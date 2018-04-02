@@ -33,6 +33,9 @@
 .color-blue{
 	color: #085b6b;
 }
+.borderBlue{
+	border: 1px solid #31708f!important;
+}
 
 /*============bg color=============*/
 /**/
@@ -282,6 +285,13 @@
 	border: 2px solid #085b6b!important; 
 	padding-top:20px!important; 
 }
+
+#homeStory .row{
+	width:270px!important; 
+	border: 2px solid #085b6b!important; 
+	padding-top:20px!important; 
+	padding-bottom:20px;
+}
 #btCerate{
 	position: absolute;
 	right: 0px;
@@ -296,5 +306,24 @@
  display:none!important; 
 }
 
+.carousel-indicators{
+	bottom:0px!important; 
+}
+
+.myselect{
+	border: 1px solid #31708f;
+}
 
 
+
+
+
+
+/*for web*/
+
+@media only screen and (min-device-width: 900px){
+	.homePage .divBtn{
+		margin-top:50px;
+	}
+	
+}

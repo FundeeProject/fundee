@@ -1,88 +1,86 @@
-<body >
-	<div class="marginAuto admin-addCategoryPage" >
-		  <p class="text-center textName"></p>
-		  <div class="form-group paddingT10 marginAuto divBtn">
-			<center>
-				<div class="container">
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+<div class="row homePage">
+	<div class="form-group marginAuto divBtn" style="width:320px;">
+		<center>
+		<div class="marginAuto marginB20" style="width:90%; height:auto;">
+			 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+   
+				<ol class="carousel-indicators" style="bottom:0px;">
+				  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				  <li data-target="#myCarousel" data-slide-to="1"></li>
+				  <li data-target="#myCarousel" data-slide-to="2"></li>
+				  <li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
 
-      <div class="item active">
-        <img src="img_chania.jpg" alt="Chania" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-        </div>
-      </div>
+				<!--img slide-->
+				<div class="carousel-inner" role="listbox">
 
-      <div class="item">
-        <img src="img_chania2.jpg" alt="Chania" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-        </div>
-      </div>
-    
-      <div class="item">
-        <img src="img_flower.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
+				  <div class="item active">
+					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200"> 
+				  </div>
 
-      <div class="item">
-        <img src="img_flower2.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beautiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
-  
-    </div>
+				  <div class="item">
+					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200">    
+				  </div>
+				
+				  <div class="item">
+					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Flower" width="240" height="200">   
+				  </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-			</center>
-		  </div>
+				  <div class="item">
+					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Flower" width="240" height="200">      
+				  </div>
+			  
+				</div>
+
+			   <!--slide left right-->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style=" margin-left: -25px;"></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="margin-right: -25;"></span>
+				  <span class="sr-only">Next</span>
+				</a>
+			</div>
+			
+			<!---->
+			<form class="form-horizontal" method="post" name="" id="">
+				<div class="form-group marginAuto marginT20" style="width: 250px;">
+					<input type="text"  class="form-control borderBlue" id="textSearch"   placeholder="">
+				</div> 
+				<div id="homeStory" class="form-group">
+					<div class='row' >
+						<div class='col-xs-3 col-lg-2'> 
+							<button id = 'pic' value ='35' onClick = '' > 
+								<img src ='imgStory/35_00.jpg'  style=' width: 45px; height: 45px;' />  
+							</button>
+						</div>
+					</div>
+				</div> 
+			</form>
+			
+			<div style="width:270px" class="objectCenter">
+				<div id="btCerate" class="btn btn-warning btn-circle"><i class="fa fa-plus"></i></div>
+			</div>
+			<br>
+		</div>
+		</center>
 	</div>	
+</div>
+
+
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>  
- <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  }
-  </style>  
-<script>
-	$(document).ready(function(){
-	  $(".homePage").addClass('active')
-	  $(".adminPage").hide()
-	});
-</script>
-</body>
+<link rel="stylesheet" href="css/style.css">
+<style>
 
+	
+</style>
+<script type="text/javascript">
+		$(document).ready(function(){
+			$(".homePage").addClass('active')
+			$(".adminPage").hide()
+		});
+</script>

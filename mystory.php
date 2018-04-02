@@ -17,7 +17,7 @@
  <p>My Story</p>
 	<form class="form-horizontal" method="post" name="" id="">
 		<div class="form-group marginAuto" style="width: 250px;">
-			<select name="Myselect" id="Myselect"  class="form-control">
+			<select name="Myselect" id="Myselect"  class="form-control myselect">
 				<option value="1" selected>All</option>
 				<option value="0" >My Create</option>
 			</select>
