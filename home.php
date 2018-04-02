@@ -80,7 +80,10 @@
 </style>
 <script type="text/javascript">
 		$(document).ready(function(){
+		// check user role login
+			
 			$(".homePage").addClass('active')
-			$(".adminPage").hide()
+			$(".adminPage").hide()//local
+			$(".storyPage").show()//admin show
 		});
 </script>
