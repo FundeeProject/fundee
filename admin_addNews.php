@@ -126,6 +126,7 @@
 		$(document).ready(function(){
 			  $(".adminPage").addClass('active')
 			  $(".textName").text("Add News")
+			  $(".storyPage").hide()
 			  
 			  $("#addNewsBtn").click(function(){
 				  alert("Add News")
