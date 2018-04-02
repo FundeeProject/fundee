@@ -1,0 +1,75 @@
+.wp100{
+    width: 100%;
+}
+.marginT10{
+    margin-top: -30px!important;
+}
+.marginB10{
+    margin-bottom: 10px!important;
+}
+.textCenter{
+    text-align: center!important;
+}
+.bgHome{
+    background-color: #085b6b;
+}
+
+.w100{
+    width: 100px;
+    height: 100px;
+}
+.w200{
+    width: 200px;
+    height: 200px;
+}
+
+.logoHome{
+    background-image: url('../img/logoHome.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top:20px;
+}
+
+.objectCenter{
+    position: absolute!important;
+    left: 0!important;
+    right: 0!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+.nameLogo{
+    width: 259px;
+    height: 107px;
+    background-image: url('../img/nameLogo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative!important;
+    left: 0!important;
+    right: 0!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+.bgW_login{
+    border-radius: 10px;
+    background-color:#FFF; 
+    width:98%;
+    height:auto;
+    margin-top: -30px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+.login{
+    position: relative!important;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 999;
+}
+
+.bgW_login .form-horizontal .form-group{
+    margin-left:  0px!important;
+    margin-right:  0px!important;
+}
+
