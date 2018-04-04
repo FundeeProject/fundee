@@ -47,8 +47,12 @@
 			<!---->
 			<form class="form-horizontal" method="post" name="" id="">
 				<div class="form-group marginAuto marginT20" style="width: 250px;">
+				 <span class="icon"><i class="fa fa-search" style="position: relative;top: 25px;right: -110px;"></i></span>
 					<input type="text"  class="form-control borderBlue" id="textSearch"   placeholder="">
 				</div> 
+				
+				
+				
 				<div id="homeStory" class="form-group">
 					<div class='row' >
 						<div class='col-xs-3 col-lg-2'> 
