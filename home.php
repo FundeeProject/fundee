@@ -13,13 +13,13 @@
 				</ol>
 
 				<!--img slide-->
-				<div class="carousel-inner" role="listbox">
+				<div class="carousel-inner" role="listbox" id="showSlideNews">
 
 				  <div class="item active">
 					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200"> 
 				  </div>
 
-				  <div class="item">
+				 <!--- <div class="item">
 					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200">    
 				  </div>
 				
@@ -29,7 +29,7 @@
 
 				  <div class="item">
 					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Flower" width="240" height="200">      
-				  </div>
+				  </div> --->
 			  
 				</div>
 
@@ -79,11 +79,37 @@
 	
 </style>
 <script type="text/javascript">
-		$(document).ready(function(){
-		// check user role login
-			
-			$(".homePage").addClass('active')
-			$(".adminPage").hide()//local
-			$(".storyPage").show()//admin show
-		});
+$(document).ready(function(){
+// check user role login
+	$(".homePage").addClass('active')
+	$(".adminPage").hide()//local
+	$(".storyPage").show()//admin show
+	
+	$.ajax({
+		type:'POST',
+		url:'qs/qs_showNews.php',
+		dataType: "json",
+		data: {},
+		success:function( datajson ) {     
+			if(datajson.length !=0){
+				$('#showSlideNews').empty();
+				$.each(datajson, function(i,item){
+					var no = i;
+					if(datajson[i].picture == 'NULL' ){
+						var img = '<div class="item active">'+
+						'<img src="x.jpg" alt="Chania" '+
+						'width="240" height="200"> </div>'; 
+					}else{
+						var img = " <button id = 'pic_' value ='"+no+"' onClick = 'pageAddpicture(this.value);' > <img src ='imgStory/"+ datajson[i].picture + "'  style=' width: 45px; height: 45px;' />  </button>"; 
+					}
+					$('#showpic_Allpage').append(img);	
+				});	
+			}
+			else{
+				alert("ไม่พบข้อมูลหน้านิทาน");
+			}
+		},
+		error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
+	});
+});
 </script>
