@@ -5,21 +5,21 @@
 		<div class="marginAuto marginB20" style="width:90%; height:auto;">
 			 <div id="myCarousel" class="carousel slide" data-ride="carousel">
    
-				<ol class="carousel-indicators" style="bottom:0px;">
+				<ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
 				  <li data-target="#myCarousel" data-slide-to="0" ></li>
-				  <li data-target="#myCarousel" data-slide-to="1"></li>
+				   <!---<li data-target="#myCarousel" data-slide-to="1"></li>
 				  <li data-target="#myCarousel" data-slide-to="2"></li>
-				  <li data-target="#myCarousel" data-slide-to="3"></li>
+				  <li data-target="#myCarousel" data-slide-to="3"></li> --->
 				</ol>
 
 				<!--img slide-->
 				<div class="carousel-inner" role="listbox" id="showSlideNews">
 
-				  <div class="item active">
+				  <!--- <div class="item active">
 					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200"> 
 				  </div>
 
-				 <!--- <div class="item">
+				 <div class="item">
 					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200">    
 				  </div>
 				
@@ -96,17 +96,22 @@ $(document).ready(function(){
 		data: {},
 		success:function( datajson ) {     
 			if(datajson.length !=0){
-				$('#showSlideNews').empty();
+				//$('#showSlideNews').empty();
 				$.each(datajson, function(i,item){
 					var no = i;
-					if(datajson[i].picture == 'NULL' ){
-						var img = '<div class="item active">'+
-						'<img src="x.jpg" alt="Chania" '+
+					if(datajson[i].	news_picture != '' ){
+						var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
+						var img = '<div class="item ">'+
+						'<img src="img/'+datajson[i].news_picture+'" alt="Chania" '+
 						'width="240" height="200"> </div>'; 
 					}else{
-						var img = " <button id = 'pic_' value ='"+no+"' onClick = 'pageAddpicture(this.value);' > <img src ='imgStory/"+ datajson[i].picture + "'  style=' width: 45px; height: 45px;' />  </button>"; 
+						var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
+						var img = '<div class="item active">'+
+						'<img src="img/'+datajson[i].news_picture +'" alt="Chania" '+
+						'width="240" height="200"> </div>'; 
 					}
-					$('#showpic_Allpage').append(img);	
+					$('#showSlideNews_number').append(imgNumber);	
+					$('#showSlideNews').append(img);	
 				});	
 			}
 			else{
