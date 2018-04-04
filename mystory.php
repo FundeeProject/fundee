@@ -133,7 +133,7 @@
 				<div class="box-text-number">
 					<p class="text-center">1</p>
 				</div>
-				<div class="objectCenter new_Btn2 " style="" id = "showPic_page">
+				<div class="objectCenter new_Btn2 " style="top:40%" id = "showPic_page">
 					<i class="fa fa-camera" style="font-size:24px"></i>
 				</div>
 				
@@ -151,10 +151,10 @@
 		<div class="row marginB20" style="margin-top: -10px;">
 			<div class="col-xs-3 col-sm-3">
 				<div id="" class="form-group form-group-sm">
-					<div class="bg-btn btn-create" style="margin-left:40px;">
+					<div class="bg-btn btn-create" style="margin-left:40px;" id="editText">
 						<i class="fa fa-edit" ></i>
 					</div>
-					<input type="button" name="editText" id="editText" />
+					<input type="hidden" name="editText"  />
 				</div>
 			</div>
 			<div class="col-xs-3 col-sm-3">
