@@ -155,6 +155,7 @@
 						<i class="fa fa-edit" ></i>
 					</div>
 					<input type="hidden" name="editText"  />
+					<!--<input type="text" name="editText" id="editText" />-->
 				</div>
 			</div>
 			<div class="col-xs-3 col-sm-3">
