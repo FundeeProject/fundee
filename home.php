@@ -6,44 +6,12 @@
 			 <div id="myCarousel" class="carousel slide" data-ride="carousel">
    
 				<ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
-<<<<<<< HEAD
-				  <!---<li data-target="#myCarousel" data-slide-to="0" ></li>
-				   <li data-target="#myCarousel" data-slide-to="1"></li>
-=======
-				   <li data-target="#myCarousel" data-slide-to="0" ></li>
-				  <!---<li data-target="#myCarousel" data-slide-to="1"></li>
->>>>>>> dabb252b2b628f667e1dfe2f1039ae3873926cf1
-				  <li data-target="#myCarousel" data-slide-to="2"></li>
-				  <li data-target="#myCarousel" data-slide-to="3"></li> --->
+
 				</ol>
 
 				<!--img slide-->
 				<div class="carousel-inner" role="listbox" id="showSlideNews">
 
-<<<<<<< HEAD
-				 <!---<div class="item active">
-					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200"> 
-				  </div>
-
-				   <div class="item">
-=======
-				   <div class="item active">
-					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200"> 
-				  </div>
-
-				<!--- <div class="item">
->>>>>>> dabb252b2b628f667e1dfe2f1039ae3873926cf1
-					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" width="240" height="200">    
-				  </div>
-				
-				  <div class="item">
-					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Flower" width="240" height="200">   
-				  </div>
-
-				  <div class="item">
-					<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Flower" width="240" height="200">      
-				  </div> --->
-			  
 				</div>
 
 			   <!--slide left right-->
@@ -112,7 +80,6 @@ $(document).ready(function(){
 			if(datajson.length !=0){
 				//$('#showSlideNews').empty();
 				$.each(datajson, function(i,item){
-<<<<<<< HEAD
 					var no = i;
 					if(datajson[i].	news_picture != '' ){
 						if(i==0){
@@ -131,20 +98,7 @@ $(document).ready(function(){
 						var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 						var img = '<div class="item active">'+
 						'<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" '+
-						'width="240" height="200"> </div>'; alert("ff");
-=======
-					var no = i;  
-					if(datajson[i].news_picture != '' ){
-						var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
-						var img = '<div class="item ">'+
-						'<img src="img/'+datajson[i].news_picture +'" alt="Chania" '+
-						'width="240" height="200"> </div>'; 
-					}else{
-						var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
-						var img = '<div class="item ">'+
-						'<img src="img/'+datajson[i].news_picture +'" alt="Chania" '+
-						'width="240" height="200"> </div>'; 
->>>>>>> dabb252b2b628f667e1dfe2f1039ae3873926cf1
+						'width="240" height="200"> </div>';
 					}
 					$('#showSlideNews_number').append(imgNumber);	
 					$('#showSlideNews').append(img);	
