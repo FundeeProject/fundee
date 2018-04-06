@@ -53,8 +53,8 @@
 		  <p class="text-center textName"></p>
 		  <div class="form-group paddingT10 marginAuto divBtn">
 			<center>
-				<div class="form-group">
-					<ul class="list-group">
+				<div class="form-group" >
+					<ul class="list-group" id = "textNews">
 					  <li class="list-group-item">10 Mar 2017 Sale 20%</li>
 					  <li class="list-group-item">15 Mar 2017 Sale 15%</li>
 					  <li class="list-group-item">25 Mar 2018 New Category</li>
@@ -75,39 +75,72 @@
 	</div>	
 
   
-    <script type="text/javascript">
-		$(document).ready(function(){
-			$(".adminPage").addClass('active')
-			$(".textName").text("Manage News")
-			
-			//
-			$('.list-group-item:first').addClass('active');
-		
-			$('ul li').click(function() {
-				$('ul.list-group li.active').removeClass('active');
-				$(this).closest('li').addClass('active');
-				$(".adminPage").addClass('active')
-			});
-			
-			  
-			
-			  
-			$("#addBtn").click(function(){
-				//window.location.href='addmin_addNews.php';
-				//window.location.href="main.php?page=addmin_addNews";
-				window.location.href="main.php?page=admin_addNews";
-			});
-			  
-			$("#delBtn").click(function(){
-				var text = $('ul li.active').text();
-				alert("del : " +text)
-			});
-			  
-			 
-			
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".adminPage").addClass('active')
+		$(".textName").text("Manage News")
+		$(".storyPage").hide()
+		///DB
+		$.ajax({
+			type:'POST',
+			url:'qs/qs_showNews.php',
+			dataType: "json",
+			data: {},
+			success:function( datajson ) {     
+				if(datajson.length !=0){
+					$('#textNews').empty();
+					$.each(datajson, function(i,item){
+						//var no = i;
+						var textNews = '<li class="list-group-item">'+datajson[i].description+'</li>';
+						
+						$('#textNews').append(textNews);
+					});	
+				}
+				else{
+				}
+				
+				$('.list-group-item:first').addClass('active');
+	
+				$('ul li').click(function() {
+					$('ul.list-group li.active').removeClass('active');
+					$(this).closest('li').addClass('active');
+					$(".adminPage").addClass('active');
+				});
+			},
+			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 		});
-			
-	</script>
+		
+		//
+		
+		
+		  
+		$("#addBtn").click(function(){
+			//window.location.href='addmin_addNews.php';
+			//window.location.href="main.php?page=addmin_addNews";
+			window.location.href="main.php?page=admin_addNews";
+		});
+		  
+		$("#delBtn").click(function(){
+			var text = $('#textNews li.active').text();
+			alert("del : " +text);
+			$.ajax({
+				type:'POST',
+				url:'qs/qs_deleteNews.php',
+				dataType: "text",
+				data: {text:text},
+				success:function( datajson ) {     
+					if(datajson == 'ok'){
+						alert("ลบแล้ว");
+						window.location.href="main.php?page=admin_manageNews";
+					}
+					else{ alert("no ok");
+					}
+				},
+				error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
+			});
+		});
+	});
+</script>
 
 </body>
 </html>

@@ -67,9 +67,16 @@
 <script type="text/javascript">
 $(document).ready(function(){
 // check user role login
-	$(".homePage").addClass('active')
-	$(".adminPage").hide()//local
-	$(".storyPage").show()//admin show
+	<?php 
+		if($_SESSION["role_id"]== 0 ){
+			echo " $('.homePage').addClass('active'); ";
+			echo "$('.storyPage').hide(); ";
+		}
+		else if($_SESSION["role_id"]== 1 ){
+			echo " $('.homePage').addClass('active'); ";
+			echo "$('.adminPage').hide(); ";
+		}
+	?>
 	//////ดึงข่าวมาจาก DB
 	$.ajax({
 		type:'POST',
