@@ -21,7 +21,7 @@ $arr = array();
 		///อัพโหลดรูปหน้าปก
 		$ext = pathinfo(basename($_FILES['news_pic_upload']['name']),PATHINFO_EXTENSION);
 		$new_img_name = 'news_'.$news_id.'.'.$ext;
-		$img_path = "../imgStory/";
+		$img_path = "../img/";
 		$upload_path = $img_path.$new_img_name;
 		$success = move_uploaded_file($_FILES['news_pic_upload']['tmp_name'],$upload_path);
 		if( $success == FALSE){
