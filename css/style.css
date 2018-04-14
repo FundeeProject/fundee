@@ -60,13 +60,15 @@
 }
 
 .bgW_login{
-    border-radius: 10px;
+   
     background-color:#FFF; 
     width:90%;
     height:auto;
     margin-top: -50px;
     margin-left: auto!important;
     margin-right: auto!important;
+	border-top-left-radius: 10px!important;
+    border-top-right-radius: 10px!important;
 }
 
 .login{
@@ -85,8 +87,35 @@
 	width:240px;
 	height:120px;
 	 background-color:#FF5733; 
+	
 }
 
+
+.homeIcon{
+	width: 18px;
+    height: 18px;
+    position: relative;
+    z-index: 999;
+    top: -20px;
+    right: -20px;
+}
+.icon-play{
+    background-image: url('../img/play.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-buy{
+    background-image: url('../img/buy.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-new{
+	width: 256px;
+    height: 256px;
+    background-image: url('../img/play.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 /*btn*/
 .sizeBtn button{width: 80px;}
@@ -129,7 +158,7 @@
 	padding-top: 60px; 
 	width :100%;
 	margin-left:auto; 
-	margin-right:auto;"
+	margin-right:auto;
 }
 
 
@@ -161,7 +190,7 @@
 }
 
 .nav-tabs{
-	border-bottom: 1px solid #31708f;
+	border-bottom: 2px solid #31708f;
 }
 
 /*mystory-create*/
@@ -254,7 +283,7 @@
 .admin-addNewsPage .divBtn,
 .admin-addCategoryPage .divBtn{
 	width:320px;
-	background-color: #e4600259!important; 
+	background-color: #e46002!important; 
 	border-radius: 5px;
 	position: relative; 
 }
@@ -286,19 +315,26 @@
 	padding-top:20px!important; 
 }
 
-#homeStory .row{
-	width:270px!important; 
+#homeStory .boxImg {
+	padding:0
+	/*width:270px!important; 
 	border: 2px solid #085b6b!important; 
 	padding-top:20px!important; 
-	padding-bottom:20px;
+	padding-bottom:20px;*/
 }
+#homeStory .boxImg img{
+	width: 60px; 
+	height: 100px;
+	box-shadow: 3px 3px #888888;
+	position: relative;
+    z-index: 1;
+}
+
 #btCerate{
 	position: absolute;
 	right: 0px;
 }
 
-.new_Btn {
-}
 
 #html_btn,
 #html_btn2
@@ -316,7 +352,22 @@
 
 
 
+.masterProfile{
+	position: absolute;
+    right: 5px;
+    top: 5px;
+    color: lightblue;
+}
 
+.masterProfile span{
+	font-size:24px;
+}
+
+#showSlideNews img{
+	height :180!important; 
+	width: auto!important; 
+
+}
 
 
 /*for web*/

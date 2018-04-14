@@ -14,6 +14,7 @@ $_GET['page'];
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!-- Add icon library -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 body {
@@ -21,6 +22,46 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.navbarH {
+  overflow: hidden!important; 
+  background-color:#085b6b!important; 
+  position: fixed!important; 
+  top: 0!important; 
+  width: 100%!important; 
+  height:260px!important; 
+  border:0px!important; 
+	left:0px;
+  z-index: 999999;
+}
+
+
+.navbarHK{
+	position:relative!important; 
+
+}
+
+.main {
+  padding: 16px!important;
+ /* margin-top: 260px!important;
+  background-color: #FFF!important;*/
+  color:#000!important;
+  z-index: 0;
+	width: 95%;
+  background-color: #fcf8e3;
+  position: absolute;
+  top: 260;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;"
+	margin-bottom:20px!important;
+	border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+ 
+}
+
+.nav-tabs{border:0}
+/*
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -43,7 +84,7 @@ body {
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
-}
+}*/
 </style>
 </head>
 <body class="bgHome container">
@@ -104,40 +145,13 @@ body {
 				);
    }
 $(document).ready(function(){
-	/*$(".show_mystory").show();
-	$(".create_mystory").hide();
-	$("#btCerate").click(function(){
-		//var show = document.getElementById("show");
-		//show.innerHTML = "btMystory";
-		//alert("btCerate2 Click");
-		$(".show_mystory").hide();
-		$(".create_mystory").show();
-	});*/
-	/*
-	$('.box li').click(function() {
-        $(this).siblings('li').removeClass('active');
-        $(this).addClass('active');
-    });
 	
-	  
-	$('ul li').click(function() {
-		//$('ul.list-group li.active').removeClass('active');
-		//$(this).closest('li').addClass('active');
-		
-		//$(this).siblings('li').removeClass('active');
-        $(this).addClass('active');
-	});
-	
-	$('.list-group').on('click', 'li', function() {
-		$('.list-group li.active').removeClass('active');
-		$(this).addClass('active');
-	});*/
 });
 	
 	
 </script>
 
-
+<!--
 <div class="container-fluid ">
   <div class="row ">
     <div class="col-sm-3 pull-right" style=" color:white;">
@@ -162,7 +176,7 @@ $(document).ready(function(){
 									<li class="homePage"><a href="main.php?page=home">HOME</a></li>
 									<li class="categoryPage"><a href="main.php?page=category">CATEGORY</a></li>
 									<li class="storyPage"><a href="main.php?page=mystory">MY STORY </a></li>
-									<?php if($_SESSION["role_id"] == 0){echo '<li class="adminPage"><a href="main.php?page=admin">ADMIN </a></li>';} ?>
+									<?/*php if($_SESSION["role_id"] == 0){echo '<li class="adminPage"><a href="main.php?page=admin">ADMIN </a></li>';}*/ ?>
 								</ul>
 							</div>
 							<center>
@@ -170,7 +184,7 @@ $(document).ready(function(){
 									<p id="showdata">แสดงข้อมูล</p>
 									
 									
-									<?php 
+									<?/*php 
 										if($_GET['page'] == 'home'){
 											include("home.php");
 										}else if($_GET['page'] == 'category'){
@@ -190,7 +204,7 @@ $(document).ready(function(){
 										}
 										
 										
-									?>
+									*/?>
 								</div>
 							</center>
 						</div>
@@ -200,6 +214,63 @@ $(document).ready(function(){
 		</div>
 	</div>
   </div>
+</div>-->
+
+<div class="navbarH">
+   <div class="masterProfile">
+		<span class="glyphicon glyphicon-log-out">
+   </div>
+   <div class="nameLogo marginT10"></div>
+   <div class="w100 logoHome login marginT10" style="position:retative; top:-10px;"></div>
+
+	<div class="row">
+		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
+			<div class="bgW_login contentStory marginB10">
+				<section class="area">
+					 <div class="row">
+						<div class="col-md-12" style="padding-top: 40px;padding-left: 0px;padding-right: 0px;">
+							<ul class="nav nav-tabs list-group" style="margin-bottom:0">
+								<li class="homePage"><a href="main.php?page=home">HOME</a></li>
+								<li class="categoryPage"><a href="main.php?page=category">CATEGORY</a></li>
+								<li class="storyPage"><a href="main.php?page=mystory">MY STORY </a></li>
+								<?php if($_SESSION["role_id"] == 0){echo '<li class="adminPage"><a href="main.php?page=admin">ADMIN </a></li>';} ?>
+							</ul>
+						</div>
+					 </div>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>
+
+<div class="main marginB20"    >
+	
+	<?php 
+		if($_GET['page'] == 'home'){
+			include("home.php");
+		}else if($_GET['page'] == 'category'){
+			include("category.php");
+		}else if($_GET['page'] == 'mystory'){
+			include("mystory.php");
+		}else if($_GET['page'] == 'admin'){
+			include("admin.php");
+		}else if($_GET['page'] == 'admin_addNews'){
+			include("admin_addNews.php");
+		}else if($_GET['page'] == 'admin_manageNews'){
+			include("admin_manageNews.php");
+		}else if($_GET['page'] == 'admin_manageCategory'){
+			include("admin_manageCategory.php");
+		}else if($_GET['page'] == 'admin_addCategory'){
+			include("admin_addCategory.php");
+		}
+		
+		
+	?>
+
+
+				
+</div>
+
+
 </body>
 </html>

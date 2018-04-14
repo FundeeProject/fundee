@@ -1,17 +1,33 @@
-
 <div class="row homePage">
-	<div class="form-group marginAuto divBtn" style="width:320px;">
+	<div class="marginAuto divBtn">
 		<center>
-		<div class="marginAuto marginB20" style="width:90%; height:auto;">
+		<div class="marginAuto" style="height:auto;">
 			 <div id="myCarousel" class="carousel slide" data-ride="carousel">
    
 				<ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
-
+			      <li data-target="#myCarousel" data-slide-to="0" ></li>
+				  <li data-target="#myCarousel" data-slide-to="1"></li>
+				  <li data-target="#myCarousel" data-slide-to="2"></li>
+				  <li data-target="#myCarousel" data-slide-to="3"></li> 
 				</ol>
 
 				<!--img slide-->
 				<div class="carousel-inner" role="listbox" id="showSlideNews">
+ 					<div class="item active">
+						<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania"> 
+				    </div>
+				 
+					<div class="item">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnSEKZqJZHveFLz5Gjkrci77XnJq7gp5cSq3UI_Nkn5P3-xfz4" alt="Chania">    
+					</div>
+					
+					<div class="item">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTldqQkHcGq8YmquLLwCt82A5ekcjFPFgZGU55EelsvdRBwrhObbQ" alt="Flower">   
+					</div>
 
+					<div class="item">
+						<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Flower">      
+					</div> 
 				</div>
 
 			   <!--slide left right-->
@@ -31,24 +47,45 @@
 				 <span class="icon"><i class="fa fa-search" style="position: relative;top: 25px;right: -110px;"></i></span>
 					<input type="text"  class="form-control borderBlue" id="textSearch" placeholder="" >
 				</div> 
-				
+				<p class="marginT20" style="">ALL STORY</p>
 				
 				
 				<div id="homeStory" class="form-group">
-					<div class='row' id="showHomeStory" >
-						<div class='col-xs-3 col-lg-2'> 
-							<button id = 'pic' value ='35' onClick = '' > 
-								<img src ='imgStory/35_00.jpg'  style=' width: 45px; height: 45px;' />  
-							</button>
+					<div class='row'  style="width:95%" id="showHomeStory" >
+						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
+							<div > 
+								<img src ='http://d28hgpri8am2if.cloudfront.net/book_images/cvr9780857071934_9780857071934_hr.jpg'/> 
+								<div>
+										<div class="homeIcon icon-play"></div>
+								</div>
+							
+							</div>
 						</div>
-						
-					</div>
+						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
+							<div > 
+								<img src ='https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png'/> 
+								<div class="homeIcon icon-buy"></div>
+							</div>
+						</div>
+						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
+							<div > 
+								<img src ='https://marketplace.canva.com/MAB__29_V3E/1/0/thumbnail_large/canva-carnival-illustration-book-cover-MAB__29_V3E.jpg'/> 
+								<div class="homeIcon icon-buy"></div>
+							</div>
+						</div>
+						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
+							<div > 
+								<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbxqmsF3kJu1V5t4_g1JBBr5ulc8Hzft7dip3JqbdPU_POWIr-'/> 
+								<div class="homeIcon icon-play"></div>
+							</div>
+						</div>
+
 				</div> 
 			</form>
-			
+			<!--
 			<div style="width:270px" class="objectCenter">
 				<div id="btCerate" class="btn btn-warning btn-circle"><i class="fa fa-plus"></i></div>
-			</div>
+			</div>-->
 			<br>
 		</div>
 		</center>
@@ -56,16 +93,9 @@
 </div>
 
 
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-<style>
-
-	
-</style>
 <script type="text/javascript">
 $(document).ready(function(){
+	
 // check user role login
 	<?php 
 		if($_SESSION["role_id"]== 0 ){
@@ -78,6 +108,7 @@ $(document).ready(function(){
 		}
 	?>
 	//////ดึงข่าวมาจาก DB
+	/*
 	$.ajax({
 		type:'POST',
 		url:'qs/qs_showNews.php',
@@ -192,6 +223,6 @@ $(document).ready(function(){
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 		});
-    });
+    });*/
 });
 </script>
