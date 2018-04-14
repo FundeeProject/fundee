@@ -8,6 +8,9 @@
     width: 200px;
     height: 200px;
 }
+.h100{
+	 height: 100px!important;
+}
 .marginT10{margin-top: 10px!important;}
 .marginT20{margin-top: 20px!important;}
 .marginB10{margin-bottom: 10px!important;}
@@ -329,6 +332,11 @@
 	position: relative;
     z-index: 1;
 }
+#homeStory .boxImg p{
+	margin-top:5px;
+	font-size: 12px;
+}
+
 
 #btCerate{
 	position: absolute;

@@ -52,32 +52,33 @@
 				
 				<div id="homeStory" class="form-group">
 					<div class='row'  style="width:95%" id="showHomeStory" >
-						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
-							<div > 
+						<div class='col-xs-4 col-lg-2  boxImg'> 
+							<div class="h100"> 
 								<img src ='http://d28hgpri8am2if.cloudfront.net/book_images/cvr9780857071934_9780857071934_hr.jpg'/> 
-								<div>
-										<div class="homeIcon icon-play"></div>
-								</div>
-							
+								<div class="homeIcon icon-play"></div>
 							</div>
+							<p>CARTOON</p>
 						</div>
-						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
-							<div > 
+						<div class='col-xs-4 col-lg-2 mrginT10 boxImg'> 
+							<div class="h100"> 
 								<img src ='https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png'/> 
 								<div class="homeIcon icon-buy"></div>
 							</div>
+							<p>FRED</p>
 						</div>
-						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
-							<div > 
+						<div class='col-xs-4 col-lg-2  boxImg'> 
+							<div class="h100"> 
 								<img src ='https://marketplace.canva.com/MAB__29_V3E/1/0/thumbnail_large/canva-carnival-illustration-book-cover-MAB__29_V3E.jpg'/> 
 								<div class="homeIcon icon-buy"></div>
 							</div>
+							<p>The Little Dancer</p>
 						</div>
-						<div class='col-xs-4 col-lg-2 marginT10 boxImg'> 
-							<div > 
+						<div class='col-xs-4 col-lg-2  boxImg'> 
+							<div class="h100"> 
 								<img src ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbxqmsF3kJu1V5t4_g1JBBr5ulc8Hzft7dip3JqbdPU_POWIr-'/> 
 								<div class="homeIcon icon-play"></div>
 							</div>
+							<p>CASPER</p>
 						</div>
 
 				</div> 
