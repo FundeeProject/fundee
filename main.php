@@ -28,7 +28,7 @@ body {
   position: fixed!important; 
   top: 0!important; 
   width: 100%!important; 
-  height:260px!important; 
+  height:195px!important; 
   border:0px!important; 
 	left:0px;
   z-index: 999999;
@@ -42,14 +42,12 @@ body {
 
 .main {
   padding: 16px!important;
- /* margin-top: 260px!important;
-  background-color: #FFF!important;*/
   color:#000!important;
   z-index: 0;
 	width: 95%;
   background-color: #fcf8e3;
   position: absolute;
-  top: 260;
+  top: 197;
   left: 0;
   right: 0;
   margin-right: auto;
@@ -60,7 +58,23 @@ body {
  
 }
 
+
 .nav-tabs{border:0}
+
+
+
+
+.navbarHH {
+  overflow: hidden!important; 
+  background-color:#085b6b!important; 
+  position: fixed!important; 
+  top: 260!important; 
+  width: 100%!important; 
+  height:260px!important; 
+  border:0px!important; 
+	left:0px;
+  z-index: 999999;
+}
 /*
 .topnav {
   overflow: hidden;
@@ -221,7 +235,7 @@ $(document).ready(function(){
 		<span class="glyphicon glyphicon-log-out">
    </div>
    <div class="nameLogo marginT10"></div>
-   <div class="w100 logoHome login marginT10" style="position:retative; top:-10px;"></div>
+   <div class="w100 logoHome login marginT10" style="position:retative; top:-18px;"></div>
 
 	<div class="row">
 		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
@@ -243,9 +257,13 @@ $(document).ready(function(){
 	</div>
 </div>
 
+
+
+
 <div class="main marginB20"    >
 	
 	<?php 
+	
 		if($_GET['page'] == 'home'){
 			include("home.php");
 		}else if($_GET['page'] == 'category'){

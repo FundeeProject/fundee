@@ -3,32 +3,17 @@
 		<center>
 		<div class="marginAuto" style="height:auto;">
 			 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-   
 				<ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
-			      <li data-target="#myCarousel" data-slide-to="0" ></li>
-				  <li data-target="#myCarousel" data-slide-to="1"></li>
-				  <li data-target="#myCarousel" data-slide-to="2"></li>
-				  <li data-target="#myCarousel" data-slide-to="3"></li> 
+
 				</ol>
 
 				<!--img slide-->
 				<div class="carousel-inner" role="listbox" id="showSlideNews">
- 					<div class="item active">
+					<!--- <div class="item active">
 						<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania"> 
-				    </div>
-				 
-					<div class="item">
-						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnSEKZqJZHveFLz5Gjkrci77XnJq7gp5cSq3UI_Nkn5P3-xfz4" alt="Chania">    
-					</div>
-					
-					<div class="item">
-						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTldqQkHcGq8YmquLLwCt82A5ekcjFPFgZGU55EelsvdRBwrhObbQ" alt="Flower">   
-					</div>
-
-					<div class="item">
-						<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Flower">      
-					</div> 
+				    </div> --->
 				</div>
+				
 
 			   <!--slide left right-->
 				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -52,7 +37,7 @@
 				
 				<div id="homeStory" class="form-group">
 					<div class='row'  style="width:95%" id="showHomeStory" >
-						<div class='col-xs-4 col-lg-2  boxImg'> 
+						<!--- <div class='col-xs-4 col-lg-2  boxImg'> 
 							<div class="h100"> 
 								<img src ='http://d28hgpri8am2if.cloudfront.net/book_images/cvr9780857071934_9780857071934_hr.jpg'/> 
 								<div class="homeIcon icon-play"></div>
@@ -79,7 +64,7 @@
 								<div class="homeIcon icon-play"></div>
 							</div>
 							<p>CASPER</p>
-						</div>
+						</div>--->
 
 				</div> 
 			</form>
@@ -109,7 +94,7 @@ $(document).ready(function(){
 		}
 	?>
 	//////ดึงข่าวมาจาก DB
-	/*
+	
 	$.ajax({
 		type:'POST',
 		url:'qs/qs_showNews.php',
@@ -120,7 +105,7 @@ $(document).ready(function(){
 				//$('#showSlideNews').empty();
 				$.each(datajson, function(i,item){
 					var no = i;
-					if(datajson[i].	news_picture != '' ){
+					if(datajson[i].news_picture != '' ){
 						if(i==0){
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							var img = '<div class="item active">'+
@@ -161,17 +146,26 @@ $(document).ready(function(){
 				$.each(datajson, function(i,item){
 					var no = i;
 					if(datajson[i].story_pic != '' ){
-						var imgStory = "<div class='col-xs-3 col-lg-2'> "+
+						/*var imgStory = "<div class='col-xs-3 col-lg-2'> "+
 											"<button id = 'pic' value ='35' onClick = '' > "+
 												"<img src ='imgStory/"+ datajson[i].story_pic+"'  style=' width: 45px; height: 45px;' />  "+
 											"</button>"+
+										"</div>";*/
+						var imgStory = "<div class='col-xs-4 col-lg-2  boxImg'> "+
+											"<div class='h100'> "+
+												"<img src ='imgStory/"+ datajson[i].story_pic+"'/>"+ 
+												"<div class='homeIcon icon-play'></div>"+
+											"</div>"+
+											"<p>"+datajson[i].story_name + "</p>"+
 										"</div>";
 					}
 					else{
-						var imgStory = "<div class='col-xs-3 col-lg-2'> "+
-											"<button id = 'pic' value ='35' onClick = '' > "+
-												"<img src ='imgStory/img_00.png'  style=' width: 45px; height: 45px;' />  "+
-											"</button>"+
+						var imgStory = "<div class='col-xs-4 col-lg-2  boxImg'> "+
+											"<div class='h100'> "+
+												"<img src ='imgStory/img_00.png'/>"+ 
+												"<div class='homeIcon icon-play'></div>"+
+											"</div>"+
+											"<p>"+datajson[i].story_name + "</p>"+
 										"</div>";
 					}
 					$('#showHomeStory').append(imgStory);
@@ -224,6 +218,6 @@ $(document).ready(function(){
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 		});
-    });*/
+    });
 });
 </script>

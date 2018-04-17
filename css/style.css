@@ -50,8 +50,8 @@
     top:0px;
 }
 .nameLogo{
-    width: 259px;
-    height: 107px;
+	width: 130px;
+    height: 53px;
     background-image: url('../img/nameLogo.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -67,7 +67,7 @@
     background-color:#FFF; 
     width:90%;
     height:auto;
-    margin-top: -50px;
+    margin-top: -60px;
     margin-left: auto!important;
     margin-right: auto!important;
 	border-top-left-radius: 10px!important;
@@ -382,7 +382,7 @@
 
 @media only screen and (min-device-width: 900px){
 	.homePage .divBtn{
-		margin-top:50px;
+		/*margin-top:50px;*/
 	}
 	
 }
