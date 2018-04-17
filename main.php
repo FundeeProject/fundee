@@ -232,7 +232,8 @@ $(document).ready(function(){
 
 <div class="navbarH">
    <div class="masterProfile">
-		<span class="glyphicon glyphicon-log-out">
+   <a href="/fundee"><span class="glyphicon glyphicon-log-out"></a>
+		
    </div>
    <div class="nameLogo marginT10"></div>
    <div class="w100 logoHome login marginT10" style="position:retative; top:-18px;"></div>

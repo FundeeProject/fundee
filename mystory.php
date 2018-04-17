@@ -13,7 +13,7 @@
 <body >
 <div class="dd">
 <center>
-<div id = "show1" class = "show_mystory"> <!--- แสดงนิทานทั้งหมดของเรา --->
+<div id = "show1" class = "show_mystory"> <!-- แสดงนิทานทั้งหมดของเรา -->
  <p>My Story</p>
 	<form class="form-horizontal" method="post" name="" id="">
 		<div class="form-group marginAuto" style="width: 250px;">
@@ -27,7 +27,7 @@
 		</div> 
 	</form>
 </div> 
-<!--- แสดงหน้าสร้างชื่อนิทานและรูปหน้าปก --->
+<!-- แสดงหน้าสร้างชื่อนิทานและรูปหน้าปก -->
 <!--
 <div id = "showCreate" class = "showCreate"> 
 	<form class="marginT20" style="width :90%; margin-left:auto; margin-right:auto; " method = "post" enctype = "multipart/form-data" id = "createform1" >
@@ -97,7 +97,7 @@
 		  </div>
 	</form>
 </div>	
-<!--- แสดงหน้าเพิ่มรูปนิทานและอัดเสียง 10หน้า--- --->
+<!-- แสดงหน้าเพิ่มรูปนิทานและอัดเสียง 10หน้า-->
 <div id = "showAllPage" class = "showAllPage marginAuto myStoryPage"> 
 	<form class="marginT20 marginAuto" style="width :90%; ">
 		<div class="form-group">
@@ -118,7 +118,7 @@
 </div>
 
 
-<!--- แสดงหน้าเพิ่มรูปนิทานและอัดเสียง --->
+<!-- แสดงหน้าเพิ่มรูปนิทานและอัดเสียง -->
 <div id = "showCreateTitle" class = "showCreateTitle" style="display:none;"> 
 	<form class="marginT20" style="width :90%; margin-left:auto; margin-right:auto; "  method = "post" enctype = "multipart/form-data" id = "createform2">
 		<div class="form-group">
@@ -243,12 +243,20 @@ $(document).ready(function(){
 				 $.each(datajson, function(i,item){
 					var no =i+1;
 					if(datajson[i].story_pic == 'NULL' ){
-						img += "<div class='col-xs-3 col-lg-2'> <button id = 'pic' value ='"+datajson[i].story_id + "' onClick = 'seeStory(this.value);' > <img src ='imgStory/img_00.png' style=' width: 45px; height: 45px;' />  </button> </div>"; 
+						//img += "<div class='col-xs-3 col-lg-2'> <button id = 'pic' value ='"+datajson[i].story_id + "' onClick = 'seeStory(this.value);' > <img src ='imgStory/img_00.png' style=' width: 45px; height: 45px;' />  </button> </div>"; 
+						//img +="<div class='col-xs-4 col-lg-2  boxImg'><div class='h100 testClick'><img src ='http://d28hgpri8am2if.cloudfront.net/book_images/cvr9780857071934_9780857071934_hr.jpg'/></div></div>"
+						img +="<div class='col-xs-4 col-lg-2  boxImg'><div class='h100 testClick'><input type='hidden'  value ='"+datajson[i].story_id+"'><img src ='imgStory/img_00.png'/></div></div>"
 					}else{
-						img += "<div class='col-xs-3 col-lg-2'> <button id = 'pic' value ='"+datajson[i].story_id + "' onClick = 'seeStory(this.value);' > <img src ='imgStory/"+ datajson[i].story_pic + "'  style=' width: 45px; height: 45px;' />  </button></div>"; 
+						img +="<div class='col-xs-4 col-lg-2  boxImg'><div class='h100 testClick'><input type='hidden'  value ='"+datajson[i].story_id+"'><img src ='imgStory/"+ datajson[i].story_pic + "'/></div></div>";
+						//img += "<div class='col-xs-3 col-lg-2'> <button id = 'pic' value ='"+datajson[i].story_id + "' onClick = 'seeStory(this.value);' > <img src ='imgStory/"+ datajson[i].story_pic + "'  style=' width: 45px; height: 45px;' />  </button></div>"; 
 					}
 				});	
-				$('#showStory').append("<div class='row'>" +img+ "</div>");	
+				//$('#showStory').append("<div class='row' style='width:95%'>" +img+ "</div>");	
+				$('#showStory').append("<div class='row' style='width:95%'>" +img+ "</div>"); 
+				$(".testClick").click(function(){ /// กดตกลงหลังจากเพิ่มหน้าหมดแล้ว
+				 alert($(this).find("input").val())
+				 //seeStory($(this).find("input").val())
+				});
 			}
 			else{
 				  alert("ไม่พบข้อมูลผู้ใช้");
@@ -268,17 +276,24 @@ $(document).ready(function(){
 			dataType: "json",
 			data: {Myselect:Myselect},
 			success:function( datajson ) { 
-						
+				var img = "";		
 				if(datajson.length !=0){
 					$.each(datajson, function(i,item){
 						var no =i+1;
 						if(datajson[i].story_pic == 'NULL' ){
-							var img = " <button id = 'pic' value ='"+datajson[i].story_id+"' onClick = 'seeStory(this.value);' > <img src ='imgStory/img_00.png' style=' width: 45px; height: 45px;' />  </button> "; 
+							//var img = " <button id = 'pic' value ='"+datajson[i].story_id+"' onClick = 'seeStory(this.value);' > <img src ='imgStory/img_00.png' style=' width: 45px; height: 45px;' />  </button> "; 
+							var	img ="<div class='col-xs-4 col-lg-2  boxImg'><div class = 'h100 testClick'><input type='hidden'  value ='"+datajson[i].story_id+"'><img src ='imgStory/img_00.png'/></div></div>"
 						}else{
-							var img = " <button id = 'pic' value ='"+datajson[i].story_id+"' onClick = 'seeStory(this.value);' > <img src ='imgStory/"+ datajson[i].story_pic + "'  style=' width: 45px; height: 45px;' />  </button>"; 
+							//var img = " <button id = 'pic' value ='"+datajson[i].story_id+"' onClick = 'seeStory(this.value);' > <img src ='imgStory/"+ datajson[i].story_pic + "'  style=' width: 45px; height: 45px;' />  </button>"; 
+							var img ="<div class='col-xs-4 col-lg-2  boxImg'><div class='h100 testClick'><input type='hidden'  value ='"+datajson[i].story_id+"'><img src ='imgStory/"+ datajson[i].story_pic + "'/></div></div>";						
 						}
-						$('#showStory').append(img);	
+						$('#showStory').append(img);
 					});	
+						
+					$(".testClick").click(function(){ 
+						//alert($(this).find("input").val())
+						seeStory($(this).find("input").val())
+					});
 				}
 				else{
 					alert("ไม่พบข้อมูลนิทาน ");

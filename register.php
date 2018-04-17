@@ -52,15 +52,16 @@ include "include/function.php";*/
  
     <script type="text/javascript">
         $(function(){
-            $("#regis").click(function(){
+            $("#regis").click(function(){///alert("click");
                 $.post("action.php?op=regis",$("form").serialize(), function(data){
-                    alert("-"+data+"-");
+                    //alert("-"+data+"-");
                     if(data=='ok'){
+						alert("สมัครสมาชิคเรียบร้อยแล้ว");
                         <?php  
                             //$row = insert("username,password,email,user_point,role_id","'$username','$password','$email','0','1'","user");
                         ?>
                         window.location.href='index.php';
-                        return true;
+                        //return true;
                     }
                 });
             });

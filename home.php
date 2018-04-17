@@ -194,17 +194,31 @@ $(document).ready(function(){
 					$.each(datajson, function(i,item){
 						var no = i;
 						if(datajson[i].story_pic != '' ){
-							var imgStory = "<div class='col-xs-3 col-lg-2'> "+
+							/*var imgStory = "<div class='col-xs-3 col-lg-2'> "+
 												"<button id = 'pic' value ='35' onClick = '' > "+
 													"<img src ='imgStory/"+ datajson[i].story_pic+"'  style=' width: 45px; height: 45px;' />  "+
 												"</button>"+
+											"</div>";*/
+							var imgStory = "<div class='col-xs-4 col-lg-2  boxImg'> "+
+												"<div class='h100'> "+
+													"<img src ='imgStory/"+ datajson[i].story_pic+"'/>"+ 
+													"<div class='homeIcon icon-play'></div>"+
+												"</div>"+
+												"<p>"+datajson[i].story_name + "</p>"+
 											"</div>";
 						}
 						else{
-							var imgStory = "<div class='col-xs-3 col-lg-2'> "+
+							/*var imgStory = "<div class='col-xs-3 col-lg-2'> "+
 												"<button id = 'pic' value ='35' onClick = '' > "+
 													"<img src ='imgStory/img_00.png'  style=' width: 45px; height: 45px;' />  "+
 												"</button>"+
+											"</div>";*/
+							var imgStory = "<div class='col-xs-4 col-lg-2  boxImg'> "+
+												"<div class='h100'> "+
+													"<img src ='imgStory/img_00.png'/>"+ 
+													"<div class='homeIcon icon-play'></div>"+
+												"</div>"+
+												"<p>"+datajson[i].story_name + "</p>"+
 											"</div>";
 						}
 						$('#showHomeStory').append(imgStory);
