@@ -259,7 +259,7 @@ $(document).ready(function(){
 				});
 			}
 			else{
-				  alert("ไม่พบข้อมูลผู้ใช้");
+				  //alert("ไม่พบข้อมูลผู้ใช้");
 				  //window.location.href = "index.php";
 			}
 		},
@@ -340,7 +340,7 @@ $(document).ready(function(){
 	            contentType: false,
 	            processData: false
 	        }).done(function(data){
-	                alert("-"+data+"-");
+	                //alert("-"+data+"-");
 				if(data != 0){story_id = data ; }
 	        });
 			
@@ -349,7 +349,7 @@ $(document).ready(function(){
 			$(".showCreateTitle").hide();
 			$(".showAllPage").show();
 			//showStoryname.value = Storyname.value;
-			alert(Storyname.value)
+			//alert(Storyname.value)
 			$("#showStoryname").html(Storyname.value)
 			showStoryid.value = story_id;
 			Storyname.value = "";
