@@ -167,9 +167,10 @@
 			</div>
 			<div class="col-xs-3 col-sm-3">
 				<div id="" class="form-group form-group-sm">
-					<div class="bg-btn btn-microphone">
+					<div class="bg-btn btn-microphone" id="editSound">
 						<i class="fa fa-microphone" style=""></i>
 					</div>
+					<input type="file" name="audio_upload" id="audio_upload" />
 				</div>
 			</div>
 			<div class="col-xs-3 col-sm-3">

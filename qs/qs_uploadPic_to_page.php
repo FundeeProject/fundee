@@ -26,9 +26,27 @@ $arr = array();
 		}else{ ///ถ้าอัพได้ ให้เพิ่มชื่อรูป
 			$sql="UPDATE page  SET picture = '$new_img_name',text = '$description_page'  WHERE story_id = '$story_id' AND page_number = '$pageNumber'";
 			$objExec = mysql_query($sql) or die (mysql_error());
+			
+				///อัพโหลดเสียง
+			$ext_s = pathinfo(basename($_FILES['audio_upload']['name']),PATHINFO_EXTENSION);
+			$new_img_name_s = 's'.$story_id.'_'.$pageNumber.'.'.$ext_s;
+			$img_path_s = "../audio/";
+			$upload_path_s = $img_path_s.$new_img_name_s;
+			$success_s = move_uploaded_file($_FILES['audio_upload']['tmp_name'],$upload_path_s);
+			if( $success_s == FALSE){
+				//echo "ไม่สามารถอัพโหลดรูปได้ " ;
+				echo "statusUpload = 'notsuccess'; ".$new_img_name_s ;
+			}else{ ///ถ้าอัพได้ ให้เพิ่มชื่อรูป
+				$sql="UPDATE page  SET voice = '$new_img_name_s'  WHERE story_id = '$story_id' AND page_number = '$pageNumber'";
+				$objExec = mysql_query($sql) or die (mysql_error());
+				echo  $story_id ;
+			}
 		}
 		
-		echo $story_id ;
+	//	echo $story_id ;
+	//
 	
+		
+		//echo $story_id ;
 	
 ?>

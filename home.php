@@ -152,7 +152,7 @@ $(document).ready(function(){
 											"</button>"+
 										"</div>";*/
 						var imgStory = "<div class='col-xs-4 col-lg-2  boxImg'> "+
-											"<div class='h100'> "+
+											"<div class='h100 testClick'> "+
 												"<img src ='imgStory/"+ datajson[i].story_pic+"'/>"+ 
 												"<div class='homeIcon icon-play'></div>"+
 											"</div>"+
@@ -161,7 +161,7 @@ $(document).ready(function(){
 					}
 					else{
 						var imgStory = "<div class='col-xs-4 col-lg-2  boxImg'> "+
-											"<div class='h100'> "+
+											"<div class='h100 testClick'> "+
 												"<img src ='imgStory/img_00.png'/>"+ 
 												"<div class='homeIcon icon-play'></div>"+
 											"</div>"+
