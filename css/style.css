@@ -48,7 +48,7 @@ body{
 /**/
 .bgHome{background-color: #085b6b;}
 .logoHome{
-    background-image: url('../img/logoHome.png');
+    background-image: url('../icon/logoHome.png');
     background-repeat: no-repeat;
     background-size: contain;
     top:0px;
@@ -56,7 +56,7 @@ body{
 .nameLogo{
 	width: 259px;
     height: 107px;
-    background-image: url('../img/nameLogo.png');
+    background-image: url('../icon/nameLogo.png');
     background-repeat: no-repeat;
     background-size: contain;
     position: relative!important;
@@ -107,19 +107,19 @@ body{
     right: -20px;
 }
 .icon-play{
-    background-image: url('../img/play.png');
+    background-image: url('../icon/play.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
 .icon-buy{
-    background-image: url('../img/buy.png');
+    background-image: url('../icon/buy.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
 .icon-new{
 	width: 256px;
     height: 256px;
-    background-image: url('../img/play.png');
+    background-image: url('../icon/play.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
