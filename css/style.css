@@ -1,3 +1,7 @@
+body{
+	font-family: PSL-Text_Regular !important;
+}
+
 /*============edit default=============*/
 .wp100{ width: 100%!important;}
 .w100{
@@ -50,8 +54,8 @@
     top:0px;
 }
 .nameLogo{
-	width: 130px;
-    height: 53px;
+	width: 259px;
+    height: 107px;
     background-image: url('../img/nameLogo.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -95,11 +99,11 @@
 
 
 .homeIcon{
-	width: 18px;
-    height: 18px;
+	width: 22px;
+    height: 22px;
     position: relative;
     z-index: 999;
-    top: -20px;
+    top: -22px;
     right: -20px;
 }
 .icon-play{
@@ -343,9 +347,24 @@
 	position: relative;
     z-index: 1;
 }
+
+#homeStory .boxImg .img{
+ 	height: 100px;
+    width: 60px;
+    padding: 9px;
+    background: url('imgStory/img_00.png') ;
+    background-size: 100% 100%!important; 
+	background-repeat: no-repeat!important; 
+	box-shadow: 3px 3px #888888;
+	position: relative;
+    z-index: 1;
+
+}
+
+
 #homeStory .boxImg p{
 	margin-top:5px;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 
@@ -386,6 +405,15 @@
 	height :180!important; 
 	width: auto!important; 
 
+}
+
+#showSlideNews .imgSlide,
+#showSlideNews .slideBg{
+	height :180!important; 
+	width: auto!important; 
+	background-color: #FFF;
+	background-size: 100% 100%!important; 
+	background-repeat: no-repeat!important; 
 }
 
 
