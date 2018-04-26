@@ -255,8 +255,8 @@ $(document).ready(function(){
 				//$('#showStory').append("<div class='row' style='width:95%'>" +img+ "</div>");	
 				$('#showStory').append("<div class='row' style='width:95%'>" +img+ "</div>"); 
 				$(".testClick").click(function(){ /// กดตกลงหลังจากเพิ่มหน้าหมดแล้ว
-				 alert($(this).find("input").val())
-				 //seeStory($(this).find("input").val())
+			//	 alert($(this).find("input").val())
+				 seeStory($(this).find("input").val())
 				});
 			}
 			else{
@@ -532,8 +532,8 @@ function pageAddpicture(pageNumber) { // กดปุ่มเลือกหน
 	$(".showAllPage").hide();
 }
 function seeStory(pageNumber) { /// กดเลือกเพื่อดู / แก้ไข นิทาน
-	alert(pageNumber);
-	
+	//alert(pageNumber);
+	window.location.href="main.php?page=play_story&storyID="+pageNumber+"";
 }
 </script>
 </body>

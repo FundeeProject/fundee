@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_GET['page'];
+$_GET['storyID'];
 ?>
 <html>
 <head>
@@ -13,7 +14,7 @@ $_GET['page'];
 	<!-- สริปต์ปุ่มสีๆ -->
 	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 	<!-- Add icon library -->
-	<link rel="stylesheet" href="css/fontawesome-all.min.css">
+	<!--<link rel="stylesheet" href="css/fontawesome-all.min.css">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 <style>
@@ -195,6 +196,10 @@ $(document).ready(function(){
 								include("admin_manageCategory.php");
 							}else if($_GET['page'] == 'admin_addCategory'){
 								include("admin_addCategory.php");
+							}else if($_GET['page'] == 'play_story'){
+								if($_GET['storyID'] != ""){
+									include("play_story.php");
+								}
 							}
 							
 							
