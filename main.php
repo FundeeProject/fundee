@@ -7,16 +7,16 @@ $_GET['page'];
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<!-- สริปต์ปุ่มสีๆ --->
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!-- สริปต์ปุ่มสีๆ -->
+	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 	<!-- Add icon library -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/fontawesome-all.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<style>
+<style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -28,7 +28,7 @@ body {
   position: fixed!important; 
   top: 0!important; 
   width: 100%!important; 
-  height:195px!important; 
+  height:188px!important; 
   border:0px!important; 
 	left:0px;
   z-index: 999999;
@@ -40,65 +40,37 @@ body {
 
 }
 
-.main {
-  padding: 16px!important;
-  color:#000!important;
-  z-index: 0;
-	width: 95%;
-  background-color: #fcf8e3;
-  position: absolute;
-  top: 197;
-  left: 0;
-  right: 0;
-  margin-right: auto;
-  margin-left: auto;"
-	margin-bottom:20px!important;
-	border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
- 
-}
-
 
 .nav-tabs{border:0}
 
-
-
-
-.navbarHH {
-  overflow: hidden!important; 
+.mainH {
   background-color:#085b6b!important; 
-  position: fixed!important; 
-  top: 260!important; 
+  position: absolute;
+  top: 188!important; 
   width: 100%!important; 
-  height:260px!important; 
+  /*height:260px!important;*/ 
   border:0px!important; 
-	left:0px;
-  z-index: 999999;
-}
-/*
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+  left:0px;
+  z-index: 0;
+  overflow-x: hidden;
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.mainBg{  
+	width: 95%!important;    
+	margin-left: auto!important;
+	margin-right: auto!important;
+}
+.mainDetail{
+	background-color: #FFF!important;
+	padding:0 16px!important;
+	border-bottom-left-radius: 10px!important;
+    border-bottom-right-radius: 10px!important;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.bgW_login{
+	padding-top: 37px!important;
 }
 
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}*/
 </style>
 </head>
 <body class="bgHome container">
@@ -165,86 +137,23 @@ $(document).ready(function(){
 	
 </script>
 
-<!--
-<div class="container-fluid ">
-  <div class="row ">
-    <div class="col-sm-3 pull-right" style=" color:white;">
-		ส่วนหัว  <?php echo $_SESSION["user_email"].$_SESSION["user_id"].$_SESSION["role_id"];  ?>
-		ออกจากระบบ 
-	</div>
-  </div>
-  
-  <div class="row">
-    <div class="nameLogo"></div>
-	<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-		<div class="w100 logoHome login marginT10" style="position:retative"></div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-			<div class="bgW_login contentStory marginB10">
-				<div style="padding-top:60px; width :100%;margin-left:auto; margin-right:auto;">
-					<section class="area">
-						 <div class="row">
-							<div class="col-md-12">
-								<ul class="nav nav-tabs list-group">
-									<li class="homePage"><a href="main.php?page=home">HOME</a></li>
-									<li class="categoryPage"><a href="main.php?page=category">CATEGORY</a></li>
-									<li class="storyPage"><a href="main.php?page=mystory">MY STORY </a></li>
-									<?/*php if($_SESSION["role_id"] == 0){echo '<li class="adminPage"><a href="main.php?page=admin">ADMIN </a></li>';}*/ ?>
-								</ul>
-							</div>
-							<center>
-								<div id="myTabContent1" class="tab-content mystory-create-m" style=" width :90%"  >
-									<p id="showdata">แสดงข้อมูล</p>
-									
-									
-									<?/*php 
-										if($_GET['page'] == 'home'){
-											include("home.php");
-										}else if($_GET['page'] == 'category'){
-											include("category.php");
-										}else if($_GET['page'] == 'mystory'){
-											include("mystory.php");
-										}else if($_GET['page'] == 'admin'){
-											include("admin.php");
-										}else if($_GET['page'] == 'admin_addNews'){
-											include("admin_addNews.php");
-										}else if($_GET['page'] == 'admin_manageNews'){
-											include("admin_manageNews.php");
-										}else if($_GET['page'] == 'admin_manageCategory'){
-											include("admin_manageCategory.php");
-										}else if($_GET['page'] == 'admin_addCategory'){
-											include("admin_addCategory.php");
-										}
-										
-										
-									*/?>
-								</div>
-							</center>
-						</div>
-					</section>
-				</div>
-			</div>	
-		</div>
-	</div>
-  </div>
-</div>-->
 
 <div class="navbarH">
    <div class="masterProfile">
-   <a href="/fundee"><span class="glyphicon glyphicon-log-out"></a>
-		
+	 
+	   <i class="fa fa-sign-out-alt"></i>
+	   <span class="glyphicon glyphicon-log-out">
    </div>
-   <div class="nameLogo marginT10"></div>
-   <div class="w100 logoHome login marginT10" style="position:retative; top:-18px;"></div>
+   <div class="nameLogo" style="width: 130px; height: 53px;"></div>
+   <div class="w100 logoHome login marginT10" style="position:retative; top:-20px;"></div>
 
-	<div class="row">
+	<div class="row ">
 		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-			<div class="bgW_login contentStory marginB10">
+			<div class="bgW_login contentStory marginB10 border-bottom" style="">
 				<section class="area">
 					 <div class="row">
-						<div class="col-md-12" style="padding-top: 40px;padding-left: 0px;padding-right: 0px;">
-							<ul class="nav nav-tabs list-group" style="margin-bottom:0">
+						<div class="col-md-12" style="padding:0px;">
+							<ul class="nav nav-tabs list-group" style="margin-bottom:0;">
 								<li class="homePage"><a href="main.php?page=home">HOME</a></li>
 								<li class="categoryPage"><a href="main.php?page=category">CATEGORY</a></li>
 								<li class="storyPage"><a href="main.php?page=mystory">MY STORY </a></li>
@@ -261,33 +170,39 @@ $(document).ready(function(){
 
 
 
-<div class="main marginB20"    >
-	
-	<?php 
-	
-		if($_GET['page'] == 'home'){
-			include("home.php");
-		}else if($_GET['page'] == 'category'){
-			include("category.php");
-		}else if($_GET['page'] == 'mystory'){
-			include("mystory.php");
-		}else if($_GET['page'] == 'admin'){
-			include("admin.php");
-		}else if($_GET['page'] == 'admin_addNews'){
-			include("admin_addNews.php");
-		}else if($_GET['page'] == 'admin_manageNews'){
-			include("admin_manageNews.php");
-		}else if($_GET['page'] == 'admin_manageCategory'){
-			include("admin_manageCategory.php");
-		}else if($_GET['page'] == 'admin_addCategory'){
-			include("admin_addCategory.php");
-		}
-		
-		
-	?>
-
-
+<div class="mainH">
+	<div class="row marginB10">
+		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
+			<div class="mainBg" >
+				<div class="mainDetail" >
 				
+
+						<?php 
+	
+							if($_GET['page'] == 'home'){
+								include("home.php");
+							}else if($_GET['page'] == 'category'){
+								include("category.php");
+							}else if($_GET['page'] == 'mystory'){
+								include("mystory.php");
+							}else if($_GET['page'] == 'admin'){
+								include("admin.php");
+							}else if($_GET['page'] == 'admin_addNews'){
+								include("admin_addNews.php");
+							}else if($_GET['page'] == 'admin_manageNews'){
+								include("admin_manageNews.php");
+							}else if($_GET['page'] == 'admin_manageCategory'){
+								include("admin_manageCategory.php");
+							}else if($_GET['page'] == 'admin_addCategory'){
+								include("admin_addCategory.php");
+							}
+							
+							
+						?>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
