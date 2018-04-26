@@ -416,6 +416,16 @@ body{
 	background-repeat: no-repeat!important; 
 }
 
+/*home*/
+.glyphicon-search{
+	font-size: 15px!important; 
+    position: relative!important; 
+    top: 20px!important; 
+    right: -110px!important; 
+    width: 10px!important; 
+    height: 10px!important; 
+}
+
 
 /*for web*/
 

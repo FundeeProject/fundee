@@ -23,7 +23,7 @@
 			<!---->
 			<form class="form-horizontal" method="post" name="" id="">
 				<div class="form-group marginAuto marginT10" style="width: 250px;">
-					<span class="icon"><i class="fa fa-search" style="position: relative;top: 25px;right: -110px;"></i></span>
+					<span class="glyphicon glyphicon-search"></span>
 					<input type="text"  class="form-control borderBlue" id="textSearch" placeholder="" >
 				</div> 
 				<p class="marginT20" style="">All Story</p>
@@ -55,7 +55,14 @@ $(document).ready(function(){
 		}
 	?>
 	
-	//=======================>>>>> ดึงข่าวมาจาก DB <<<<<=======================
+	//=======================>>>>> logout <<<<<=======================
+	
+	$(".glyphicon-log-out").click(function(){ 
+		
+		alert("logout : ====== >4. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
+	});				
+	
+	//=======================>>>>> News <<<<<=======================
 	$.ajax({
 		type:'POST',
 		url:'qs/qs_showNews.php',
@@ -213,4 +220,5 @@ $(document).ready(function(){
 1. ปุ่มที่แสดงบนหนังสือ มีปุ่ม play : <div class="homeIcon icon-play"></div> และ buy : <div class="homeIcon icon-buy"></div> ตอนนี้ขาดการเช็คสถานะปุุ่ม ()
 2. $(".viewDetail") ทำต่อว่ากดแล้วไปหน้า story ยังไม่ได้ทำรอมิ้นทำหน้า story ครบ
 3. ปุ่มแสดง เงิน
+4. ออกจากระบบ
 -->
