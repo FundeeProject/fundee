@@ -3,6 +3,9 @@ body{
 }
 
 /*============edit default=============*/
+.min-h{
+	min-height: 200px!important;
+}
 .wp100{ width: 100%!important;}
 .w100{
     width: 100px;
@@ -76,6 +79,14 @@ body{
     margin-right: auto!important;
 	border-top-left-radius: 10px!important;
     border-top-right-radius: 10px!important;
+}
+
+.imgAdmin{
+	width: 100px;
+    height:74px;
+    background-image: url('../icon/admin.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .login{
@@ -290,14 +301,19 @@ body{
 .adminPage #editNewsBtn{
 	margin-bottom:40px;
 }
+.adminPage .divBtn{
+	border-radius: 5px;
+	position: relative; 
+	min-height: 300px!important; 
+}
 
-.adminPage .divBtn,
 .admin-addNewsPage .divBtn,
 .admin-addCategoryPage .divBtn{
 	width:320px;
 	background-color: #e46002!important; 
 	border-radius: 5px;
 	position: relative; 
+	min-height: 200px!important; 
 }
 
 /*admin-manageNewsPage*/
