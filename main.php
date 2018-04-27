@@ -62,7 +62,7 @@ body {
 	margin-right: auto!important;
 }
 .mainDetail{
-	background-color: #FFF!important;
+	background-color: #FFF;
 	padding:0 16px!important;
 	border-bottom-left-radius: 10px!important;
     border-bottom-right-radius: 10px!important;
