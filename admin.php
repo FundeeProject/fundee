@@ -1,73 +1,8 @@
-<?php
-//session_start();
-//$_SESSION['mystoryPage']='showmystory';
-//$_GET['page'];
-?>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="css/ytLoad.jquery.css" rel="stylesheet" type="text/css">
-    
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="js/ytLoad.jquery.js"></script>
-	
-</head>
-<style>
-
-</style>
+<!--
 <body class="bgHome container">
 
 	<div class="row adminPage">
-		<!--<div class="col-xs-12 col-lg-offset-3 col-lg-6">-->
-		<!--
-		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-			<div class="w100 logoHome login marginT10" style="position:retative"></div>
-		</div>
-    
-		<div class="row">
-		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-				<div class="bgW_login contentStory marginB10">
-			<div class="marginAuto wp100" style="padding-top:60px;">
-				<section class="area">
-						 <div class="row">
-							<div class="col-md-12">
-								<ul class="nav nav-tabs">
-									<li><a data-toggle="tab" href="">HOME</a></li>
-									<li><a data-toggle="tab" href="">CATEGORY</a></li>
-									<li class="active"><a data-toggle="tab" href="#tab3">ADMIN</a></li>
-								</ul>
-							</div>
-							<div id="myTabContent1" class="tab-content mystory-create-m" style="">
-								<div class="tab-pane fade" id="tab1"></div>
-								<div class="tab-pane fade" id="tab2"></div>
-								<div class="tab-pane fade active in" id="tab3">
-									<div class="marginT20"></div><br></br>
-									<div class="marginAuto box-80 marginT20"></div>
-									
-									<p class="text-center marginT20 textName"></p>
-									<div class="marginT20 marginAuto" style="width :70%;">
-										  <div class="form-group" >
-											<center>
-											<button type="button" class="btn btn-warning" style="margin-bottom:8px; width:150px;">Approve Story</button><br/>
-											<button type="button" class="btn btn-warning" style="margin-bottom:8px; width:150px;">Create Story</button><br/>
-											<button type="button" class="btn btn-warning" style="margin-bottom:8px; width:150px;">Manage Story</button><br/>
-											<button type="button" class="btn btn-warning" style="margin-bottom:8px; width:150px;">Approve Story</button><br/>
-											<button type="button" class="btn btn-warning" style="margin-bottom:8px; width:150px;">Approve Story</button>
-
-											</center>
-										  </div>
-										
-									</div>		
-								</div>
-							</div>
-						</div>
-				</section>
-			</div>
-		</div>-->	
+	
 			<div class="marginAuto" >
 				  <p class="textName"></p>
 				  <div class="form-group paddingT10 marginAuto divBtn">
@@ -82,11 +17,7 @@
 					<div class="btn btn-warning btn-circle" id="createBtn" ><i class="fa fa-plus"></i></div>
 				  </div>
 			</div>	
-		<!--</div>-->	
 	</div>
-	
-
-  
     <script>
 		$(document).ready(function(){
 			//สีฟ้าที่ปุ่ม admin
@@ -95,7 +26,7 @@
 			
 			$(".textName").text("Joy!")
 			
-			//------------------->>> btn  <<--------------------
+			
 			$('#approveBtn').click(function() {
 				
 				alert("Approve Story")
@@ -145,4 +76,75 @@
 	</script>
 
 </body>
-</html>
+</html>-->
+
+
+<div class="row adminPage">
+	<div class="marginAuto divBtn min-h">
+		<div class="row marginAuto"  style="width:95%;">
+			<div class="imgAdmin marginAuto marginB10" ></div>
+			<div class="blockAdmin marginAuto">
+				<div class="blockAdminInner" >
+					<div class="blockAdminBtn" id="approveBtn">
+						<div class="icon40 icon-check marginAuto"></div>
+						<p class="text-center"><b>Approve Story</b></p>
+					</div>
+				</div>
+				<div class="blockAdminInner">
+					<div class="blockAdminBtn"  id="manageStoryBtn">
+						<div class="icon40 icon-book marginAuto"></div>
+						<p class="text-center"><b >Manage Story</b></p>
+					</div>
+				</div>
+				<div class="blockAdminInner">
+					<div class="blockAdminBtn" id="manageNewsBtn">
+						<div class="icon40 icon-news2 marginAuto"></div>
+						<p class="text-center"><b >Manage News</b></p>
+					</div>
+				</div>
+				<div class="blockAdminInner">
+					<div class="blockAdminBtn" id="manageCateBtn">
+						<div class="icon40 icon-folder marginAuto"></div>
+						<p class="text-center"><b >Manage Category</b></p>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		//สีฟ้าที่ปุ่ม admin
+		$(".adminPage").addClass('active')
+		$(".storyPage").hide()
+		$(".mainDetail").css('background-color', '#dddddd');
+		
+		$('#approveBtn').click(function() {
+				alert("Approve Story : ======> ทำต่อด้วย")
+		});
+		
+		$('#manageStoryBtn').click(function() {
+			alert("Create Story : ======> ทำต่อด้วย")
+			
+		});
+		
+	
+			
+
+		$('#manageCateBtn').click(function() {
+				alert("Manage Category")
+				window.location.href="main.php?page=admin_manageCategory";
+		});
+		
+		$('#manageNewsBtn').click(function() {
+			alert("Edit News")
+			window.location.href="main.php?page=admin_manageNews";
+			
+			
+		});
+	});
+</script>

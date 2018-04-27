@@ -176,10 +176,7 @@ $(document).ready(function(){
 		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
 			<div class="mainBg" >
 				<div class="mainDetail" >
-				
-
 						<?php 
-	
 							if($_GET['page'] == 'home'){
 								include("home.php");
 							}else if($_GET['page'] == 'category'){
@@ -196,6 +193,8 @@ $(document).ready(function(){
 								include("admin_manageCategory.php");
 							}else if($_GET['page'] == 'admin_addCategory'){
 								include("admin_addCategory.php");
+							}else if($_GET['page'] == 'full_page'){
+								include("full_page.php");
 							}else if($_GET['page'] == 'play_story'){
 								if($_GET['storyID'] != ""){
 									include("play_story.php");

@@ -107,7 +107,18 @@ body{
 	 background-color:#FF5733; 
 	
 }
-
+.icon36{
+	width: 36px;
+	height: 36px;
+}
+.icon40{
+	width: 40px;
+	height: 40px;
+}
+.icon48{
+	width: 48px;
+	height: 48px;
+}
 
 .homeIcon{
 	width: 22px;
@@ -134,6 +145,106 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.icon-add{
+	background-image: url('../icon/add.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon-book{
+	background-image: url('../icon/book.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon-bought{
+	background-image: url('../icon/bought.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-check{
+	background-image: url('../icon/check.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon-coin{
+	background-image: url('../icon/coin.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.icon-closesoundRed{
+	background-image: url('../icon/closesoundwhenoff.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon-closesound{
+	background-image: url('../icon/closesound.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-delete{
+	background-image: url('../icon/delete.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-folder{
+	background-image: url('../icon/folder.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-mic{
+	background-image: url('../icon/mic.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-news{
+	background-image: url('../icon/news.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-news2{
+	background-image: url('../icon/news2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-sell{
+	background-image: url('../icon/sell.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-sold{
+	background-image: url('../icon/sold.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-sold1{
+	background-image: url('../icon/sold1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-text{
+	background-image: url('../icon/text.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-download{
+	background-image: url('../icon/download.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+
+
+
 
 /*btn*/
 .sizeBtn button{width: 80px;}
@@ -327,6 +438,29 @@ body{
     border: 2px solid #085b6b;
     border-radius: 5px;
 }
+.blockAdmin{
+	width:280px;
+}
+.blockAdminInner{
+	width:50%;
+	/*background-color:green;*/
+	height:120px;
+	float:left 
+}
+.blockAdminBtn{
+	width: 96px; 
+	height:96px;
+	padding: 15px 0 0 0; 
+	background-color: #fff; 
+	box-shadow: -5px 5px 5px #31708f;;
+	border-radius: 15px; margin:0 auto;
+}
+.blockAdminBtn p{
+	margin-top:10px; 
+	color:#085b6b; 
+	font-size: 12px;
+}
+
 
 /*story*/
 
