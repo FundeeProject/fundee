@@ -170,7 +170,7 @@
 					<div class="bg-btn btn-microphone" id="editSound">
 						<!-- <i class="fa fa-microphone" style=""></i>--> Audio
 					</div>
-					<input type="file" name="audio_upload" id="audio_upload" />
+					<input type="file" name="audio_upload" id="audio_upload" accept="audio/*" />
 				</div>
 			</div>
 			<div class="col-xs-3 col-sm-3">

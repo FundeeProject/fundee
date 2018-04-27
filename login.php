@@ -14,6 +14,14 @@ include "include/function.php";
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/ytLoad.jquery.js"></script>
+		<!--  pwa --> <link rel="manifest" href="manifest.json">
+			<link rel="apple-touch-icon" sizes="180x180" href="icon/logoHome.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="icon/logoHome.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="icon/logoHome.png">
+			 <!-- <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5"> -->
+			
+			<meta name="apple-mobile-web-app-capable" content="yes">
+			<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	</head>
 	<body class="bgHome">
 		<div class="nameLogo"></div>
