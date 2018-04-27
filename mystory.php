@@ -134,7 +134,7 @@
 					<p class="text-center">1</p>
 				</div>
 				<div class="objectCenter new_Btn2 " style="top:40%" id = "showPic_page">
-					<i class="fa fa-camera" style="font-size:24px"></i>
+					<!--<i class="fa fa-camera" style="font-size:24px"></i>--> Add Pic
 				</div>
 				
 				<input type="file" name="pic_upload_page" id="html_btn2" OnChange="PreviewPage(this)"/>
@@ -152,7 +152,7 @@
 			<div class="col-xs-3 col-sm-3">
 				<div id="" class="form-group form-group-sm">
 					<div class="bg-btn btn-create" style="margin-left:40px;" id="editText">
-						<i class="fa fa-edit" ></i>
+						<!-- <i class="fa fa-car" ></i> --> Edit
 					</div>
 					<input type="hidden" name="editText"  />
 					<!--<input type="text" name="editText" id="editText" />-->
@@ -168,7 +168,7 @@
 			<div class="col-xs-3 col-sm-3">
 				<div id="" class="form-group form-group-sm">
 					<div class="bg-btn btn-microphone" id="editSound">
-						<i class="fa fa-microphone" style=""></i>
+						<!-- <i class="fa fa-microphone" style=""></i>--> Audio
 					</div>
 					<input type="file" name="audio_upload" id="audio_upload" />
 				</div>
@@ -255,8 +255,8 @@ $(document).ready(function(){
 				//$('#showStory').append("<div class='row' style='width:95%'>" +img+ "</div>");	
 				$('#showStory').append("<div class='row' style='width:95%'>" +img+ "</div>"); 
 				$(".testClick").click(function(){ /// กดตกลงหลังจากเพิ่มหน้าหมดแล้ว
-				 alert($(this).find("input").val())
-				 //seeStory($(this).find("input").val())
+			//	 alert($(this).find("input").val())
+				 seeStory($(this).find("input").val())
 				});
 			}
 			else{
@@ -532,8 +532,8 @@ function pageAddpicture(pageNumber) { // กดปุ่มเลือกหน
 	$(".showAllPage").hide();
 }
 function seeStory(pageNumber) { /// กดเลือกเพื่อดู / แก้ไข นิทาน
-	alert(pageNumber);
-	
+	//alert(pageNumber);
+	window.location.href="main.php?page=play_story&storyID="+pageNumber+"";
 }
 </script>
 </body>
