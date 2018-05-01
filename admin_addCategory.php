@@ -98,16 +98,31 @@
   
     <script type="text/javascript">
 		$(document).ready(function(){
-			  $(".adminPage").addClass('active')
-			 
+			$(".adminPage").addClass('active')
+			$(".storyPage").hide()
 			  
-			  $("#addBtn").click(function(){
-				  alert($("#textCategory").val())
+			$("#addBtn").click(function(){
+				var Categoryname = $("#textCategory").val();
+				alert(Categoryname)
+				$.ajax({
+					type:'POST',
+					url:'qs/qs_add_Category.php',
+					dataType: "text",
+					data: {Categoryname:Categoryname},
+					success:function( datajson ) {     
+						if(datajson == 'ok'){
+							//alert("เพิ่มแล้ว");
+							window.location.href="main.php?page=admin_manageCategory";
+						}
+						else{ alert("เพิ่มไม่สำเร็จ");
+						}
+					},
+					error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
+				});
 				  window.location.href="main.php?page=admin_manageCategory";
 			  });
 			  
 			   $("#cancelBtn").click(function(){
-				  alert("create")
 				  window.location.href="main.php?page=admin_manageCategory";
 			  });
 			  

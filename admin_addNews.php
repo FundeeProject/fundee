@@ -85,8 +85,8 @@
 		        }).done(function(data){
 		                alert("-"+data+"-");
 		   		});
-			  window.location.href="main.php?page=admin_manageNews";
-		  });
+				window.location.href="main.php?page=admin_manageNews";
+			});
 		});
 		function addPic(ele) {  // แสดงรูปที่เลือก
 		alert("addPic");

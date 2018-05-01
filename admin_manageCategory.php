@@ -79,7 +79,7 @@
 		  <div class="form-group paddingT10 marginAuto divBtn">
 			<center>
 				<div class="form-group">
-					<ul class="list-group">
+					<ul class="list-group" id = "textCategory">
 					  <li class="list-group-item">Fantacy</li>
 					  <li class="list-group-item">Aesop's Fables</li>
 					  <li class="list-group-item">Funny Tales</li>
@@ -105,30 +105,63 @@
 		$(document).ready(function(){
 			$(".adminPage").addClass('active')
 			$(".textName").text("Manage Category")
+			$(".storyPage").hide() ///ซ่อนมายสตอรี่
 			
-			$('.list-group-item:first').addClass('active');
 			
-			
-			$('ul li').click(function() {
-				$('ul.list-group li.active').removeClass('active');
-				$(this).closest('li').addClass('active');
-				$(".adminPage").addClass('active')
+			//////เมื่อโหลดหน้านี้มาให้ดึง category มาจาก Db ก่อน
+			$.ajax({
+				type:'POST',
+				url:'qs/qs_showCategory.php',
+				dataType: "json",
+				data: {},
+				success:function( datajson ) {      ///ถ้ามีข้อมูลกลับมา
+					if(datajson.length !=0){ 
+						$('#textCategory').empty();
+						$.each(datajson, function(i,item){
+							//var no = i;
+							var textCategory = '<li class="list-group-item">'+datajson[i].category_name+'</li>';
+							
+							$('#textCategory').append(textCategory);
+						});	
+					}
+					else{ alert("มีปัญหาในการเชื่อมต่อฐานข้อมูล");
+					}
+					$('.list-group-item:first').addClass('active'); ///ทำให้อันแรกของลิสเป็นสีฟ้า
+					$('ul li').click(function() {
+						$('ul.list-group li.active').removeClass('active');
+						$(this).closest('li').addClass('active');
+						$(".adminPage").addClass('active');
+					});
+				},
+				error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 			});
 			
-			  
-			$("#delBtn").click(function(){
-				var text = $('ul li.active').text();
-				alert("del : " +text)
-			});
-			  
+			
+			//////////////// เพิ่ม Category
 			$("#addBtn").click(function(){
 				window.location.href="main.php?page=admin_addCategory";
 			});
-			  
-			
-			  
-			 
-			
+			/////////ลบ Category  
+			$("#delBtn").click(function(){
+				//var text = $('ul li.active').text();
+				var text = $('#textCategory li.active').text();
+				alert("del : " +text);
+				$.ajax({
+					type:'POST',
+					url:'qs/qs_deleteCategory.php',
+					dataType: "text",
+					data: {text:text},
+					success:function( datajson ) {     
+						if(datajson == 'ok'){
+							alert("ลบแล้ว");
+							window.location.href="main.php?page=admin_manageCategory";
+						}
+						else{ alert("ลบไม่สำเร็จ");
+						}
+					},
+					error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
+				});
+			});
 		});
 			
 	</script>
