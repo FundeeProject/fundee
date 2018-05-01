@@ -87,6 +87,8 @@ body{
     background-image: url('../icon/admin.png');
     background-repeat: no-repeat;
     background-size: contain;
+	z-index:9999;
+	position:relative;
 }
 
 .login{
@@ -192,11 +194,14 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .icon-folder{
-	background-image: url('../icon/folder.png');
+	background-image: url('../icon/foldericon2.png');
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+
 .icon-mic{
 	background-image: url('../icon/mic.png');
     background-repeat: no-repeat;
@@ -440,6 +445,15 @@ body{
 }
 .blockAdmin{
 	width:280px;
+	height: 250px;
+    border-radius: 15px;
+    margin: 0 auto;
+    /*border: 2px solid #085b6b;*/
+    background: #dddddd;
+    padding-top: 0px;
+    position: relative;
+    top: -20px;
+	margin-bottom:20px;
 }
 .blockAdminInner{
 	width:50%;
