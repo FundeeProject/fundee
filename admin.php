@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <div class="row adminPage">
 	<div class="marginAuto divBtn min-h">
 		<div class="row marginAuto"  style="width:95%;">

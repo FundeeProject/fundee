@@ -55,13 +55,6 @@ $(document).ready(function(){
 		}
 	?>
 	
-	//=======================>>>>> logout <<<<<=======================
-	
-	$(".glyphicon-log-out").click(function(){ 
-		
-		alert("logout : ====== >4. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
-	});				
-	
 	//=======================>>>>> News <<<<<=======================
 	$.ajax({
 		type:'POST',
@@ -149,7 +142,8 @@ $(document).ready(function(){
 				});
 				$(".viewDetail").click(function(){ 
 					var thisId = $(this).data('img');
-					alert(thisId+"------>2. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
+					alert(thisId+"------>2. ทำต่อแล้ว!!!!!!!!!!!!!!!!")	
+					window.location.href="main.php?page=play_story&storyID="+thisId+"";
 				});				
 			}
 			else{
@@ -206,7 +200,8 @@ $(document).ready(function(){
 				
 				$(".viewDetail").click(function(){ 
 					var thisId = $(this).data('img');
-					alert(thisId+"------>2. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
+					alert(thisId+"------>2. ทำต่อแล้ว!!!!!!!!!!!!!!!!")	
+					window.location.href="main.php?page=play_story&storyID="+thisId+"";
 				});
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

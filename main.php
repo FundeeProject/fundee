@@ -140,6 +140,7 @@ $(document).ready(function(){
 
 
 <div class="navbarH">
+<?php echo $_SESSION["role_id"];?> -
    <div class="masterProfile">
 	 
 	   <i class="fa fa-sign-out-alt"></i>
@@ -208,7 +209,15 @@ $(document).ready(function(){
 		</div>
 	</div>
 </div>
-
-
+<script type="text/javascript">
+$(document).ready(function(){
+//=======================>>>>> logout <<<<<=======================
+	$(".glyphicon-log-out").click(function(){ 
+		
+		//alert("logout : ====== >4. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
+		window.location.href="logout.php";
+	});	
+});
+</script>
 </body>
 </html>
