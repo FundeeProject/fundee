@@ -1,84 +1,52 @@
 <?php
-//session_start();
-//$_SESSION['mystoryPage']='showmystory';
-//$_GET['page'];
+/*session_start();
+$_SESSION['mystoryPage']='showmystory';
+$_GET['page'];*/
 ?>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    <link href="css/ytLoad.jquery.css" rel="stylesheet" type="text/css">
-  
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/ytLoad.jquery.js"></script>
-	<link rel="stylesheet" href="css/style.css">
-	
-</head>
-<style>
 
-</style>
-<body class="bgHome container">
-	<!--
-	<div class="row admin-manageNewsPage">	
-		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-			<div id="myTabContent1" class="tab-content mystory-create-m">
-				<div class="marginT20 marginAuto" style="width :300px">
-					  <p class="text-center">Manage Category</p>
-					  <div class="form-group">
-						<ul class="list-group">
-						  <li class="list-group-item">10 Mar 2017 Sale 20%</li>
-						  <li class="list-group-item">15 Mar 2017 Sale 15%</li>
-						  <li class="list-group-item">25 Mar 2018 New Category</li>
-						  <li class="list-group-item">30 Mar 2018 New Story garfield</li>
-						</ul>
-					  </div>
-					 <div class="row">
-						<div class="col-xs-12">
-							<div  class="text-center sizeBtn" >
-								 <button type="submit" class="btn btn-info" style="" id="addBtn">Add New </button>
-								 <button type="button" class="btn btn-danger" style="" id="delBtn">Delete</button>
-							</div>
-							<p class="marginB10"></p>
-						</div>
-					</div>
-				</div>	
-			</div>
+
+
+<div class="row adminManageNewsPage">
+	<div class="marginAuto divBtn min-h">
+		<div class="row marginAuto boxImgLogo">
+			<p><b>Manage News</b></p>
 		</div>
-	</div>
-	-->
-	
-	<div class="marginAuto admin-manageNewsPage" >
-		  <p class="text-center textName"></p>
-		  <div class="form-group paddingT10 marginAuto divBtn">
-			<center>
-				<div class="form-group" >
-					<ul class="list-group" id = "textNews">
-					  <li class="list-group-item">10 Mar 2017 Sale 20%</li>
-					  <li class="list-group-item">15 Mar 2017 Sale 15%</li>
-					  <li class="list-group-item">25 Mar 2018 New Category</li>
-					  <li class="list-group-item">30 Mar 2018 New Story garfield</li>
+		<div class="icon64 icon-news2 marginB10"></div>
+		<div class="blockAdmin marginAuto marginT20">
+			<div class="marginT20 iconBtn">
+				<div class="icon36 icon-add" id="addBtn" ></div>
+				<div class="icon36 icon-delete" id="" data-toggle="modal" data-target="#exampleModal"></div>
+				<!--<div class="icon36 icon-delete" id="delBtn"></div>-->
+			</div>
+			<div class="" style="padding-top:80px;">
+				<div class="form-group borderBlue marginAuto"  style="width:95%;">
+					<ul class="list-group" id = "textNews" style="margin:0">
 					</ul>
 				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<div  class="text-center sizeBtn" >
-							 <button type="submit" class="btn btn-info" style="" id="addBtn">Add New </button>
-							 <button type="button" class="btn btn-danger" style="" id="delBtn">Delete</button>
-						</div>
-						<p class="marginB10"></p>
+			</div>
+		
+			<div class="row">
+				<div class="col-xs-12">
+					<div  class="text-center sizeBtn" >
+						
+						<button type="button" class="btn btn-primary" style="" id="backBtn">Back</button>
 					</div>
+					<p class="marginB10"></p>
 				</div>
-			</center>
-		  </div>
-	</div>	
+			</div>
 
+		
+		</div>
+	</div>
+</div>
+
+
+
+				
   
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".adminPage").addClass('active')
-		$(".textName").text("Manage News")
 		$(".storyPage").hide()
 		///DB
 		$.ajax({
@@ -90,9 +58,9 @@
 				if(datajson.length !=0){
 					$('#textNews').empty();
 					$.each(datajson, function(i,item){
-						//var no = i;
-						var textNews = '<li class="list-group-item">'+datajson[i].description+'</li>';
-						
+						var no = i+1;
+						var textNews = '<li class="list-group-item" data-id='+datajson[i].news_id+'>'+no+". "+datajson[i].description+'</li>';
+						//var textNews = '<li class="list-group-item">'+datajson[i].description+'</li>';
 						$('#textNews').append(textNews);
 					});	
 				}
@@ -119,10 +87,17 @@
 			//window.location.href="main.php?page=addmin_addNews";
 			window.location.href="main.php?page=admin_addNews";
 		});
-		  
-		$("#delBtn").click(function(){
+
+		//popup
+		$(".modal-body").html("ยืนยันการลบข้อมูล")
+		
+		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			var text = $('#textNews li.active').text();
-			alert("del : " +text);
+			var newId =  $('#textNews li.active').data("id") // มาจาก  data-id='+datajson[i].news_id+'
+			alert(newId ) // เอาค่านี้ไปใช้
+		
+			//alert(text)
+			
 			$.ajax({
 				type:'POST',
 				url:'qs/qs_deleteNews.php',
@@ -139,8 +114,17 @@
 				error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 			});
 		});
+
+
+		$("#backBtn").click(function(){
+			alert("ทำต่อด้วย")
+		});
+		
 	});
 </script>
 
-</body>
-</html>
+<!-- 
+	1.ตอนนี้ข้อมูลไม่ลบ ต้องเปลี่ยนจากส่ง id ไปลบ
+	2.กดปุ่ม back แล้วไปไหน
+
+-->

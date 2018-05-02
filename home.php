@@ -78,6 +78,7 @@ $(document).ready(function(){
 							var img = '<div class="item active">'+
 							'<img src="img/'+datajson[i].news_picture +'" alt="Chania" '+
 							'width="240" height="200"> </div>'; */
+							
 						}
 						else{
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
@@ -94,7 +95,12 @@ $(document).ready(function(){
 					$('#showSlideNews_number').append(imgNumber);	
 					$('#showSlideNews').append(img);	
 					$('#showSlideNews').find('.item').eq(0).addClass('active');
+					
 				});	
+				/*
+				$('.carousel').carousel({
+						interval: 500
+				})*/
 			}
 			else{
 				alert("ไม่พบข้อมูลหน้านิทาน");

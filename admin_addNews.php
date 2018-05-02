@@ -1,8 +1,4 @@
-<?php
-//session_start();
-//$_SESSION['mystoryPage']='showmystory';
-//$_GET['page'];
-?>
+
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -36,9 +32,9 @@
 					  
 					 
 						<label class="color-blue marginT10">Add Picture</label>
-						<!--- <div class="box-camera">
+						<!-- <div class="box-camera">
 							<i class="fa fa-camera"></i>
-						</div> --->
+						</div> -->
 						
 						<div class="box-camera  " style="" id = "showPic_news">
 							<i class="fa fa-camera" style="font-size:24px"></i>

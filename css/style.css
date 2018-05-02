@@ -121,6 +121,10 @@ body{
 	width: 48px;
 	height: 48px;
 }
+.icon64{
+	width: 64px;
+	height: 64px;
+}
 
 .homeIcon{
 	width: 22px;
@@ -432,7 +436,52 @@ body{
 	min-height: 200px!important; 
 }
 
+
+
+
 /*admin-manageNewsPage*/
+.adminManageNewsPage .boxImgLogo{
+  	width: 200px;
+    height: 40px;
+    background-color: #fef0be;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #ebc43d;
+    position: relative;
+    z-index: 1;
+    top: 15px;
+}
+
+.adminManageNewsPage .boxImgLogo p{
+
+	margin:0; text-align: center;
+    line-height: 40px;
+}
+
+.adminManageNewsPage .icon-news2{
+ 	position:  absolute!important; 
+    top: 5px!important;
+    left: -160px!important;
+    margin: 0 auto!important;
+    right: 0!important;
+	z-index: 100!important;
+}
+
+.adminManageNewsPage .iconBtn .icon-add,
+.adminManageNewsPage .iconBtn .icon-delete
+{
+	 margin-top: 0px;
+	position: absolute;top: 30px;
+}
+
+.adminManageNewsPage .iconBtn .icon-add{ right: 10px;}
+.adminManageNewsPage .iconBtn .icon-delete{right: 50px;}
+.adminManageNewsPage .borderBlue{border: 2px solid #31708f!important;}
+
+
+
+
+
 .list-group-item.active{
 	background-color: #5bc0de!important; 
 }
@@ -443,9 +492,21 @@ body{
     border: 2px solid #085b6b;
     border-radius: 5px;
 }
+
+.list-group-item:first-child,
+.list-group-item:last-child{
+	border-radius: 0px!important; 
+}
+
+.list-group-item.active,
+.list-group-item.active:hover{
+	border-color:#FFF;
+}
+
+
 .blockAdmin{
 	width:280px;
-	height: 250px;
+	min-height: 250px;
     border-radius: 15px;
     margin: 0 auto;
     /*border: 2px solid #085b6b;*/

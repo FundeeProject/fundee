@@ -32,7 +32,7 @@ body {
   height:188px!important; 
   border:0px!important; 
 	left:0px;
-  z-index: 999999;
+  z-index: 99;
 }
 
 
@@ -70,6 +70,24 @@ body {
 
 .bgW_login{
 	padding-top: 37px!important;
+}
+
+/*modal*/
+.modal{
+	top: 40%;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;"
+}
+.modal-footer{
+	border:0!important;
+	width: 220px;
+    position: absolute;
+    bottom: 0px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;	
 }
 
 </style>
@@ -140,9 +158,11 @@ $(document).ready(function(){
 
 
 <div class="navbarH">
-<?php echo $_SESSION["role_id"];?> -
+	
+
+<div style="position:absolute"><?php echo $_SESSION["role_id"];?> </div>
+
    <div class="masterProfile">
-	 
 	   <i class="fa fa-sign-out-alt"></i>
 	   <span class="glyphicon glyphicon-log-out">
    </div>
@@ -177,6 +197,7 @@ $(document).ready(function(){
 		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
 			<div class="mainBg" >
 				<div class="mainDetail" >
+				
 						<?php 
 							if($_GET['page'] == 'home'){
 								include("home.php");
@@ -209,6 +230,22 @@ $(document).ready(function(){
 		</div>
 	</div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="min-height: 150px;">
+      <div class="modal-body" style="text-align:center;">
+      </div>
+      <div class="modal-footer marginAuto" style="" >
+        <button type="button" class="btn btn-secondary" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="okModalBtn" style="width:90px;">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
 //=======================>>>>> logout <<<<<=======================
