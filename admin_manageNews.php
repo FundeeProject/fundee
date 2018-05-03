@@ -29,7 +29,7 @@ $_GET['page'];*/
 				<div class="col-xs-12">
 					<div  class="text-center sizeBtn" >
 						
-						<button type="button" class="btn btn-primary" style="" id="backBtn">Back</button>
+						<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
 					</div>
 					<p class="marginB10"></p>
 				</div>
