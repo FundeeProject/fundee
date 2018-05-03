@@ -102,7 +102,7 @@ $_GET['page'];*/
 				type:'POST',
 				url:'qs/qs_deleteNews.php',
 				dataType: "text",
-				data: {text:text},
+				data: {news_id:newId},
 				success:function( datajson ) {     
 					if(datajson == 'ok'){
 						alert("ลบแล้ว");
@@ -117,14 +117,14 @@ $_GET['page'];*/
 
 
 		$("#backBtn").click(function(){
-			alert("ทำต่อด้วย")
+			window.location.href="main.php?page=admin";
 		});
 		
 	});
 </script>
 
 <!-- 
-	1.ตอนนี้ข้อมูลไม่ลบ ต้องเปลี่ยนจากส่ง id ไปลบ
-	2.กดปุ่ม back แล้วไปไหน
+	1.ตอนนี้ข้อมูลไม่ลบ ต้องเปลี่ยนจากส่ง id ไปลบ แก้แล้วค่ะ
+	2.กดปุ่ม back แล้วไปไหน แก้แล้วค่ะ
 
 -->
