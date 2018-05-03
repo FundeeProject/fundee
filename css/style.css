@@ -46,9 +46,11 @@ body{
 .borderBlue{
 	border: 1px solid #31708f!important;
 }
-
+.text-center{
+	text-align: center!important;
+}
 .text-blue{
-	color: #085b6b;
+	color: #085b6b!important;
 }
 
 /*============bg color=============*/
@@ -265,6 +267,16 @@ body{
 
 /*btn*/
 .sizeBtn button{width: 80px;}
+.btn-back{
+	color: #085b6b;
+	background-color: #fff; 
+	border-color: #085b6b;
+}
+.btn-info{
+	color: #fff;
+    background-color: #028aa4;
+    border-color: #46b8da;
+}
 
 .btn-circle {
   width: 30px;
@@ -448,7 +460,8 @@ body{
 
 
 /*admin-manageNewsPage*/
-.adminManageNewsPage .boxImgLogo{
+.adminManageNewsPage .boxImgLogo,
+.adminAddNewsPage .boxImgLogo{
   	width: 200px;
     height: 40px;
     background-color: #fef0be;
@@ -460,13 +473,14 @@ body{
     top: 15px;
 }
 
-.adminManageNewsPage .boxImgLogo p{
-
+.adminManageNewsPage .boxImgLogo p,
+.adminAddNewsPage .boxImgLogo p{
 	margin:0; text-align: center;
     line-height: 40px;
 }
 
-.adminManageNewsPage .icon-news2{
+.adminManageNewsPage .icon-news2,
+.adminAddNewsPage .icon-news2 {
  	position:  absolute!important; 
     top: 5px!important;
     left: -160px!important;
@@ -488,8 +502,58 @@ body{
 .adminManageNewsPage .borderBlue{border: 2px solid #31708f!important;}
 
 
+/*admin news*/
+.adminAddNewsPage .form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
+.adminAddNewsPage .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
+.adminAddNewsPage .form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
+.adminAddNewsPage .form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
+.adminAddNewsPage .form-control::-ms-input-placeholder { color: white; }  /* Microsoft Edge */
+.adminAddNewsPage .blockAdmin{
+	height: 350px;
+	margin-bottom: 0px;
+}
 
+.adminAddNewsPage .divTextDetail{
+	width: 90%;
+    height: 280px;
+    background-color: #FFF;
+    margin: 0 auto;
+    position: relative;
+    top: 50px!important; 
+    border-radius: 20px;
+    box-shadow: -4px 4px 0px #a1a1a1;
+}
 
+.adminAddNewsPage .icon-add{
+	position: relative;
+    top: 5px;
+	left: 5px;
+}
+
+.adminAddNewsPage .text-blue{
+	position: relative;
+    top: -16px;
+    left: 35px;margin:0; bottom:0
+}
+
+.adminAddNewsPage #Detail{
+	width: 90%;
+    border-radius: 25px;
+    background-color: #085b6b;
+    color: #FFF;
+	margin: 0 auto;
+}
+
+.adminAddNewsPage #showPic_news{
+	width: 90%;
+	background-color: #fff; 
+	height:120px;
+	margin:0 auto; margin-top:10px; 
+}
+
+.adminAddNewsPage .boxIconCamera{
+	width:30px; margin:40px auto 0 auto;
+}
 
 .list-group-item.active{
 	background-color: #5bc0de!important; 

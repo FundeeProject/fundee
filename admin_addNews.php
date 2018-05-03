@@ -38,55 +38,72 @@
 		  </div>
 	</div>	
 	</form>
--->  
-
-<div class="row adminManageNewsPage">
-	<div class="marginAuto divBtn min-h">
-		<div class="row marginAuto boxImgLogo">
-			<p><b>Manage News</b></p>
-		</div>
-		<div class="icon64 icon-news2 marginB10"></div>
-		<div class="blockAdmin marginAuto marginT20">
-			<div style="    width: 90%;
-    height: 150px;
-    background-color: #FFF;
-    margin: 0 auto;
-    /* padding-top: 150px; */
-    position: relative;
-    top: 35px;
-    border-radius: 20px;
-    box-shadow: -5px 5px 5px #555;">
-			<div class="icon24 icon-add " style="position: relative;
-    top: 5px;
-	left: 5px;"></div>
-	<p class="text-blue" style="    position: relative;
-    top: -16px;
-    left: 35px;margin:0; bottom:0">Add News</p>
-	<input type="email" class="" id="email" placeholder="Enter email" name="email" style="width: 90%;
-    border-radius: 25px;
-    background-color: #085b6b;
-    color: #FFF;
-    margin: 0 auto;">
-
-	
-		</div>
-
+-->
+<form class=""   method = "post" enctype = "multipart/form-data" id = "createform3">
+	<div class="row adminAddNewsPage">
+		<div class="marginAuto divBtn min-h">
+			<div class="row marginAuto boxImgLogo">
+				<p><b>Manage News</b></p>
+			</div>
+			<div class="icon64 icon-news2 marginB10"></div>
+			<div class="blockAdmin marginAuto marginT20">
+				<div class="divTextDetail">
+				<div class="icon24 icon-add"></div>
+				<p class="text-blue"><b>Add News</b></p>
 			
-
-		
+					<input type="text" class="form-control" id="Detail" placeholder="Topic ...." name="" >
+					<div class="borderBlue" id="showPic_news">
+						<div class="boxIconCamera">
+							
+							<i class="glyphicon glyphicon-plus"></i>
+						</div>
+						<p class="color-blue text-center" style="margin:0">Add Picture News</lapbel>
+						
+					</div>
+					<input style="display:none" type="file" name="news_pic_upload" id="add_pic" OnChange="addPic(this)"/>
+					<div class="row marginT20">
+						<div class="col-xs-12">
+							<div  class="text-center sizeBtn " >
+								<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
+								<button type="submit" class="btn btn-info" style="" id="">Add</button>
+							</div>
+							<p class="marginB10"></p>
+						</div>
+					</div>
+			</div>
 		</div>
 	</div>
-</div>
+</form>
+
+
+
+
+
 <script type="text/javascript">
 	$(document).ready(function(){
-			$(".adminPage").addClass('active')
-			$(".textName").text("Add News")
-			$(".storyPage").hide()
-			
-			
+		$(".adminPage").addClass('active')
+		$(".textName").text("Add News")
+		$(".storyPage").hide()
+
+		//---------->> เลือกภาพ
+		$('#showPic_news').bind("click" , function () {
+			$('#add_pic').click();
+		})
+		//---------->> back
+		$('#backBtn').click(function(){
+			window.location.href="main.php?page=admin_manageNews";
+		})
+
+		
+				
 		$("#createform3").on("submit",function(e){
-				// alert("Add News");
-				e.preventDefault();
+	
+			//1. เช็ค กรณีไม่ใส่ค่าให้แจ้งเตือน แล้วค่อยเอาการทำงานไปใส่ใน
+			//if ($("#Detail").val() == "" ||  ){
+
+			
+
+			e.preventDefault();
 			var  Detail = document.getElementById("Detail");
 			var formData2 = new FormData($(this)[0]);
 			formData2.append("Detail",Detail.value);
@@ -101,13 +118,20 @@
 	        }).done(function(data){
 	                alert("-"+data+"-");
 	   		});
+
+			//2. ถ้าทำไม่สำเร็จไม่ต้องเปลี่ยนหน้า
 			window.location.href="main.php?page=admin_manageNews";
+			
 		});
+
+
 	});
+
+
 	function addPic(ele) {  // แสดงรูปที่เลือก
-	alert("addPic");
+		alert("addPic");
 		var showPic_news = document.getElementById("showPic_news");
-		showPic_news.innerHTML = "<img id='img3' src='' alt='' style=' width: 50 px; height: 50px;' />";
+		showPic_news.innerHTML = "<img id='img3' src='' alt='' style='width: 100%;height: 120px;' />";
 		$('#img3').attr('src', ele.value);
 		if (ele.files && ele.files[0]) 
 		{
@@ -122,5 +146,15 @@
 </script>
 <!--
 </body>
+
 </html>
+-->
+
+
+<!-- 
+*************************************************
+1. เช็ค กรณีไม่ใส่ค่าให้แจ้งเตือน
+2. ถ้าทำไม่สำเร็จไม่ต้องเปลี่ยนหน้า
+3. ถ้าใส่แต่ภาพ ไม่ใส่รูปต้องดักด้วยตอนนี้ใส่แต่ภาพก็ save ผ่าน
+*************************************************
 -->
