@@ -22,6 +22,7 @@ body{
 .marginT20{margin-top: 20px!important;}
 .marginB10{margin-bottom: 10px!important;}
 .marginB20{margin-bottom: 20px!important;}
+.marginL10{margin-left: 10px!important;}
 .marginAuto{
 	margin-left:auto;
 	margin-right:auto;
@@ -461,7 +462,9 @@ body{
 
 /*admin-manageNewsPage*/
 .adminManageNewsPage .boxImgLogo,
-.adminAddNewsPage .boxImgLogo{
+.adminAddNewsPage .boxImgLogo,
+.adminManageCategoryPage .boxImgLogo,
+.adminAddCategoryPage .boxImgLogo{
   	width: 200px;
     height: 40px;
     background-color: #fef0be;
@@ -473,7 +476,8 @@ body{
     top: 15px;
 }
 
-.adminManageNewsPage .list-group-item {
+.adminManageNewsPage .list-group-item,
+.adminManageCategoryPage .list-group-item {
 	height: 35px;
     line-height: 35px;
     padding-top: 0px;
@@ -481,13 +485,17 @@ body{
 }
 
 .adminManageNewsPage .boxImgLogo p,
-.adminAddNewsPage .boxImgLogo p{
+.adminAddNewsPage .boxImgLogo p,
+.adminManageCategoryPage .boxImgLogo p,
+.adminAddCategoryPage .boxImgLogo p{
 	margin:0; text-align: center;
     line-height: 40px;
 }
 
 .adminManageNewsPage .icon-news2,
-.adminAddNewsPage .icon-news2 {
+.adminAddNewsPage .icon-news2,
+.adminManageCategoryPage .icon-folder,
+.adminAddCategoryPage .icon-folder {
  	position:  absolute!important; 
     top: 5px!important;
     left: -160px!important;
@@ -497,30 +505,35 @@ body{
 }
 
 .adminManageNewsPage .iconBtn .icon-add,
-.adminManageNewsPage .iconBtn .icon-delete
+.adminManageNewsPage .iconBtn .icon-delete,
+.adminManageCategoryPage .iconBtn .icon-add,
+.adminManageCategoryPage .iconBtn .icon-delete
 {
 	margin-top: 0px;
 	position: absolute;
 	top: 40px;
 }
 
-.adminManageNewsPage .iconBtn .icon-add{ right: 10px;}
-.adminManageNewsPage .iconBtn .icon-delete{right: 50px;}
-.adminManageNewsPage .borderBlue{border: 2px solid #31708f!important;}
+.adminManageNewsPage .iconBtn .icon-add,.adminManageCategoryPage .iconBtn .icon-add{ right: 10px;}
+.adminManageNewsPage .iconBtn .icon-delete,.adminManageCategoryPage .iconBtn .icon-delete{right: 50px;}
+.adminManageNewsPage .borderBlue,adminManageCategoryPage .borderBlue{border: 2px solid #31708f!important;}
 
 
 /*admin news*/
-.adminAddNewsPage .form-control::-webkit-input-placeholder { color: white; }  /* WebKit, Blink, Edge */
-.adminAddNewsPage .form-control:-moz-placeholder { color: white; }  /* Mozilla Firefox 4 to 18 */
-.adminAddNewsPage .form-control::-moz-placeholder { color: white; }  /* Mozilla Firefox 19+ */
-.adminAddNewsPage .form-control:-ms-input-placeholder { color: white; }  /* Internet Explorer 10-11 */
-.adminAddNewsPage .form-control::-ms-input-placeholder { color: white; }  /* Microsoft Edge */
+/*
+.adminAddNewsPage .form-control::-webkit-input-placeholder,
+.adminAddCategoryPage .form-control::-webkit-input-placeholder { color: white; }  
+.adminAddNewsPage .form-control:-ms-input-placeholder,
+.adminAddCategoryPage .form-control:-ms-input-placeholder { color: white; }  
+.adminAddNewsPage .form-control::-ms-input-placeholder,
+.adminAddCategoryPage .form-control::-ms-input-placeholder { color: white; } */
 .adminAddNewsPage .blockAdmin{
 	height: 350px;
 	margin-bottom: 0px;
 }
 
-.adminAddNewsPage .divTextDetail{
+.adminAddNewsPage .divTextDetail,
+.adminAddCategoryPage .divTextDetail{
 	width: 90%;
     height: 280px;
     background-color: #FFF;
@@ -530,20 +543,27 @@ body{
     border-radius: 20px;
     box-shadow: -4px 4px 0px #a1a1a1;
 }
+.adminAddCategoryPage .divTextDetail{
+	 height: 180px;
+}
 
-.adminAddNewsPage .icon-add{
+.adminAddNewsPage .icon-add,
+.adminAddCategoryPage .icon-add
+{
 	position: relative;
     top: 5px;
 	left: 5px;
 }
 
-.adminAddNewsPage .text-blue{
+.adminAddNewsPage .text-blue,
+.adminAddCategoryPage .text-blue{
 	position: relative;
     top: -16px;
     left: 35px;margin:0; bottom:0
 }
 
-.adminAddNewsPage #Detail{
+.adminAddNewsPage #Detail,
+.adminAddCategoryPage #textCategory{
 	width: 90%;
     border-radius: 25px;
     background-color: #085b6b;

@@ -239,7 +239,7 @@ $(document).ready(function(){
       </div>
       <div class="modal-footer marginAuto" style="" >
         <button type="button" class="btn btn-secondary" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="okModalBtn" style="width:90px;">Yes</button>
+        <button type="button" class="btn btn-info" id="okModalBtn" style="width:90px;">Yes</button>
       </div>
     </div>
   </div>
