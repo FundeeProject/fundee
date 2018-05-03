@@ -454,7 +454,7 @@ body{
     background-color: #fef0be;
     margin: 0 auto;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #ebc43d;
+    box-shadow: 4px 4px -0px #ebc43d;
     position: relative;
     z-index: 1;
     top: 15px;
@@ -478,8 +478,9 @@ body{
 .adminManageNewsPage .iconBtn .icon-add,
 .adminManageNewsPage .iconBtn .icon-delete
 {
-	 margin-top: 0px;
-	position: absolute;top: 30px;
+	margin-top: 0px;
+	position: absolute;
+	top: 40px;
 }
 
 .adminManageNewsPage .iconBtn .icon-add{ right: 10px;}
