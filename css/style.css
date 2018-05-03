@@ -47,6 +47,10 @@ body{
 	border: 1px solid #31708f!important;
 }
 
+.text-blue{
+	color: #085b6b;
+}
+
 /*============bg color=============*/
 /**/
 .bgHome{background-color: #085b6b;}
@@ -83,7 +87,7 @@ body{
 
 .imgAdmin{
 	width: 100px;
-    height:74px;
+    height:100px;
     background-image: url('../icon/admin.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -108,6 +112,10 @@ body{
 	height:120px;
 	 background-color:#FF5733; 
 	
+}
+.icon24{
+	width: 24px;
+	height: 24px;
 }
 .icon36{
 	width: 36px;
@@ -506,14 +514,14 @@ body{
 
 .blockAdmin{
 	width:280px;
-	min-height: 250px;
+	min-height: 260px;
     border-radius: 15px;
     margin: 0 auto;
     /*border: 2px solid #085b6b;*/
     background: #dddddd;
     padding-top: 0px;
     position: relative;
-    top: -20px;
+    top: -35px;
 	margin-bottom:20px;
 }
 .blockAdminInner{
@@ -527,7 +535,7 @@ body{
 	height:96px;
 	padding: 15px 0 0 0; 
 	background-color: #fff; 
-	box-shadow: -5px 5px 5px #31708f;;
+	box-shadow: -5px 5px -0px #7fa4ab;;
 	border-radius: 15px; margin:0 auto;
 }
 .blockAdminBtn p{
