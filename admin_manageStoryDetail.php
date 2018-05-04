@@ -1,6 +1,6 @@
 <div class="row adminManageStoryDetailPage">
 	<div class="marginAuto divBtn min-h">
-		<div style="background-color: #C1C319;height: 100px;">
+		<div style="background-color: #19c371;height: 100px;">
 			<div class="icon32 icon-close" id="closeBtn"></div>
 		</div>
 		<div id="boxData" data-id='1'><!--get ค่ามาใช้จากหน้าที่ผ่านมาแทนเลข 1-->
