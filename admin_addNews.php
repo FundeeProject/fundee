@@ -54,11 +54,9 @@
 					<input type="text" class="form-control" id="Detail" placeholder="Topic ...." name="" >
 					<div class="borderBlue" id="showPic_news">
 						<div class="boxIconCamera">
-							
 							<i class="glyphicon glyphicon-plus"></i>
 						</div>
-						<p class="color-blue text-center" style="margin:0">Add Picture News</lapbel>
-						
+						<p class="color-blue text-center" style="margin:0">Add Picture News</p>
 					</div>
 					<input style="display:none" type="file" name="news_pic_upload" id="add_pic" OnChange="addPic(this)"/>
 					<div class="row marginT20">
@@ -93,43 +91,37 @@
 		$('#backBtn').click(function(){
 			window.location.href="main.php?page=admin_manageNews";
 		})
-
 		
-				
 		$("#createform3").on("submit",function(e){
-	
-			//1. เช็ค กรณีไม่ใส่ค่าให้แจ้งเตือน แล้วค่อยเอาการทำงานไปใส่ใน
-			//if ($("#Detail").val() == "" ||  ){
-
-			
-
-			e.preventDefault();
-			var  Detail = document.getElementById("Detail");
-			var formData2 = new FormData($(this)[0]);
-			formData2.append("Detail",Detail.value);
-			$.ajax({
-	            url: 'qs/qs_add_news.php',
-	            type: 'POST',
-			    data: formData2,
-	            async: false,
-	            cache: false,
-	            contentType: false,
-	            processData: false
-	        }).done(function(data){
-	                alert("-"+data+"-");
-	   		});
-
-			//2. ถ้าทำไม่สำเร็จไม่ต้องเปลี่ยนหน้า
-			window.location.href="main.php?page=admin_manageNews";
-			
+			var str = $('#img3').attr('src');
+			if (typeof str === "undefined" || $("#Detail").val() == "") {
+				alert("กรุณากรอกข้อมูลให้ครบ")
+			}else{
+				e.preventDefault();
+				var  Detail = document.getElementById("Detail");
+				var formData3 = new FormData($(this)[0]);
+				formData3.append("Detail",Detail.value);
+				$.ajax({
+		            url: 'qs/qs_add_news.php',
+		            type: 'POST',
+				    data: formData3,
+		            async: false,
+		            cache: false,
+		            contentType: false,
+		            processData: false
+		        }).done(function(data){
+		               //alert("-"+data+"-");
+					if(data == "success"){
+						window.location.href="main.php?page=admin_manageNews";
+					}
+					else if(data == "notsuccess"){
+						alert("ไม่สามารถอัพโหลดได้ กรุณาลองใหม่");
+					}
+		   		});
+			}
 		});
-
-
 	});
-
-
 	function addPic(ele) {  // แสดงรูปที่เลือก
-		alert("addPic");
 		var showPic_news = document.getElementById("showPic_news");
 		showPic_news.innerHTML = "<img id='img3' src='' alt='' style='width: 100%;height: 120px;' />";
 		$('#img3').attr('src', ele.value);

@@ -62,12 +62,12 @@
 			
 
 		$('#manageCateBtn').click(function() {
-				alert("Manage Category")
+				//alert("Manage Category")
 				window.location.href="main.php?page=admin_manageCategory";
 		});
 		
 		$('#manageNewsBtn').click(function() {
-			alert("Edit News")
+			//alert("Edit News")
 			window.location.href="main.php?page=admin_manageNews";
 			
 			

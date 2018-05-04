@@ -26,7 +26,7 @@ $arr = array();
 		$success = move_uploaded_file($_FILES['news_pic_upload']['tmp_name'],$upload_path);
 		if( $success == FALSE){
 			//echo "ไม่สามารถอัพโหลดรูปได้ " ;
-			echo "statusUpload = 'notsuccess'; ".$new_img_name ;
+			echo "notsuccess";
 		}else{ ///ถ้าอัพได้ ให้เพิ่มชื่อรูป
 			////add dB
 			$sql="INSERT INTO news (news_picture, description, create_date, user_id,Is_show  )".
