@@ -44,33 +44,24 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		//สีฟ้าที่ปุ่ม admin
 		$(".adminPage").addClass('active')
 		$(".storyPage").hide()
 		$(".mainDetail").css('background-color', '#FFF');
 		
 		$('#approveBtn').click(function() {
-				alert("Approve Story : ======> ทำต่อด้วย")
+			window.location.href="main.php?page=admin_approveStory";
 		});
 		
 		$('#manageStoryBtn').click(function() {
-			alert("Create Story : ======> ทำต่อด้วย")
-			
+			window.location.href="main.php?page=admin_manageStory";
 		});
 		
-	
-			
-
 		$('#manageCateBtn').click(function() {
-				//alert("Manage Category")
-				window.location.href="main.php?page=admin_manageCategory";
+			window.location.href="main.php?page=admin_manageCategory";
 		});
 		
 		$('#manageNewsBtn').click(function() {
-			//alert("Edit News")
 			window.location.href="main.php?page=admin_manageNews";
-			
-			
 		});
 	});
 </script>
