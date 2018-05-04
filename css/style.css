@@ -1,5 +1,9 @@
 body{
+	/*font-family: Leelawadee !important;*/
 	font-family: PSL-Text_Regular !important;
+	
+	
+	
 }
 
 /*============edit default=============*/
@@ -27,10 +31,12 @@ body{
 	margin-left:auto;
 	margin-right:auto;
 }
+.clearMargin{
+	margin:0!important;
+}
 
 .paddingT10{padding-top: 10px!important;}
 .paddingB10{padding-bottom: 10px!important;}
-.textCenter{text-align: center!important;}
 
 
 .objectCenter{
@@ -50,9 +56,10 @@ body{
 .text-center{
 	text-align: center!important;
 }
-.text-blue{
-	color: #085b6b!important;
-}
+.text-blue{color: #085b6b!important;}
+.text-red{color:red!important;}
+.text-pink{color:#cf0cbe!important;}
+.text-black{color: black;!important;}
 
 /*============bg color=============*/
 /**/
@@ -116,9 +123,17 @@ body{
 	 background-color:#FF5733; 
 	
 }
+.icon16{
+	width: 16px;
+	height: 16px;
+}
 .icon24{
 	width: 24px;
 	height: 24px;
+}
+.icon32{
+	width: 32px;
+	height: 32px;
 }
 .icon36{
 	width: 36px;
@@ -138,12 +153,12 @@ body{
 }
 
 .homeIcon{
-	width: 22px;
-    height: 22px;
+	width: 26px;
+    height: 26px;
     position: relative;
     z-index: 999;
     top: -22px;
-    right: -20px;
+    right: -26px;
 }
 .icon-play{
     background-image: url('../icon/play.png');
@@ -257,6 +272,33 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.icon-approve{
+	background-image: url('../icon/approve.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.icon-approveWait{
+	background-image: url('../icon/approve_wait.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-delete2{
+	background-image: url('../icon/delete2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-close{
+	background-image: url('../icon/close.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
 
 
 
@@ -464,7 +506,8 @@ body{
 .adminManageNewsPage .boxImgLogo,
 .adminAddNewsPage .boxImgLogo,
 .adminManageCategoryPage .boxImgLogo,
-.adminAddCategoryPage .boxImgLogo{
+.adminAddCategoryPage .boxImgLogo,
+.adminApproveStoryPage .boxImgLogo{
   	width: 200px;
     height: 40px;
     background-color: #fef0be;
@@ -487,7 +530,8 @@ body{
 .adminManageNewsPage .boxImgLogo p,
 .adminAddNewsPage .boxImgLogo p,
 .adminManageCategoryPage .boxImgLogo p,
-.adminAddCategoryPage .boxImgLogo p{
+.adminAddCategoryPage .boxImgLogo p,
+.adminApproveStoryPage .boxImgLogo p{
 	margin:0; text-align: center;
     line-height: 40px;
 }
@@ -495,7 +539,8 @@ body{
 .adminManageNewsPage .icon-news2,
 .adminAddNewsPage .icon-news2,
 .adminManageCategoryPage .icon-folder,
-.adminAddCategoryPage .icon-folder {
+.adminAddCategoryPage .icon-folder,
+.adminApproveStoryPage .iconApproveHead {
  	position:  absolute!important; 
     top: 5px!important;
     left: -160px!important;
@@ -514,9 +559,14 @@ body{
 	top: 40px;
 }
 
-.adminManageNewsPage .iconBtn .icon-add,.adminManageCategoryPage .iconBtn .icon-add{ right: 10px;}
-.adminManageNewsPage .iconBtn .icon-delete,.adminManageCategoryPage .iconBtn .icon-delete{right: 50px;}
-.adminManageNewsPage .borderBlue,adminManageCategoryPage .borderBlue{border: 2px solid #31708f!important;}
+.adminManageNewsPage .iconBtn .icon-add,
+.adminManageCategoryPage .iconBtn .icon-add{ right: 10px;}
+
+.adminManageNewsPage .iconBtn .icon-delete,
+.adminManageCategoryPage .iconBtn .icon-delete{right: 50px;}
+
+.adminManageNewsPage .borderBlue,
+.adminManageCategoryPage .borderBlue{border: 2px solid #31708f!important;}
 
 
 /*admin news*/
@@ -563,7 +613,8 @@ body{
 }
 
 .adminAddNewsPage #Detail,
-.adminAddCategoryPage #textCategory{
+.adminAddCategoryPage #textCategory,
+.adminApproveStoryPage #Myselect{
 	width: 90%;
     border-radius: 25px;
     background-color: #085b6b;
@@ -581,6 +632,122 @@ body{
 .adminAddNewsPage .boxIconCamera{
 	width:30px; margin:40px auto 0 auto;
 }
+
+/*admin approve*/
+.adminApproveStoryPage .homeIcon{
+	right: -56px;
+}
+.adminApproveStoryDetailPage .divIcon .deleteBtn,
+.adminApproveStoryDetailPage .divIcon .playBtn,
+.adminApproveStoryDetailPage .divIcon .approveBtn{
+	position: absolute;
+    margin: 0 auto;
+    z-index: 9999;
+	
+}
+.adminApproveStoryDetailPage .divIcon .deleteBtn{
+	left: -100px;
+    right: 0;
+    top: 145px;
+}
+.adminApproveStoryDetailPage .divIcon .playBtn{
+	left: 0px;
+    right: 0px;
+    top: 140px;
+}
+.adminApproveStoryDetailPage .divIcon .approveBtn{
+	 left: 0px;
+    right: -100px;
+    top: 145px;
+}
+.iconCheckStatus{
+	position: relative;
+    top: -10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.adminApproveStoryDetailPage #textDetail{
+	text-indent:10px; 
+	margin:10px; 2px
+}
+select option {
+   /* margin: 40px!important; 
+    background: red!important; 
+	width:252px!important; 
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4)!important;*/ 
+}
+
+/********************************************/
+div.custom-select 
+{
+  height: 40px;
+  width: 400px;
+  position: relative;
+  background-color: #F2F2F2;
+  border: 1px solid #E4E4E4;
+}
+
+div.selected
+{
+  width: inherit;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+}
+
+div.selected > .text
+{
+  padding: 10px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+div.select-box
+{
+  display: none;
+  width: 100%;
+  z-index: 10029;
+  position: absolute;
+  border-radius: 3px;
+  box-shadow: 0 8px 20px #000000;
+  box-shadow: 0 8px 20px rgba(0,0,0,.35)
+}
+
+div.select-box.active
+{
+  display: block;
+}
+
+div.select-box.drop-up
+{
+  top: auto;
+  bottom: 100%;
+}
+
+ul.select-list
+{
+  margin: 0;
+  padding: 10px;
+  list-style-type: none;
+}
+
+ul.select-list li
+{
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+ul.select-list li:hover,
+ul.select-list li.active
+{
+  background-color: #999999;
+}
+/********************************************/
 
 .list-group-item.active{
 	background-color: #5bc0de!important; 
@@ -653,13 +820,10 @@ body{
 }
 
 #homeStory .boxImg,
-#showStory .boxImg
+#showStory .boxImg,
+#approveStory .boxImg
  {
-	padding:0
-	/*width:270px!important; 
-	border: 2px solid #085b6b!important; 
-	padding-top:20px!important; 
-	padding-bottom:20px;*/
+	padding:0;
 }
 #showStory .boxImg{
 	padding-top: 10px;
@@ -673,7 +837,8 @@ body{
     z-index: 1;
 }
 
-#homeStory .boxImg .img{
+#homeStory .boxImg .img,
+#approveStory .boxImg .img{
  	height: 100px;
     width: 60px;
     padding: 9px;
@@ -686,17 +851,36 @@ body{
 
 }
 
-
-#homeStory .boxImg p{
-	margin-top:5px;
+.boxImg p {
+	margin-top:5px!important; 
 	font-size: 14px;
 }
 
+#approveStory .boxImg .img{
+	left:0;
+	right:0;
+	margin:0 auto;
+}
+/*adminApproveStoryDetailPage*/
+.adminApproveStoryDetailPage .img{
+	width:100px; 
+	height:140px; 
+	padding: 9px;
+    background-size: 100% 100%!important;
+    background-repeat: no-repeat!important;
+    box-shadow: 3px 3px #888888;
+    position: relative;
+    z-index: 1;left: 0;
+    right: 0;
+    margin: 0 auto;
+	top:10px
+}
 
 #btCerate{
 	position: absolute;
 	right: 0px;
 }
+
 
 
 #html_btn,

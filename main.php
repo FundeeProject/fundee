@@ -215,6 +215,13 @@ $(document).ready(function(){
 								include("admin_manageCategory.php");
 							}else if($_GET['page'] == 'admin_addCategory'){
 								include("admin_addCategory.php");
+							}else if($_GET['page'] == 'admin_approveStory'){
+								include("admin_approveStory.php");
+							}else if($_GET['page'] == 'admin_manageStory'){
+								include("admin_manageStory.php");
+							}else if($_GET['page'] == 'admin_approveStoryDetail'){
+								include("admin_approveStoryDetail.php");
+								
 							}else if($_GET['page'] == 'full_page'){
 								include("full_page.php");
 							}else if($_GET['page'] == 'play_story'){
@@ -238,8 +245,8 @@ $(document).ready(function(){
       <div class="modal-body" style="text-align:center;">
       </div>
       <div class="modal-footer marginAuto" style="" >
-        <button type="button" class="btn btn-secondary" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-info" id="okModalBtn" style="width:90px;">Yes</button>
+        <button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info okBtn" id="okModalBtn" style="width:90px;">Yes</button>
       </div>
     </div>
   </div>
