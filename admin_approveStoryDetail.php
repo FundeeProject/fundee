@@ -55,7 +55,7 @@
 			window.location.href="main.php?page=admin_approveStory"
 		});
 		$(".deleteBtn").click(function(){ 
-			
+			alert("del")
 		});
 		$(".playBtn").click(function(){ 
 			alert("ทำด้วย")
