@@ -16,6 +16,8 @@ $_GET['storyID'];
 	<!-- Add icon library -->
 	<!--<link rel="stylesheet" href="css/fontawesome-all.min.css">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	
 	<link rel="stylesheet" href="css/style.css">
 <style>
 body {
@@ -197,44 +199,46 @@ $(document).ready(function(){
 		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
 			<div class="mainBg" >
 				<div class="mainDetail" >
-				
-						<?php 
-							if($_GET['page'] == 'home'){
-								include("home.php");
-							}else if($_GET['page'] == 'category'){
-								include("category.php");
-							}else if($_GET['page'] == 'mystory'){
-								include("mystory.php");
-							}else if($_GET['page'] == 'admin'){
-								include("admin.php");
-							}else if($_GET['page'] == 'admin_addNews'){
-								include("admin_addNews.php");
-							}else if($_GET['page'] == 'admin_manageNews'){
-								include("admin_manageNews.php");
-							}else if($_GET['page'] == 'admin_manageCategory'){
-								include("admin_manageCategory.php");
-							}else if($_GET['page'] == 'admin_addCategory'){
-								include("admin_addCategory.php");
-							}else if($_GET['page'] == 'admin_approveStory'){
-								include("admin_approveStory.php");
-							}else if($_GET['page'] == 'admin_manageStory'){
-								include("admin_manageStory.php");
-							}else if($_GET['page'] == 'admin_approveStoryDetail'){
-								include("admin_approveStoryDetail.php");
-								
-							}else if($_GET['page'] == 'admin_manageStoryDetail'){
-								include("admin_manageStoryDetail.php");
-							}else if($_GET['page'] == 'full_page'){
-								include("full_page.php");
-							}else if($_GET['page'] == 'play_story'){
-								if($_GET['storyID'] != ""){
-									include("play_story.php");
-								}
+					<?php 
+						if($_GET['page'] == 'home'){include("home.php");
+						}else if($_GET['page'] == 'category'){include("category.php");
+						}else if($_GET['page'] == 'mystory'){include("mystory.php");
+						}else if($_GET['page'] == 'admin'){include("admin.php");
+						}else if($_GET['page'] == 'admin_addNews'){include("admin_addNews.php");
+						}else if($_GET['page'] == 'admin_manageNews'){include("admin_manageNews.php");
+						}else if($_GET['page'] == 'admin_manageCategory'){include("admin_manageCategory.php");
+						}else if($_GET['page'] == 'admin_addCategory'){include("admin_addCategory.php");
+						}else if($_GET['page'] == 'admin_approveStory'){include("admin_approveStory.php");
+						}else if($_GET['page'] == 'admin_manageStory'){include("admin_manageStory.php");
+						}else if($_GET['page'] == 'create_story'){include("create_story.php");
+						}else if($_GET['page'] == 'admin_approveStoryDetail'){include("admin_approveStoryDetail.php");	
+						}else if($_GET['page'] == 'admin_manageStoryDetail'){include("admin_manageStoryDetail.php");
+						}else if($_GET['page'] == 'full_page'){include("full_page.php");
+						}else if($_GET['page'] == 'play_story'){
+							if($_GET['storyID'] != ""){
+								include("play_story.php");
 							}
-							//
-							
-							
-						?>
+						}else if($_GET['page'] == 'play_storydetail'){
+							if($_GET['storyID'] != ""){
+								include("play_storydetail.php");
+							}
+						}else if($_GET['page'] == 'play_storydetail_formystory'){
+							if($_GET['storyID'] != ""){
+								include("play_storydetail_formystory.php");
+							}
+						}else if($_GET['page'] == 'create_page'){
+							if($_GET['storyid'] != ""){
+								include("create_page.php");
+							}
+						}else if($_GET['page'] == 'create_page_detail'){
+							if($_GET['storyid'] != "" && $_GET['pageid'] != ""){
+								include("create_page_detail.php");
+							}
+						}
+						//
+						
+						
+					?>
 				</div>
 			</div>
 		</div>

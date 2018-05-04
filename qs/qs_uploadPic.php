@@ -31,20 +31,20 @@ $story_id = 0;
 		$success = move_uploaded_file($_FILES['pic_upload']['tmp_name'],$upload_path);
 		if( $success == FALSE){
 			//echo "ไม่สามารถอัพโหลดรูปได้ " ;
-			echo "statusUpload = 'notsuccess';" ;
+			//echo $upload_path ;
+			echo "notsuccess" ;
 		}else{ ///ถ้าอัพได้ ให้เพิ่มชื่อรูป
 			$sql="UPDATE story  SET story_pic = '$new_img_name' WHERE story_id = '$story_id'";
 			$objExec = mysql_query($sql) or die (mysql_error());
-		}
-		////เพิ่ม page เปล่า 10 หน้า
-		for($i = 1; $i <= 10; $i++){
-			$page_id = $story_id.$i;
-			$sql="INSERT INTO page (page_id, picture, voice, text, page_number,story_id  ) VALUES ( $page_id ,'NULL' , 'NULL' , 'NULL' ,'$i' , '$story_id' )";
-			$objExec = mysql_query($sql) or die (mysql_error());
+			////เพิ่ม page เปล่า 10 หน้า
+			for($i = 1; $i <= 10; $i++){
+				$page_id = $story_id.$i;
+				$sql="INSERT INTO page (page_id, picture, voice, text, page_number,story_id  ) VALUES ( $page_id ,'NULL' , 'NULL' , 'NULL' ,'$i' , '$story_id' )";
+				$objExec = mysql_query($sql) or die (mysql_error());
+			}
+			echo $story_id ;
 		}
 		
-		//echo $Storyname." ถูกสร้างแล้ว ".$story_id;
-		echo $story_id ;
 	
 	
 ?>

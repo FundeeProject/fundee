@@ -22,7 +22,7 @@ $arr = array();
 		$success = move_uploaded_file($_FILES['pic_upload_page']['tmp_name'],$upload_path);
 		if( $success == FALSE){
 			//echo "ไม่สามารถอัพโหลดรูปได้ " ;
-			echo "statusUpload = 'notsuccess'; ".$new_img_name ;
+			echo "notsuccess" ;
 		}else{ ///ถ้าอัพได้ ให้เพิ่มชื่อรูป
 			$sql="UPDATE page  SET picture = '$new_img_name',text = '$description_page'  WHERE story_id = '$story_id' AND page_number = '$pageNumber'";
 			$objExec = mysql_query($sql) or die (mysql_error());
@@ -35,11 +35,11 @@ $arr = array();
 			$success_s = move_uploaded_file($_FILES['audio_upload']['tmp_name'],$upload_path_s);
 			if( $success_s == FALSE){
 				//echo "ไม่สามารถอัพโหลดรูปได้ " ;
-				echo "statusUpload = 'notsuccess'; ".$new_img_name_s ;
+				echo "notsuccess" ;
 			}else{ ///ถ้าอัพได้ ให้เพิ่มชื่อรูป
 				$sql="UPDATE page  SET voice = '$new_img_name_s'  WHERE story_id = '$story_id' AND page_number = '$pageNumber'";
 				$objExec = mysql_query($sql) or die (mysql_error());
-				echo  $story_id ;
+				echo  "ok" ;
 			}
 		}
 		
