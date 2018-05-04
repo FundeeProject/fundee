@@ -189,6 +189,12 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+.icon-manage{
+	background-image: url('../icon/manage.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 
 .icon-bought{
 	background-image: url('../icon/bought.png');
@@ -294,6 +300,12 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+.icon-edit{
+	background-image: url('../icon/edit.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 
 
 
@@ -507,7 +519,8 @@ body{
 .adminAddNewsPage .boxImgLogo,
 .adminManageCategoryPage .boxImgLogo,
 .adminAddCategoryPage .boxImgLogo,
-.adminApproveStoryPage .boxImgLogo{
+.adminApproveStoryPage .boxImgLogo,
+.adminManageStoryPage  .boxImgLogo {
   	width: 200px;
     height: 40px;
     background-color: #fef0be;
@@ -531,7 +544,8 @@ body{
 .adminAddNewsPage .boxImgLogo p,
 .adminManageCategoryPage .boxImgLogo p,
 .adminAddCategoryPage .boxImgLogo p,
-.adminApproveStoryPage .boxImgLogo p{
+.adminApproveStoryPage .boxImgLogo p,
+.adminManageStoryPage .boxImgLogo p{
 	margin:0; text-align: center;
     line-height: 40px;
 }
@@ -540,7 +554,8 @@ body{
 .adminAddNewsPage .icon-news2,
 .adminManageCategoryPage .icon-folder,
 .adminAddCategoryPage .icon-folder,
-.adminApproveStoryPage .iconApproveHead {
+.adminApproveStoryPage .iconApproveHead,
+.adminManageStoryPage .iconApproveHead {
  	position:  absolute!important; 
     top: 5px!important;
     left: -160px!important;
@@ -613,8 +628,7 @@ body{
 }
 
 .adminAddNewsPage #Detail,
-.adminAddCategoryPage #textCategory,
-.adminApproveStoryPage #Myselect{
+.adminAddCategoryPage #textCategory{
 	width: 90%;
     border-radius: 25px;
     background-color: #085b6b;
@@ -622,6 +636,19 @@ body{
 	margin: 0 auto;
 }
 
+.adminManageStoryPage #Myselect{
+    width: 70%;
+    border-radius: 25px;
+    background-color: #085b6b;
+    color: #FFF;
+	margin-left: 20px;
+}
+
+.adminManageStoryPage #addBtn{
+    position: absolute;
+    right: 20;
+    top: 50;
+}
 .adminAddNewsPage #showPic_news{
 	width: 90%;
 	background-color: #fff; 
@@ -634,42 +661,52 @@ body{
 }
 
 /*admin approve*/
-.adminApproveStoryPage .homeIcon{
+.adminApproveStoryPage .homeIcon,
+.adminManageStoryPage .homeIcon {
 	right: -56px;
 }
 .adminApproveStoryDetailPage .divIcon .deleteBtn,
 .adminApproveStoryDetailPage .divIcon .playBtn,
-.adminApproveStoryDetailPage .divIcon .approveBtn{
+.adminApproveStoryDetailPage .divIcon .approveBtn,
+.adminManageStoryDetailPage .divIcon .deleteBtn,
+.adminManageStoryDetailPage .divIcon .playBtn,
+.adminManageStoryDetailPage .divIcon .editBtn{
 	position: absolute;
     margin: 0 auto;
     z-index: 9999;
 	
 }
-.adminApproveStoryDetailPage .divIcon .deleteBtn{
+.adminApproveStoryDetailPage .divIcon .deleteBtn,
+.adminManageStoryDetailPage .divIcon .deleteBtn{
 	left: -100px;
     right: 0;
     top: 145px;
 }
-.adminApproveStoryDetailPage .divIcon .playBtn{
+.adminApproveStoryDetailPage .divIcon .playBtn,
+.adminManageStoryDetailPage .divIcon .playBtn{
 	left: 0px;
     right: 0px;
     top: 140px;
 }
-.adminApproveStoryDetailPage .divIcon .approveBtn{
+.adminApproveStoryDetailPage .divIcon .approveBtn,
+.adminManageStoryDetailPage .divIcon .editBtn{
 	 left: 0px;
     right: -100px;
     top: 145px;
 }
 .iconCheckStatus{
 	position: relative;
-    top: -10px;
+    top: -12px;
     left: 0;
     right: 0;
     margin: 0 auto;
 }
 .adminApproveStoryDetailPage #textDetail{
 	text-indent:10px; 
-	margin:10px; 2px
+	margin:10px 2px;
+}
+.adminApproveStoryPage #Myselect{
+
 }
 select option {
    /* margin: 40px!important; 
@@ -862,7 +899,8 @@ ul.select-list li.active
 	margin:0 auto;
 }
 /*adminApproveStoryDetailPage*/
-.adminApproveStoryDetailPage .img{
+.adminApproveStoryDetailPage .img,
+.adminManageStoryDetailPage .img{
 	width:100px; 
 	height:140px; 
 	padding: 9px;

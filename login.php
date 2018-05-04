@@ -39,7 +39,7 @@ include "include/function.php";
 					</div>
 				</div>
 				<div id = "status"> </div>
-				<p class="textCenter marginT10">- or -</p>
+				<p class="text-center marginT10">- or -</p>
 				<form class="form-horizontal" method="post" name="flogin" id="flogin">
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="email">Email:</label>

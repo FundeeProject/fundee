@@ -222,6 +222,8 @@ $(document).ready(function(){
 							}else if($_GET['page'] == 'admin_approveStoryDetail'){
 								include("admin_approveStoryDetail.php");
 								
+							}else if($_GET['page'] == 'admin_manageStoryDetail'){
+								include("admin_manageStoryDetail.php");
 							}else if($_GET['page'] == 'full_page'){
 								include("full_page.php");
 							}else if($_GET['page'] == 'play_story'){
@@ -229,6 +231,7 @@ $(document).ready(function(){
 									include("play_story.php");
 								}
 							}
+							//
 							
 							
 						?>
