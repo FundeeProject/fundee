@@ -66,7 +66,7 @@
 			var thisId = $(this).data('img');
 			alert(thisId+"------>2. ทำต่อ")	
 			//window.location.href="main.php?page=play_story&storyID="+thisId+"";
-			window.location.href="main.php?page=admin_approveStoryDetail"
+			window.location.href="main.php?page=admin_approveStoryDetail";
 		});
 	});
 </script>
