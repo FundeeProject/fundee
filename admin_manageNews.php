@@ -65,6 +65,7 @@ $_GET['page'];*/
 					});	
 				}
 				else{
+					$('#textNews').append("<p class='list-group-item' style=' text-align: center; ' >ไม่มีข้อมูล</p>");
 				}
 				
 				$('.list-group-item:first').addClass('active');
@@ -94,7 +95,7 @@ $_GET['page'];*/
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			var text = $('#textNews li.active').text();
 			var newId =  $('#textNews li.active').data("id") // มาจาก  data-id='+datajson[i].news_id+'
-			alert(newId ) // เอาค่านี้ไปใช้
+			//alert(newId ) // เอาค่านี้ไปใช้
 		
 			//alert(text)
 			
@@ -105,10 +106,10 @@ $_GET['page'];*/
 				data: {news_id:newId},
 				success:function( datajson ) {     
 					if(datajson == 'ok'){
-						alert("ลบแล้ว");
+						//alert("ลบแล้ว");
 						window.location.href="main.php?page=admin_manageNews";
 					}
-					else{ alert("no ok");
+					else{ alert("ลบไม่สำเร็จ กรุณาลองใหม่");
 					}
 				},
 				error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
