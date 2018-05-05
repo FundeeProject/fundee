@@ -76,7 +76,7 @@
 		});
         $("#addBtn").click(function(){ 
 			
-			window.location.href="main.php?page=admin_manageStoryDetail";
+			window.location.href="main.php?page=admin_manageStoryEdit";
 		});
         
 	});

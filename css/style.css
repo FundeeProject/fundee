@@ -56,10 +56,12 @@ body{
 .text-center{
 	text-align: center!important;
 }
+.text-14{font-size: 14px!important;}
+.text-12{font-size: 12px!important;}
 .text-blue{color: #085b6b!important;}
 .text-red{color:red!important;}
 .text-pink{color:#cf0cbe!important;}
-.text-black{color: black;!important;}
+.text-black{color: black!important;}
 
 /*============bg color=============*/
 /**/
@@ -706,7 +708,11 @@ body{
 	margin:10px 2px;
 }
 .adminApproveStoryPage #Myselect{
+    
+}
 
+.adminManageStoryEditPage .form-control{
+    width: 90%!important;
 }
 select option {
    /* margin: 40px!important; 

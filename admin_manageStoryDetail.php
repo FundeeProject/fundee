@@ -48,10 +48,10 @@
 		
 				
 				var newId =  $('#boxData').data("id") 
-				alert(newId)
+				alert(newId+"sss")
 				
 				// !!!!!!!!!!!!!!!!!!!!!!!!  ถ้า approve สำเร็จถึงเปลี่ยนหน้า !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-				window.location.href="main.php?page=admin_manageStory"
+				window.location.href="main.php?page=admin_manageStoryEdit"
 				
 			
 		});

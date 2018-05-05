@@ -213,6 +213,7 @@ $(document).ready(function(){
 						}else if($_GET['page'] == 'create_story'){include("create_story.php");
 						}else if($_GET['page'] == 'admin_approveStoryDetail'){include("admin_approveStoryDetail.php");	
 						}else if($_GET['page'] == 'admin_manageStoryDetail'){include("admin_manageStoryDetail.php");
+						}else if($_GET['page'] == 'admin_manageStoryEdit'){include("admin_manageStoryEdit.php");
 						}else if($_GET['page'] == 'full_page'){include("full_page.php");
 						}else if($_GET['page'] == 'play_story'){
 							if($_GET['storyID'] != ""){
