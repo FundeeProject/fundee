@@ -131,7 +131,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+datajson[i].story_name + '</p>'+
+											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 					}
 					else{
@@ -141,7 +141,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+datajson[i].story_name + '</p>'+
+											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 					}
 					$('#showHomeStory').append(imgStory);
@@ -182,7 +182,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+datajson[i].story_name + '</p>'+
+											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 						}
 						else{
@@ -192,7 +192,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+datajson[i].story_name + '</p>'+
+											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 						}
 						$('#showHomeStory').append(imgStory);
@@ -214,6 +214,15 @@ $(document).ready(function(){
 		});
     });
 });
+/*-----------------------ฟังชันตัดชื่อนิทาน-----------------*/
+	function cutStoryName (storyname){
+		var nameLength = storyname.length;
+		var newString = storyname;
+		if(nameLength >= 7 ){
+			newString = storyname.substring(0, 11)+"..";
+		}
+		return newString;
+	}
 </script>
 
 

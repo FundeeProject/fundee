@@ -191,9 +191,6 @@ $(document).ready(function(){
 	</div>
 </div>
 
-
-
-
 <div class="mainH">
 	<div class="row marginB10">
 		<div class="col-xs-12 col-lg-offset-3 col-lg-6">
@@ -211,10 +208,12 @@ $(document).ready(function(){
 						}else if($_GET['page'] == 'admin_approveStory'){include("admin_approveStory.php");
 						}else if($_GET['page'] == 'admin_manageStory'){include("admin_manageStory.php");
 						}else if($_GET['page'] == 'create_story'){include("create_story.php");
-						}else if($_GET['page'] == 'admin_approveStoryDetail'){include("admin_approveStoryDetail.php");	
+						}else if($_GET['page'] == 'admin_approveStoryDetail'){
+							if($_GET['storyid'] != ""){include("admin_approveStoryDetail.php");	}
 						}else if($_GET['page'] == 'admin_manageStoryDetail'){include("admin_manageStoryDetail.php");
 						}else if($_GET['page'] == 'admin_manageStoryEdit'){include("admin_manageStoryEdit.php");
-						}else if($_GET['page'] == 'full_page'){include("full_page.php");
+						}else if($_GET['page'] == 'full_page'){
+							if($_GET['storyid'] != ""){include("full_page.php");}
 						}else if($_GET['page'] == 'play_story'){
 							if($_GET['storyID'] != ""){
 								include("play_story.php");
@@ -265,8 +264,6 @@ $(document).ready(function(){
 $(document).ready(function(){
 //=======================>>>>> logout <<<<<=======================
 	$(".glyphicon-log-out").click(function(){ 
-		
-		//alert("logout : ====== >4. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
 		window.location.href="logout.php";
 	});	
 });

@@ -36,8 +36,9 @@ body, html {
 </style>
 </head>
 <body >
-
+<div class="icon32 icon-close" id="closeBtn"></div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	
 	 <ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
 		<!-- <li data-target="#myCarousel" data-slide-to="0" ></li>
 		<li data-target="#myCarousel" data-slide-to="1" ></li> -->
@@ -143,7 +144,7 @@ $(document).ready(function(){
 		if(index_ != 10){
 		index_ += 1 ;}
 		else{index_=1;}
-		alert( "index_ = "+index_ );
+		//alert( "index_ = "+index_ );
 		
 		var vid0 = document.getElementById("myVideo0");
 		var vid1 = document.getElementById("myVideo1");
@@ -228,7 +229,7 @@ $(document).ready(function(){
 		if(index_ != 1){
 			index_ -= 1 ;
 		}else{index_ = 10;}
-		alert( "index_ = "+index_ );
+		//alert( "index_ = "+index_ );
 		var vid0 = document.getElementById("myVideo0");
 		var vid1 = document.getElementById("myVideo1");
 		var vid2 = document.getElementById("myVideo2");
@@ -307,6 +308,10 @@ $(document).ready(function(){
 			//vid10.load();
 		}
 	});	
+	/*-----------Close----------*/
+	$("#closeBtn").click(function(){ 
+			 window.history.back();
+	});
 });
 </script>
 </body>
