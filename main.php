@@ -234,6 +234,18 @@ $(document).ready(function(){
 							if($_GET['storyid'] != "" && $_GET['pageid'] != ""){
 								include("create_page_detail.php");
 							}
+						}else if($_GET['page'] == 'uesr_edit_story'){
+							if($_GET['storyidToEdit'] != "" ){
+								include("uesr_edit_story.php");
+							}
+						}else if($_GET['page'] == 'user_edit_story_page'){
+							if($_GET['storyid'] != "" ){
+								include("user_edit_story_page.php");
+							}
+						}else if($_GET['page'] == 'user_edit_story_page_detail'){
+							if($_GET['storyid'] != "" && $_GET['pageid'] != ""){
+								include("user_edit_story_page_detail.php");
+							}
 						}
 						//
 						

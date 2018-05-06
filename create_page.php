@@ -20,6 +20,7 @@ $_GET['storyid'];
 	<div class="btn-confirm">
 		<button type="button" id = "finish" class="btn btn-primary btn-confirm"  >Finish</button>
 	</div>
+	<br>
 </div>
 <script>
 	var story_id = <?php echo $_GET['storyid'];?> ;

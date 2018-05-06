@@ -72,7 +72,10 @@ $_GET['storyID'];
 		$(".approveBtn").click(function(){ 
 			var newId =  $('#boxData').data("id") ;
 			//alert("***********ทำต่อด้วย***");
-			if(statusid == 2){alert("อนุมัติแล้ว แก้ไขไม่ได้");}else{alert("แก้ไขได้ ทำต่อด้วย");}
+			if(statusid == 2){alert("อนุมัติแล้ว แก้ไขไม่ได้");}
+			else{
+				window.location.href="main.php?page=uesr_edit_story&storyidToEdit="+newId;
+			}
 			
 			
 		});

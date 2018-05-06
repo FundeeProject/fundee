@@ -29,7 +29,7 @@ $_SESSION['user_id'];
 							</div>
 							<p class="color-blue text-center" style="margin:0"></p>
 						</div>
-						<input style="display:none" type="file" name="pic_upload" id="add_pic" OnChange="addPic(this)"/>
+						<input style="display:none" type="file" name="pic_upload" id="add_pic" OnChange="addPic(this)" accept="image/*"/>
 						<br>	
 					 </div>	
 					 <div class="row" >
