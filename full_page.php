@@ -36,7 +36,10 @@ body, html {
 </style>
 </head>
 <body >
-<div class="icon32 icon-close" id="closeBtn"></div>
+<div class="fullPage">
+
+
+<div class="icon32 icon-close " id="closeBtn"></div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 	
 	 <ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
@@ -67,6 +70,7 @@ body, html {
 	  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="margin-right: -25;"></span>
 	  <span class="sr-only">Next</span>
 	</a>
+</div>
 </div>
 
 <script type="text/javascript">
@@ -126,8 +130,11 @@ $(document).ready(function(){
 				var vid = document.getElementById("myVideo0");
 				vid.autoplay = true;
 				vid.load();
-				$('.carousel').carousel({
+				$('.carousel').carousel({ 
 					interval:false 
+					/*pause:true*/
+					/*interval: 2000,
+					pause: false*/
 				});
 				//-------------end play audio-------------//
 			}
