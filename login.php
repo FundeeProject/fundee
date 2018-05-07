@@ -83,7 +83,7 @@ include "include/function.php";
   			</form>
 		</div>
 	
-	
+		<!-- popup -->
 		<div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
 		  <div class="modal-dialog" role="document" style="top: 40%;">
 			<div class="modal-content" style="min-height: 150px;">
@@ -178,8 +178,8 @@ include "include/function.php";
 							return true;
 						}
 						else{
-							$("#exampleModal").modal()
-							$(".modal-body").html(data)		
+							$("#exampleModal").modal()// เปิดใช้ popup
+							$(".modal-body").html(data)	 //ใส่ข้อความที่ต้องการ alert	
 							//alert("-"+data+"-"); 
 						}
 					})
