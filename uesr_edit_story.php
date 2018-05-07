@@ -52,10 +52,20 @@ $_GET['storyidToEdit'];
 	var isEditPic = 0;
 	$(document).ready(function(){
 		var storyid = <?php echo $_GET['storyidToEdit'];?> ;
-		$(".storyPage").addClass('active');
-		$(".adminPage").hide();
+		//$(".storyPage").addClass('active');
+		//$(".adminPage").hide();
 		add_select_option();
-		
+		<?php 
+			if($_SESSION["role_id"]== 0 ){ ///admin
+				echo "$('.storyPage').hide(); ";
+				echo " $('.adminPage').addClass('active'); ";
+			}
+			else if($_SESSION["role_id"]== 1 ){
+				echo "$('.adminPage').hide(); ";
+				echo " $('.storyPage').addClass('active'); ";
+			}
+			
+		?>
 		
 		/*--------------ดึงข้อมูลจาก DB มาแสดง ตอนโหลดหน้านี้มา-------*/
 		$.ajax({ 
@@ -84,7 +94,8 @@ $_GET['storyidToEdit'];
 		//-------------------------->> ยกเลิกการแก้ไข <<---------------------------
 		$('#cancelBtn').bind("click" , function () {
 			//alert("ยกเลิกการแก้ไข");
-			window.location.href="main.php?page=play_storydetail_formystory&storyID="+storyid+"";
+			//window.location.href="main.php?page=play_storydetail_formystory&storyID="+storyid+"";
+			window.history.back();
 		})
 		//-------------------------->> เลือกภาพ <<---------------------------
 		$('#showPic').bind("click" , function () {

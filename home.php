@@ -148,8 +148,8 @@ $(document).ready(function(){
 				});
 				$(".viewDetail").click(function(){ 
 					var thisId = $(this).data('img');
-					alert(thisId+"------>2. ทำต่อแล้ว!!!!!!!!!!!!!!!!")	
-					window.location.href="main.php?page=play_story&storyID="+thisId+"";
+					//window.location.href="main.php?page=play_story&storyID="+thisId+"";
+					window.location.href="main.php?page=play_storydetail&storyID="+thisId+"&pagename=home";
 				});				
 			}
 			else{
@@ -206,8 +206,8 @@ $(document).ready(function(){
 				
 				$(".viewDetail").click(function(){ 
 					var thisId = $(this).data('img');
-					alert(thisId+"------>2. ทำต่อแล้ว!!!!!!!!!!!!!!!!")	
-					window.location.href="main.php?page=play_story&storyID="+thisId+"";
+					//window.location.href="main.php?page=play_story&storyID="+thisId+"";
+					window.location.href="main.php?page=play_storydetail&storyID="+thisId+"&pagename=home";
 				});
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

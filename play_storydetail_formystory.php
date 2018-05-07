@@ -1,5 +1,6 @@
 <?php
 $_GET['storyID'];
+$_GET['formPage'];
 ?>
 <div class="row adminApproveStoryDetailPage">
 	<div class="marginAuto divBtn min-h">
@@ -28,15 +29,35 @@ $_GET['storyID'];
 <script type="text/javascript">
 	$(document).ready(function(){
 		var storyid = <?php echo $_GET['storyID'];?>;
+		var formPage = "<?php echo $_GET['formPage'];?>";
 		var statusid ;
 		//สีฟ้าที่ปุ่ม admin
-		$(".storyPage").addClass('active')
-		$(".adminPage").hide()
+		
+		
+			<?php 
+			if($_GET['formPage'] == "admin_manageStory"){
+				echo "$('.storyPage').hide(); ";
+				echo " $('.adminPage').addClass('active'); ";
+				//echo " $('.categoryPage').addClass('active'); ";
+			}else if($_GET['formPage'] == "mystory"){
+				echo "$('.adminPage').hide(); ";
+				echo " $('.storyPage').addClass('active'); ";
+			}
+			
+			/*if($_GET['pagename'] == "category"){
+				echo " $('.categoryPage').addClass('active'); ";
+			}else if($_GET['pagename'] == "home"){
+				echo " $('.homePage').addClass('active'); ";
+			}*/
+		?>
+		//$(".storyPage").addClass('active')
+		//$(".adminPage").hide()
 		$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 		
 		/*-------------------กดกากบาท----------------------*/
 		$("#closeBtn").click(function(){ 
-			window.location.href="main.php?page=mystory";
+			//window.location.href="main.php?page=mystory";
+			window.history.back();
 		});
 		
 		/*-------------------กดลบนิทาน----------------------*/
@@ -72,7 +93,7 @@ $_GET['storyID'];
 		$(".approveBtn").click(function(){ 
 			var newId =  $('#boxData').data("id") ;
 			//alert("***********ทำต่อด้วย***");
-			if(statusid == 2){alert("อนุมัติแล้ว แก้ไขไม่ได้");}
+			if(statusid == 2 && formPage == "mystory"){alert("อนุมัติแล้ว แก้ไขไม่ได้");}
 			else{
 				window.location.href="main.php?page=uesr_edit_story&storyidToEdit="+newId;
 			}

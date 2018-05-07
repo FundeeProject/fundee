@@ -25,9 +25,19 @@ $_GET['storyid'];
 <script>
 	var story_id = <?php echo $_GET['storyid'];?> ;
 	$(document).ready(function(){
-		$(".storyPage").addClass('active');
-		$(".adminPage").hide();
-		
+		//$(".storyPage").addClass('active');
+		//$(".adminPage").hide();
+		<?php 
+			if($_SESSION["role_id"]== 0 ){ ///admin
+				echo "$('.storyPage').hide(); ";
+				echo " $('.adminPage').addClass('active'); ";
+			}
+			else if($_SESSION["role_id"]== 1 ){
+				echo "$('.adminPage').hide(); ";
+				echo " $('.storyPage').addClass('active'); ";
+			}
+			
+		?>
 		
 		//------------------------------------------->> แสดงหน้าเปล่า 10 หน้า <<----------------------------------------
 		$.ajax({
@@ -75,7 +85,8 @@ $_GET['storyid'];
 		});
 		///---------------------------- กดตกลงหลังจากเพิ่มหน้าหมดแล้ว---------------------
 		$("#finish").click(function(){ 
-			window.location.href="main.php?page=play_storydetail_formystory&storyID="+story_id+"";
+			//window.location.href="main.php?page=play_storydetail_formystory&storyID="+story_id+"";
+			window.history.back();
 		});
 	});
 	function pageAddpicture(pageNumber) { // กดปุ่มเลือกหน้าที่จะเพิ่ม เนื้อเรื่องกับภาพ

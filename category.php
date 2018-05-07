@@ -73,7 +73,7 @@ $(document).ready(function(){
 				$(".viewDetail").click(function(){ 
 					var thisId = $(this).data('img');
 					//alert(thisId+"------>2. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
-					window.location.href="main.php?page=play_story&storyID="+thisId+"";
+					window.location.href="main.php?page=play_storydetail&storyID="+thisId+"&pagename=category";
 				});				
 			}
 			else{
@@ -153,7 +153,8 @@ $(document).ready(function(){
 				$(".viewDetail").click(function(){ 
 					var thisId = $(this).data('img');
 				//	alert(thisId+"------>2. ทำต่อด้วย!!!!!!!!!!!!!!!!")	
-					window.location.href="main.php?page=play_story&storyID="+thisId+"";
+				//	window.location.href="main.php?page=play_storydetail&storyID="+thisId+"";
+					window.location.href="main.php?page=play_storydetail&storyID="+thisId+"&pagename=category";
 				});
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

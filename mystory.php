@@ -97,7 +97,7 @@ function callStoryByStatus(status_id) {
 				$(".viewDetail").click(function(){ 
 					var thisId = $(this).data('img');
 					//alert(thisId);
-					window.location.href="main.php?page=play_storydetail_formystory&storyID="+thisId+"";
+					window.location.href="main.php?page=play_storydetail_formystory&storyID="+thisId+"&formPage=mystory";
 				});	
 				
 				
