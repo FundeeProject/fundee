@@ -75,8 +75,19 @@ $_GET['pageid'];
 var isEditPic = 0; ///เอามาไว้เก็บค่าว่ามีการเปลี่ยนแปลงรูปภาพหรือไม่
 var isEditSound = 0;
 	$(document).ready(function(){
-		$(".storyPage").addClass('active');
-		$(".adminPage").hide();
+		//$(".storyPage").addClass('active');
+		//$(".adminPage").hide();
+		<?php 
+			if($_SESSION["role_id"]== 0 ){ ///admin
+				echo "$('.storyPage').hide(); ";
+				echo " $('.adminPage').addClass('active'); ";
+			}
+			else if($_SESSION["role_id"]== 1 ){
+				echo "$('.adminPage').hide(); ";
+				echo " $('.storyPage').addClass('active'); ";
+			}
+			
+		?>
 		var story_id = <?php echo $_GET['storyid'];?> ;
 		var  pageNumber_ = <?php echo $_GET['pageid'];?>;
 		$('.new_Btn2').bind("click" , function () {
@@ -158,7 +169,15 @@ var isEditSound = 0;
 						alert("เพิ่มไม่ได้ กรุณาลองใหม่");
 					}else if(data == "ok"){
 						alert("เพิ่มแล้ว");
-						window.location.href="main.php?page=user_edit_story_page&storyid="+story_id+"";
+						//window.location.href="main.php?page=user_edit_story_page&storyid="+story_id+"";
+						<?php 
+							if($_SESSION["role_id"]== 0 ){ ///admin
+								echo 'window.location.href="main.php?page=user_edit_story_page&storyid='.$_GET['storyid'].'";';
+							}
+							else if($_SESSION["role_id"]== 1 ){
+								echo 'window.location.href="main.php?page=mystory";';
+							}
+						?>
 					}
 		        });
 			}

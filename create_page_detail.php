@@ -73,8 +73,19 @@ $_GET['pageid'];
 </div>
 <script>
 	$(document).ready(function(){
-		$(".storyPage").addClass('active');
-		$(".adminPage").hide();
+		//$(".storyPage").addClass('active');
+		//$(".adminPage").hide();
+		<?php 
+			if($_SESSION["role_id"]== 0 ){ ///admin
+				echo "$('.storyPage').hide(); ";
+				echo " $('.adminPage').addClass('active'); ";
+			}
+			else if($_SESSION["role_id"]== 1 ){
+				echo "$('.adminPage').hide(); ";
+				echo " $('.storyPage').addClass('active'); ";
+			}
+			
+		?>
 		var story_id = <?php echo $_GET['storyid'];?> ;
 		var  pageNumber_ = <?php echo $_GET['pageid'];?>;
 		$('.new_Btn2').bind("click" , function () {
@@ -106,7 +117,7 @@ $_GET['pageid'];
 		$("#createform2").on("submit",function(e){ 
 			e.preventDefault();
 			//----------------ข้อมูลที่จะส่งไปอัพเดท
-			var  description_page = document.getElementById("description_page");
+			var  description_page = document.getElementById("description_page");alert($("#description_page").val());
 			var formData2 = new FormData($(this)[0]);
 			formData2.append("story_id",story_id);
 			formData2.append("pageNumber",pageNumber_);
@@ -130,7 +141,7 @@ $_GET['pageid'];
 		        }).done(function(data){
 		              //  alert("-"+data+"-");
 					if(data == "notsuccess"){
-						alert("เพิ่มไม่ได้ กรุณาลองใหม่");
+						alert("เพิ่มไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
 					}
 					else if(data == "ok"){
 						alert("เพิ่มแล้ว");

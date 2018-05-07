@@ -73,11 +73,13 @@
 			var thisId = $(this).data('img');
 			alert(thisId+"------>2. ทำต่อ")	
 			window.location.href="main.php?page=admin_manageStoryDetail";
-		});
-        $("#addBtn").click(function(){ 
-			
-			window.location.href="main.php?page=admin_manageStoryEdit";
 		});*/
+        //=======================>>>>> กดบวก สร้างนิทาน <<<<<==================
+		$("#addBtn").click(function(){ 
+			window.location.href="main.php?page=create_story";
+			//window.location.href="main.php?page=admin_manageStoryEdit";
+		});
+		
         /// ---------------------------------ถ้ามีการเลือก categoyr ให้ไปดึงข้อมูลเฉพาะที่เลือกมาแสดง------------------------------
 		$( "#Myselect" ).change(function() { 
 			var categoryid = $("#Myselect").val();

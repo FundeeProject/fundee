@@ -70,10 +70,11 @@ $_GET['formPage'];
 					dataType: "text",
 					data: {storyid:storyid},
 					success:function( datajson ) {  
-						/*-----------ลบแล้วกลับไปหน้ามายสตอรี่------------*/
+						/*-----------ลบแล้วกลับไปหน้าก่อนนี้-----------*/
 						if(datajson == "ok"){ 
 							alert( "ลบแล้ว" );
-							window.location.href="main.php?page=mystory";
+							//window.location.href="main.php?page=mystory";
+							 window.history.back();
 						}
 						else{
 							  alert("ลบผิดพลาด กรุณาลองใหม่");

@@ -8,11 +8,17 @@ $Storyname = $_POST['Storyname'];
 $selectCategory = $_POST['selectCategory'];
 $description = $_POST['description'];
 $create_date =  date("Y-m-d") ;
+
 $status_id = 0 ; //สถานะนิทานสร้างใหม่ยังเป็นส่วนตัวอยู่
 $user_id = $_SESSION["user_id"];
 $arr = array();
 $story_id = 0;
-
+	if($_SESSION["role_id"]== 0 ){ ///admin
+		$status_id = 2 ;
+	}
+	else if($_SESSION["role_id"]== 1 ){
+		$status_id = 0 ;
+	}
 		$sql="INSERT INTO story (story_name, story_description, create_date, category_id,status_id ,user_id ) VALUES ( '$Storyname' , '$description' , '$create_date' ,'$selectCategory' , $status_id ,$user_id )";
 		$objExec = mysql_query($sql) or die (mysql_error());
 		// ค้นหา story_id

@@ -49,8 +49,20 @@ $_SESSION['user_id'];
     <script>
 	$(document).ready(function(){
 		var user_id = <?php echo $_SESSION['user_id'];?> ;
-		$(".storyPage").addClass('active');
-		$(".adminPage").hide();
+		//$(".storyPage").addClass('active');
+		//$(".adminPage").hide();
+		
+		<?php 
+			if($_SESSION["role_id"]== 0 ){ ///admin
+				echo "$('.storyPage').hide(); ";
+				echo " $('.adminPage').addClass('active'); ";
+			}
+			else if($_SESSION["role_id"]== 1 ){
+				echo "$('.adminPage').hide(); ";
+				echo " $('.storyPage').addClass('active'); ";
+			}
+			
+		?>
 		add_select_option();
 		//-------------------------->> เลือกภาพ <<---------------------------
 		$('#showPic').bind("click" , function () {

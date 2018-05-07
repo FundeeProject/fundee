@@ -86,7 +86,15 @@ $_GET['storyid'];
 		///---------------------------- กดตกลงหลังจากเพิ่มหน้าหมดแล้ว---------------------
 		$("#finish").click(function(){ 
 			//window.location.href="main.php?page=play_storydetail_formystory&storyID="+story_id+"";
-			window.history.back();
+			//window.history.back();
+			<?php 
+				if($_SESSION["role_id"]== 0 ){ ///admin
+					echo 'window.location.href="main.php?page=admin_manageStory";';
+				}
+				else if($_SESSION["role_id"]== 1 ){
+					echo 'window.location.href="main.php?page=mystory";';
+				}
+			?>
 		});
 	});
 	function pageAddpicture(pageNumber) { // กดปุ่มเลือกหน้าที่จะเพิ่ม เนื้อเรื่องกับภาพ
