@@ -72,7 +72,7 @@ function logFace(){
 			echo $_SESSION["role_id"];
 			exit();
 		}else{
-			echo "<br><p class='alert alert-danger'>ผิดพลาด! ไม่สามารถเข้าใช้งานระบบได้.</p>";
+			echo "ผิดพลาด! ไม่สามารถเข้าใช้งานระบบได้";
 			exit();
 		}
 	}
