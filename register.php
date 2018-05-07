@@ -4,6 +4,7 @@ session_start();
 include "include/config.php";
 include "include/function.php";*/
 ?>
+<!DOCTYPE HTML>  
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -29,7 +30,7 @@ include "include/function.php";*/
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Email:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                            <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
                         </div>
                     </div>
                     <div class="form-group">
@@ -40,7 +41,8 @@ include "include/function.php";*/
                     </div>
                     <div class="form-group">        
                         <div class="col-sm-10">
-                            <button type="submit" class="btn btn-success" style="width: 80px;" id="regis">Submit</button>
+                           <!-- <button type="submit" class="btn btn-success" style="width: 80px;" id="regis">Submit</button>-->
+						    <button type="button" class="btn btn-success" style="width: 80px;" id="regis">Submit</button>
                             <button type="button" class="btn btn-secondary" style="width: 80px;" id="back">Back</button>
                         </div>
                         <p class="marginB10"></p>
@@ -51,9 +53,23 @@ include "include/function.php";*/
     </div>
  
     <script type="text/javascript">
-        $(function(){
-            $("#regis").click(function(){///alert("click");
-                $.post("action.php?op=regis",$("form").serialize(), function(data){
+	$(document).ready(function(){
+		
+		   var email = $('#email').val();
+		   var username = $('#username').val();
+		   var pwd = $('#pwd').val();
+		
+			$("#regis").click(function(){///alert("click");
+			alert(validateEmail(email))
+			if(validateEmail(email) == true && username != "" && pwd != ""){
+				alert("pass");
+			}
+			else if(validateEmail(email) == false){
+				
+			}
+				//alert(validateEmail(email));
+				
+                /*$.post("action.php?op=regis",$("form").serialize(), function(data){
                     //alert("-"+data+"-");
                     if(data=='ok'){
 						alert("สมัครสมาชิคเรียบร้อยแล้ว");
@@ -63,14 +79,20 @@ include "include/function.php";*/
                         window.location.href='index.php';
                         //return true;
                     }
-                });
+                });*/
             });
 
             $("#back").click(function(){
                  window.location.href='index.php';
 
             });
-        });
+		
+	});
+	
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
     </script>
 
 

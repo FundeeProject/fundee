@@ -137,7 +137,7 @@ $(document).ready(function(){
 					else{
 							imgStory = '<div class="col-xs-4 col-lg-2  boxImg"> '+
 											'<div class="h100 viewDetail"> '+
-												'<div class="img" style="background:url(imgStory/img_00)"></div> '+
+												'<div class="img" style="background:url(imgStory/img_00.png)"></div> '+
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
@@ -153,7 +153,8 @@ $(document).ready(function(){
 				});				
 			}
 			else{
-				alert("ไม่พบข้อมูลหน้านิทาน");
+				//alert("ไม่พบข้อมูลหน้านิทาน");
+				$('#showHomeStory').append("<p  class='text-blue'>ไม่พบข้อมูลหน้านิทาน</p>");
 			}
 		},
 		error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

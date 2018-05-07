@@ -15,10 +15,10 @@ if($op === 'signin'){
    logFace();
 }
 function regis(){ //echo "dd";
-$username = trim($_POST['username']);
-$email = trim($_POST['email']);
-$password = trim($_POST['pwd']);
-$cke = selects("user","where email='$email'");
+	$username = trim($_POST['username']);
+	$email = trim($_POST['email']);
+	$password = trim($_POST['pwd']);
+	$cke = selects("user","where email='$email'");
 	//echo "email :".$email."username :".$username."password ".$password;
 	if(count($cke)==0){
 		$row = insert("username,password,email,user_point,role_id","'$username','$password','$email','0','1'","user");
