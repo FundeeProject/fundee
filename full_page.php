@@ -25,8 +25,8 @@ body, html {
 
 @media screen and (orientation:portrait) {
 	body {
-	//	-ms-transform: rotate(90deg); /* IE 9 */
-	//	-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+		-ms-transform: rotate(90deg); /* IE 9 */
+		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
 		transform: rotate(90deg);
 	}
 		
@@ -40,7 +40,7 @@ body, html {
 
 
 <div class="icon32 icon-close " id="closeBtn"></div>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 	
 	 <ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
 		<!-- <li data-target="#myCarousel" data-slide-to="0" ></li>
@@ -48,7 +48,7 @@ body, html {
 	</ol> 
 
 	<!--img slide-->
-	<div class="carousel-inner" role="listbox" id="showSlideNews">
+	<div class="carousel-inner" role="listbox" id="showSlideNews" >
 		<!--<div class="item">
 			<div class="slideMint" style="background-image:url(imgStory/87_1.png);height :300px;">
 				<p>sdfsdfsdfsdf</p>
