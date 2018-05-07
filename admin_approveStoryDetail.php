@@ -23,7 +23,14 @@ $_GET['storyid'];
 			</div>
 		</div>
 	</div>
+	
+	
+	
 </div>
+
+
+
+
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -33,11 +40,13 @@ $_GET['storyid'];
 		$(".storyPage").hide()
 		$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 		
+		//alert($(".textPopup").val())
 		
 		$("#closeBtn").click(function(){ 
 			window.location.href="main.php?page=admin_approveStory";
 		});
-		$(".deleteBtn").click(function(){ 
+		/*$(".deleteBtn").click(function(){ 
+		
 			//alert("del");
 			var txt ="" ;
 			var pop = confirm("ต้องการลบนิทานหรือไม่ ?");
@@ -49,7 +58,7 @@ $_GET['storyid'];
 					dataType: "text",
 					data: {storyid:storyid},
 					success:function( datajson ) {  
-						/*-----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------*/
+						//-----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------//
 						if(datajson == "ok"){ 
 							alert( "ลบแล้ว" );
 							window.location.href="main.php?page=admin_approveStory";
@@ -64,12 +73,13 @@ $_GET['storyid'];
 			else {
 				//"ยกเลิก";
 			}
-		});
+		});*/
 		$(".playBtn").click(function(){ 
 			//alert("ทำด้วย");
 			window.location.href = "full_page.php?storyid="+storyid+"";
 		});
-		$(".approveBtn").click(function(){ 
+		/*$(".approveBtn").click(function(){ 
+		
 			var newId =  $('#boxData').data("id") ;
 			var pop = confirm("อนุมัตินิทานหรือไม่ ?");
 			
@@ -80,7 +90,7 @@ $_GET['storyid'];
 					dataType: "text",
 					data: {storyid:newId},
 					success:function( datajson ) {  
-						/*--------------อนุมัติสำเร็จแล้วถึงเปลี่ยนหน้า--------------*/
+						//--------------อนุมัติสำเร็จแล้วถึงเปลี่ยนหน้า--------------
 						if(datajson == "ok"){ 
 							alert( "อนุมัติแล้ว" );
 							window.location.href="main.php?page=admin_approveStory";
@@ -92,10 +102,31 @@ $_GET['storyid'];
 					error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
 				});
 			}else{
-				/*------กดยกเลิกก็อยู่ที่เดิมไม่ต้องทำไร-----------*/
+				//------กดยกเลิกก็อยู่ที่เดิมไม่ต้องทำไร-----------
 			}
 		});
+		*/
 		
+		
+		/////////////////////////////////
+		$(".approveBtn").click(function(){
+			$('.exampleModal').modal('show');
+			$(".modal-body").html("Approve!!")
+			apv ()
+		})
+		
+		
+		$(".deleteBtn").click(function(){
+			$('.exampleModal').modal('show');
+			$(".modal-body").html("ยืนยันการลบข้อมูล")
+			aa ()
+		})
+		
+		
+		
+		
+		
+		/////////////////////////////////
 		/*--------------ดึงข้อมูลจาก DB มาแสดง ตอนโหลดหน้านี้มา-------*/
 		var storyid = <?php echo $_GET['storyid']; ?>;
 		$.ajax({ 
@@ -124,6 +155,7 @@ $_GET['storyid'];
 		
 		
 	});
+	
 	
 	function chk (c){
 		alert(c)
@@ -154,4 +186,46 @@ $_GET['storyid'];
 		}
 		
 	}
+	
+	
+	
+	function apv (){
+		alert("1")
+		//
+		
+		$(".okBtn").click(function(e){
+			
+			//$("#okModalBtn").hide()
+			/*
+			var newId =  $('#boxData').data("id") ;
+			var pop = confirm("อนุมัตินิทานหรือไม่ ?");
+			
+			if (pop == true) {
+				$.ajax({
+					type:'POST',
+					url:'qs/qs_admin_approveStory.php',
+					dataType: "text",
+					data: {storyid:newId},
+					success:function( datajson ) {  
+						//--------------อนุมัติสำเร็จแล้วถึงเปลี่ยนหน้า--------------
+						if(datajson == "ok"){ 
+							alert( "อนุมัติแล้ว" );
+							window.location.href="main.php?page=admin_approveStory";
+						}
+						else{
+							alert("ผิดพลาด กรุณาลองใหม่");
+						}
+					},
+					error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
+				});
+			}else{
+				//------กดยกเลิกก็อยู่ที่เดิมไม่ต้องทำไร-----------
+				$('.exampleModal').modal('hide');
+			}*/
+			
+			
+			
+		})
+	}
+	
 </script>

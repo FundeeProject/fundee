@@ -7,21 +7,32 @@ include "include/function.php";
 ?>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link href="css/ytLoad.jquery.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/ytLoad.jquery.js"></script>
-		<!--  pwa --> <link rel="manifest" href="manifest.json">
+		
 			<link rel="apple-touch-icon" sizes="180x180" href="icon/logoHome.png">
-			<link rel="icon" type="image/png" sizes="32x32" href="icon/logoHome.png">
-			<link rel="icon" type="image/png" sizes="16x16" href="icon/logoHome.png">
-			 <!-- <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5"> -->
-			
 			<meta name="apple-mobile-web-app-capable" content="yes">
-			<meta name="apple-mobile-web-app-status-bar-style" content="black">
+			<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+			<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- สริปต์ปุ่มสีๆ -->
+	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+	<!-- Add icon library -->
+	<!--<link rel="stylesheet" href="css/fontawesome-all.min.css">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	
+	<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body class="bgHome">
 		<div class="nameLogo"></div>
@@ -62,9 +73,9 @@ include "include/function.php";
 					</div>-->
 					<div class="form-group">        
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="button" class="btn btn-success wp100" id="singin">Submit</button>
+							<button type="button" class="btn btn-success wp100" id="singin">Sign In</button>
 						</div>
-						<div class="col-sm-offset-2 col-sm-10 textCenter marginT10 marginB10">
+						<div class="col-sm-offset-2 col-sm-10 text-center marginT10 marginB10">
 							<a href="register.php">Have an account? Login</a>
 						</div>
 					</div>
@@ -72,6 +83,19 @@ include "include/function.php";
   			</form>
 		</div>
 	
+	
+		<div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+		  <div class="modal-dialog" role="document" style="top: 40%;">
+			<div class="modal-content" style="min-height: 150px;">
+			  <div class="modal-body" style="text-align:center;">
+			  </div>
+			  <div class="modal-footer marginAuto" style="width: 90px;padding-left: 0px;" >
+				<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
+				
+			  </div>
+			</div>
+		  </div>
+		</div>
 	
 	
 		<script type="text/javascript">
@@ -134,6 +158,8 @@ include "include/function.php";
 				var email = $("#email").val();
 				var pass = $("#pwd").val();
 				
+				if (email != "" &&  pass != ""){
+				
 				/*if (email == "admin@gmail.com" && pass == "1234"){
 					//window.location.href="admin.php";
 					window.location.href="main.php?page=admin";
@@ -142,19 +168,25 @@ include "include/function.php";
 					window.location.href="main.php?page=mystory";
 				}*/
 				
-				$.post("action.php?op=test",$("form").serialize(), function(data){
-					if(data=='1'){ //user
-						window.location.href="main.php?page=home";
-						return true;
-					}
-					else if(data=='0'){ //admin
-						window.location.href="main.php?page=admin";
-						return true;
-					}
-					else{
-						alert("-"+data+"-"); 
-					}
-				});
+					$.post("action.php?op=test",$("form").serialize(), function(data){
+						if(data=='1'){ //user
+							window.location.href="main.php?page=home";
+							return true;
+						}
+						else if(data=='0'){ //admin
+							window.location.href="main.php?page=admin";
+							return true;
+						}
+						else{
+							$("#exampleModal").modal()
+							$(".modal-body").html(data)		
+							//alert("-"+data+"-"); 
+						}
+					})
+				}else{
+					$("#exampleModal").modal()
+					$(".modal-body").html("Please enter data")	
+				}
 
             });
 		</script>

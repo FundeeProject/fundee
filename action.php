@@ -92,7 +92,7 @@ function test(){
 		$login=mysql_fetch_assoc($query); 
 		//echo $num_rows;
 		if($num_rows === 0){
-			echo "<br><p class='alert alert-danger'>ผิดพลาด! ไม่มี Username นี้ในระบบ หรือคุณถูกระงับการใช้งาน.</p>";
+			echo "ผิดพลาด! ไม่มี Username นี้ในระบบ หรือคุณถูกระงับการใช้งาน.";
 			exit();
 		}else if ($num_rows != 0){
 			$uid = $username;

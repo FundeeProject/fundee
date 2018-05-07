@@ -7,7 +7,7 @@
 <div class="row adminManageCategoryPage">
 	<div class="marginAuto divBtn min-h">
 		<div class="row marginAuto boxImgLogo">
-			<p class="marginL10"><b>Manage Category</b></p>
+			<p ><b class="marginL20">Manage Category</b></p>
 		</div>
 		<div class="icon64 icon-folder marginB10"></div>
 		<div class="blockAdmin marginAuto marginT20">

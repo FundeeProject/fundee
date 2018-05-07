@@ -1,29 +1,29 @@
 <?php
-session_start();
+//session_start();
 
 ?>
 
 
-<body >
-<div class="dd">
+
+
 <center>
- <p>Category</p>
+	<label class="marginT20 color-blue" for="Storyname">CATEGORY</label>
 	<form class="form-horizontal" method="post" name="" id="">
 		<div class="form-group marginAuto marginT10" style="width: 250px;">
 			<select class="form-control" id="selectCategory">
 				<option value="0">Select Category</option>
 			</select>
 		</div> 
-		<p class="marginT20" style="">All Story</p>
 		<div id="homeStory" class="form-group">
 			<div class='row'  style="width:95%" id="showHomeStory" ></div>
 		</div> 
 	</form>
 </center>
-<div>
+
 <script type="text/javascript">
 $(document).ready(function(){
 		<?php 
+		
 			if($_SESSION["role_id"]== 0 ){
 				echo " $('.categoryPage').addClass('active'); ";
 				echo "$('.storyPage').hide(); ";
@@ -33,7 +33,8 @@ $(document).ready(function(){
 				echo "$('.adminPage').hide(); ";
 			}
 		?>
-		//=======================>>>>> นิทาน <<<<<=======================
+	$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
+	//=======================>>>>> นิทาน <<<<<=======================
 	add_select_option();
 	//------------------------------ แสดงนิทานตอนโหลดหน้า------------------------//
 	$.ajax({
@@ -171,4 +172,3 @@ $(document).ready(function(){
 		return newString;
 	}			
 </script>
-</body>

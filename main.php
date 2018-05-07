@@ -259,7 +259,8 @@ $(document).ready(function(){
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+
+<div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="min-height: 150px;">
       <div class="modal-body" style="text-align:center;">
@@ -279,6 +280,9 @@ $(document).ready(function(){
 	$(".glyphicon-log-out").click(function(){ 
 		window.location.href="logout.php";
 	});	
+	
+	
+	
 });
 </script>
 </body>
