@@ -109,7 +109,7 @@ function test(){
 			echo $_SESSION["role_id"];
 			exit();
 		}else{
-			echo "<br><p class='alert alert-danger'>ผิดพลาด! ไม่สามารถเข้าใช้งานระบบได้.</p>";
+			echo "ผิดพลาด! ไม่สามารถเข้าใช้งานระบบได้.";
 			exit();
 		}
 	}
@@ -127,7 +127,7 @@ function signIn(){
 		$num_rows=mysql_num_rows($query);
 		$login=mysql_fetch_assoc($query);
 		if($num_rows === 0){
-			echo "<br><p class='alert alert-danger'>ผิดพลาด! ไม่มี Username นี้ในระบบ หรือคุณถูกระงับการใช้งาน.</p>";
+			echo "ผิดพลาด! ไม่มี Username นี้ในระบบ หรือคุณถูกระงับการใช้งาน.";
 			exit();
 		}else if ($num_rows != 0){
 			$uid = $username;
