@@ -78,7 +78,7 @@ $(document).ready(function(){
 				});				
 			}
 			else{
-				alert("ไม่พบข้อมูลหน้านิทาน");
+				//alert("ไม่พบข้อมูลหน้านิทาน");
 			}
 		},
 		error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
@@ -101,7 +101,7 @@ $(document).ready(function(){
 					});	
 				}
 				else{
-					alert("ไม่พบข้อมูล Category");
+					//alert("ไม่พบข้อมูล Category");
 				}
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
@@ -147,7 +147,7 @@ $(document).ready(function(){
 				}
 				else{
 					$('#showHomeStory').empty();
-					var imgStory = "<div > ไม่พบนิทาน </div>";
+					var imgStory = "<div ><p class='text-blue'> ไม่พบนิทาน </p></div>";
 					$('#showHomeStory').append(imgStory);
 				}
 				

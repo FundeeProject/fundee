@@ -1,10 +1,11 @@
 <?php
-session_start();
+//session_start();
 $_SESSION['user_id'];
 //$_GET['page'];
 ?>
 <br>
 <div class="marginAuto myStoryPage showCreate" id = "showCreate" >
+	<p class="text-center text-blue marginT10"><b>STORY</b></p>
 	<form class="marginT20 marginAuto" style="width :90%;" method = "post" enctype = "multipart/form-data" id = "createform1" >
 		  <p class="text-center textName"></p>
 		  <div class="form-group paddingT10 marginAuto divBtn">
@@ -20,7 +21,10 @@ $_SESSION['user_id'];
 						  <option value="0">Select Category</option>
 						</select>
 						<label for="description" class="marginT10 color-blue">Short Description</label>
-						<textarea class="form-control marginB20" id="description" rows="3">  </textarea>
+						<textarea class="form-control" id="description" rows="3">  </textarea>
+						<span class="text-pink text-12" >use less then 255 characters.</span>
+						<br><br>
+
 					
 						<label for="showPic" class="color-blue">Choose a cover photo</label>
 						<div class="boxImg box-90 box-camera " id="showPic">
@@ -48,6 +52,7 @@ $_SESSION['user_id'];
  <br>
     <script>
 	$(document).ready(function(){
+		$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 		var user_id = <?php echo $_SESSION['user_id'];?> ;
 		//$(".storyPage").addClass('active');
 		//$(".adminPage").hide();

@@ -374,7 +374,7 @@ body{
 
 .box-90{
 	width:90px; 
-	height:90px; 
+	height:120px; 
 }
 
 .box-camera{
@@ -500,7 +500,7 @@ body{
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 35px;
+	top: 50px;
 }
 
 /*admin*/

@@ -108,7 +108,7 @@
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p class="text-blue text-center">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 						}
 						else{
@@ -118,7 +118,7 @@
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p class="text-blue text-center">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 						}
 						$('#showHomeStory').append(imgStory);

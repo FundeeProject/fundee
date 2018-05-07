@@ -1,10 +1,11 @@
 <?php
-session_start();
+//session_start();
 //$_SESSION['user_id'];
 $_GET['storyidToEdit'];
 ?>
 <br>
 <div class="marginAuto myStoryPage showCreate" id = "showCreate" >
+	<p class="text-center text-blue marginT10"><b>STORY</b></p>
 	<form class="marginT20 marginAuto" style="width :90%;" method = "post" enctype = "multipart/form-data" id = "createform1" >
 		  <p class="text-center textName"></p>
 		  <div class="form-group paddingT10 marginAuto divBtn">
@@ -51,6 +52,7 @@ $_GET['storyidToEdit'];
     <script>
 	var isEditPic = 0;
 	$(document).ready(function(){
+		$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 		var storyid = <?php echo $_GET['storyidToEdit'];?> ;
 		//$(".storyPage").addClass('active');
 		//$(".adminPage").hide();
