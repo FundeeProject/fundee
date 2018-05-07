@@ -44,6 +44,9 @@
 		$(".storyPage").hide()
 		$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 		
+		$("#CREATEtitel").click(function(){
+			window.location.href="main.php?page=admin_manageStoryEditAll";
+		});
 		
 	});
 	

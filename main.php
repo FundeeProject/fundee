@@ -212,6 +212,7 @@ $(document).ready(function(){
 							if($_GET['storyid'] != ""){include("admin_approveStoryDetail.php");	}
 						}else if($_GET['page'] == 'admin_manageStoryDetail'){include("admin_manageStoryDetail.php");
 						}else if($_GET['page'] == 'admin_manageStoryEdit'){include("admin_manageStoryEdit.php");
+						}else if($_GET['page'] == 'admin_manageStoryEditAll'){include("admin_manageStoryEditAll.php");
 						}else if($_GET['page'] == 'full_page'){
 							if($_GET['storyid'] != ""){include("full_page.php");}
 						}else if($_GET['page'] == 'play_story'){
