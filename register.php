@@ -4,9 +4,9 @@ session_start();
 include "include/config.php";
 include "include/function.php";*/
 ?>
-<!DOCTYPE HTML>  
+ 
 <html>
-<head>
+<head><meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/ytLoad.jquery.css" rel="stylesheet" type="text/css">
@@ -59,15 +59,35 @@ include "include/function.php";*/
 		   var username = $('#username').val();
 		   var pwd = $('#pwd').val();
 		
-			$("#regis").click(function(){///alert("click");
-			alert(validateEmail(email))
+			$("#regis").click(function(){
+			
 			if(validateEmail(email) == true && username != "" && pwd != ""){
-				alert("pass");
+				//alert("pass");
+				$.post("action.php?op=regis",$("form").serialize(), function(data){
+                    //alert("-"+data+"-");
+                    if(data=='ok'){
+						alert("สมัครสมาชิคเรียบร้อยแล้ว");
+                        <?php  
+                            //$row = insert("username,password,email,user_point,role_id","'$username','$password','$email','0','1'","user");
+                        ?>
+                        window.location.href='index.php';
+                        //return true;
+                    }
+                });
 			}
-			else if(validateEmail(email) == false){
-				
+			else {
+				var texAlert = "";
+				if(validateEmail(email) == false){
+					texAlert += "\n- email incorrect" ;
+				}
+				if(username == ""){
+					texAlert += "\n- fill username" ;
+				}
+				if(pwd == ""){
+					texAlert += "\n- fill your password" ;
+				}
+				alert(texAlert);
 			}
-				//alert(validateEmail(email));
 				
                 /*$.post("action.php?op=regis",$("form").serialize(), function(data){
                     //alert("-"+data+"-");
