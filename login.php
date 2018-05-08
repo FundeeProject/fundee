@@ -185,7 +185,7 @@ include "include/function.php";
 					})
 				}else{
 					$("#exampleModal").modal()
-					$(".modal-body").html("Please enter data")	
+					$(".modal-body").html("Please enter data");
 				}
 
             });
