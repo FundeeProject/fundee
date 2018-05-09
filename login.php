@@ -37,7 +37,7 @@ include "include/function.php";
 	<body class="bgHome">
 		<div class="nameLogo"></div>
 		<div class="w100 logoHome login" style="position:retative"></div>
-		<div class="bgW_login">
+		<div class="bgW_login" style="border-radius: 10px;">
 			<div class="divContent">
 				 <!--
 				 <div class="col-sm-12 textCenter">
