@@ -39,11 +39,12 @@ $_SESSION['user_id'];
 					 <div class="row" >
 						<div class="col-xs-12">
 							<div  class="text-center" >
-								 <button type="submit" class="btn btn-info" style="" id="CREATEtitel">CREATE</button>
+								 <button type="button" class="btn btn-back" style="width:80px" id="backBtn">Back</button>
+								 <button type="submit" class="btn btn-info" style="width:80px" id="CREATEtitel">CREATE</button>
 							</div>
 							<p class="marginB10"></p>
 						</div>
-					</div>			
+					</div>	
 				</div>
 			</center>
 		  </div>
@@ -119,6 +120,13 @@ $_SESSION['user_id'];
 				alert("ข้อมูลไม่ครบ \n"+textToAlert); 
 			}
 		});
+		
+		$("#backBtn").click(function(){
+			alert("ทำด้วย")
+			//window.location.href="main.php?page=admin_manageStoryEdit";
+		});
+		
+		
 	});
 	function add_select_option(){ // ดัง category ทั้งหมดมาแสดงให้เลือก
 		$.ajax({

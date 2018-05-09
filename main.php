@@ -292,6 +292,21 @@ $(document).ready(function(){
 </div>
 
 
+<div class="modal fade modalApprove" id="modalApprove" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="min-height: 150px;">
+      <div class="modal-body" style="text-align:center;">
+      </div>
+      <div class="modal-footer marginAuto" style="" >
+        <!--<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>-->
+		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noBtn" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info okBtn" id="okBtn" style="width:80px;">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
 //=======================>>>>> logout <<<<<=======================
