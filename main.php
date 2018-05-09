@@ -179,6 +179,7 @@ $(document).ready(function(){
 						<div class="col-md-12" style="padding:0px;">
 							<ul class="nav nav-tabs list-group" style="margin-bottom:0;">
 								<li class="homePage"><a href="main.php?page=home">HOME</a></li>
+								<!--<li class="homePage"><a href="">HOME</a></li>-->
 								<li class="categoryPage"><a href="main.php?page=category">CATEGORY</a></li>
 								<li class="storyPage"><a href="main.php?page=mystory">MY STORY </a></li>
 								<?php if($_SESSION["role_id"] == 0){echo '<li class="adminPage"><a href="main.php?page=admin">ADMIN </a></li>';} ?>
@@ -266,8 +267,9 @@ $(document).ready(function(){
       <div class="modal-body" style="text-align:center;">
       </div>
       <div class="modal-footer marginAuto" style="" >
-        <button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-info okBtn" id="okModalBtn" style="width:90px;">Yes</button>
+        <!--<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>-->
+		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noModalBtn" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info okBtn" id="okModalBtn" style="width:80px;">Yes</button>
       </div>
     </div>
   </div>
@@ -279,7 +281,13 @@ $(document).ready(function(){
 //=======================>>>>> logout <<<<<=======================
 	$(".glyphicon-log-out").click(function(){ 
 		window.location.href="logout.php";
-	});	
+	});
+	
+	/*$(".homePage").click(function(){ 
+		window.location.href="main.php?page=home";
+	});*/
+
+	
 	
 	
 	

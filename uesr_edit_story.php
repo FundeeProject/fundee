@@ -21,8 +21,9 @@ $_GET['storyidToEdit'];
 						  <option value="0">Select Category</option>
 						</select>
 						<label for="description" class="marginT10 color-blue">Short Description</label>
-						<textarea class="form-control marginB20" id="description" rows="3">  </textarea>
-					
+						<textarea class="form-control" id="description" rows="3">  </textarea>
+						<span class="text-pink text-12" >use less then 255 characters.</span>
+						</br></br>
 						<label for="showPic" class="color-blue">Choose a cover photo</label>
 						<div class="boxImg box-90 box-camera " id="showPic">
 							<div class="boxIconCamera">
@@ -37,8 +38,9 @@ $_GET['storyidToEdit'];
 						<div class="col-xs-12">
 							
 							<div  class="text-center" >
-								<button type="button" class="btn " style="" id="cancelBtn">CANCEL</button>
-								 <button type="submit" class="btn btn-info" style="" id="CREATEtitel">UPDATE</button>
+								 <!--<button type="button" class="btn " style="" id="cancelBtn">CANCEL</button>-->
+								 <button type="button" class="btn btn-back" style="width:80px" id="cancelBtn">Back</button>
+								 <button type="submit" class="btn btn-info" style="width:80px" id="CREATEtitel">UPDATE</button>
 							</div>
 							<p class="marginB10"></p>
 						</div>

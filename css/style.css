@@ -77,6 +77,12 @@ body{
     background-size: contain;
     top:0px;
 }
+.logoRegis{
+	background-image: url('../icon/regis.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    top:0px;
+}
 .nameLogo{
 	width: 259px;
     height: 107px;
@@ -858,6 +864,22 @@ ul.select-list li.active
     position: relative;
     top: -35px;
 	margin-bottom:20px;
+}
+.blockRegis{
+	width:270px;
+	min-height: 200px;
+    border-radius: 15px;
+    margin: 0 auto;
+    background: #dddddd;
+    padding-top: 0px;
+    margin-top: 70px;
+}
+.blockRegis input{
+	width: 70%;
+    border-radius: 25px;
+    background-color: #085b6b;
+    color: #FFF;
+    margin:0 auto;
 }
 .blockAdminInner{
 	width:50%;

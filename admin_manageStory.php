@@ -64,6 +64,7 @@
 	$(document).ready(function(){
 		//สีฟ้าที่ปุ่ม admin
 		$(".adminPage").addClass('active')
+		$(".adminPage").prop('disabled', true);//สั่งให้ปุ่ม disabled คือกดไม่ได้
 		$(".storyPage").hide()
 		$(".mainDetail").css('background-color', '#FFF');
 		add_select_option();

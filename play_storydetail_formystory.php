@@ -10,7 +10,7 @@ $_GET['formPage'];
 		<div id="boxData" data-id='<?php echo $_GET['storyID']; ?>'><!--get ค่ามาใช้จากหน้าที่ผ่านมาแทนเลข 1-->
 			<div class="img" id="showImg" style="background:url(imgStory/56_00.png); top:-80px"></div>
 			<div class="divIcon" style="">
-				<div class="icon32 icon-delete2 deleteBtn" id=""></div>
+				<div class="icon32 icon-delete2 deleteBtn" id="" data-toggle="modal" data-target="#exampleModal"></div>
 				<div class="icon48 icon-play playBtn"></div>
 				<div class="icon32 icon-edit approveBtn" >
 					<input class="textPopup" type='hidden' value='aaaaaaaaaa'/>
@@ -61,9 +61,13 @@ $_GET['formPage'];
 		});
 		
 		/*-------------------กดลบนิทาน----------------------*/
-		$(".deleteBtn").click(function(){ 
-			var pop = confirm("ต้องการลบนิทานหรือไม่ ?");
-			if (pop == true) {
+		//popup
+		$(".modal-body").html("ยืนยันการลบข้อมูล")
+		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
+		
+		//$(".deleteBtn").click(function(){ 
+			//var pop = confirm("ต้องการลบนิทานหรือไม่ ?");
+			//if (pop == true) {
 				$.ajax({
 					type:'POST',
 					url:'qs/qs_admin_deleteStory.php',
@@ -82,8 +86,8 @@ $_GET['formPage'];
 					},
 					error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
 				});
-			} 
-			else {}//"ยกเลิก";
+			//} 
+			//else {}//"ยกเลิก";
 			
 		});
 		/*-------------------กดเล่นนิทาน----------------------*/
