@@ -45,7 +45,7 @@
 			<div class="row marginAuto boxImgLogo">
 				<p><b>Manage News</b></p>
 			</div>
-			<div class="icon64 icon-news2 marginB10"></div>
+			<div class="icon48 icon-news2 marginB10"></div>
 			<div class="blockAdmin marginAuto marginT20">
 				<div class="divTextDetail">
 				<div class="icon24 icon-add"></div>

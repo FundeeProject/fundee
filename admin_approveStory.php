@@ -3,7 +3,7 @@
 		<div class="row marginAuto boxImgLogo">
 			<p><b>Apporve Story</b></p>
 		</div>
-		<div class="iconApproveHead icon64 icon-approve marginB10"></div>
+		<div class="iconApproveHead icon48 icon-approve marginB10"></div>
 		<div class="blockAdmin marginAuto marginT20">
 		
 			 <div class="" style="padding-top:50px;">

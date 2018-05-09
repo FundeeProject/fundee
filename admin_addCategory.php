@@ -9,7 +9,7 @@
 		<div class="row marginAuto boxImgLogo">
 			<p><b>Manage Category</b></p>
 		</div>
-		<div class="icon64 icon-folder marginB10"></div>
+		<div class="icon48 icon-folder marginB10"></div>
 		<div class="blockAdmin marginAuto marginT20">
 			<div class="divTextDetail">
 			<div class="icon24 icon-add"></div>

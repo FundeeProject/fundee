@@ -1,9 +1,10 @@
 <div class="row adminManageStoryPage">
 	<div class="marginAuto divBtn min-h">
+		<div class="icon32 icon-close" id="closeBtn" style="position: absolute;z-index: 999;"></div>
 		<div class="row marginAuto boxImgLogo">
 			<p><b>Manage Story</b></p>
 		</div>
-		<div class="iconApproveHead icon64 icon-manage marginB10"></div>
+		<div class="iconApproveHead icon48 icon-manage marginB10"></div>
 		<div class="blockAdmin marginAuto marginT20" style=" margin-bottom: 0px;">
 		
 			<div class="" style="padding-top:50px;">
@@ -16,7 +17,8 @@
 			<div class="imgApporve">
 				<div id="approveStory" class="form-group">
 					<div class='row marginAuto marginT10'  style="width:95%" id="showHomeStory"  >
-						<!-- <div class="col-xs-4 col-lg-2 boxImg"> 
+						<!--
+						 <div class="col-xs-4 col-lg-2 boxImg"> 
 							<div class="h100 viewDetail" data-img='1'> 
 								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
 								<div class="homeIcon icon-edit"></div>
@@ -59,6 +61,7 @@
 		</div>
 	</div>
 </div>
+
 
 <script type="text/javascript">
 	$(document).ready(function(){

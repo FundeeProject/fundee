@@ -6,10 +6,11 @@
 
 <div class="row adminManageCategoryPage">
 	<div class="marginAuto divBtn min-h">
+	
 		<div class="row marginAuto boxImgLogo">
 			<p ><b class="marginL20">Manage Category</b></p>
 		</div>
-		<div class="icon64 icon-folder marginB10"></div>
+		<div class="icon48 icon-folder marginB10"></div>
 		<div class="blockAdmin marginAuto marginT20">
 			<div class="marginT20 iconBtn">
 				<div class="icon36 icon-add" id="addBtn" ></div>

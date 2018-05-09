@@ -258,6 +258,21 @@ $(document).ready(function(){
 		</div>
 	</div>
 </div>
+<!--
+<div style="    width: 95%;
+    height: 40px;
+    background-color: #fcf8e3;
+    z-index: 9999;
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    border-radius: 10px;
+    padding-bottom: 50px;">aaaaaaaaa</div>
+	
+-->
+
 
 <!-- Modal -->
 
