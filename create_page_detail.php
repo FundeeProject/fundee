@@ -6,28 +6,40 @@ $_GET['pageid'];
 <br>
 
 <div id = "showCreateTitle" class = "showCreateTitle" style=""> 
-	<form class="marginT20" style="width :90%; margin-left:auto; margin-right:auto; "  method = "post" enctype = "multipart/form-data" id = "createform2">
+	<form class="" style="width :90%; margin-left:auto; margin-right:auto; "  method = "post" enctype = "multipart/form-data" id = "createform2">
 		<div class="form-group">
-			<label for="">Story Name : <span id="showStoryname2"></span></label>
+			<label class="text-blue">Story Name : <span style="color:#3a3837" id="showStoryname2"></span></label>
 		</div>
 		<div class="form-group">
-			<label for="">Please add picture, Record and text. </label>
-			<div class="box-img" style="width:90%" >
+			<!--<label for="">Please add picture, Record and text. </label>-->
+			<div class="box-img" style="margin: 0 auto;width: 100%; background-color: #fff;" >
 				<div class="box-text-number">
 					<p class="text-center">1</p>
 				</div>
 				<div class="objectCenter new_Btn2 "  id = "showPic_page">
-					<!--<i class="fa fa-camera" style="font-size:24px"></i>--> Add Pic
+					<i class="glyphicon glyphicon-camera" style="left: 43%;top: 43;"></i>
 				</div>
 				
-				<input type="file" name="pic_upload_page" id="html_btn2" OnChange="PreviewPage(this)"/>
+				<input type="file" name="pic_upload_page" id="html_btn2" OnChange="PreviewPage(this)" style="display:none"/>
+				<div style="position: relative;top: 130px;">
+					<textarea class="form-control" id="editText" rows="3" placeholder="Storyline : " style="border-radius: 10px;background-color: #085b6b;color: #FFF;"></textarea>
+				</div>
 				
-				<p class="text-center objectCenter" style="top:55%">Add Picture</p>
 			</div>
+			
+			
 			
 			
 		</div>
 		
+		<!--nan new-->
+		<div class="row" style="margin-top: -10px;">
+			<div id="" class="form-group form-group-sm">
+				<div class="icon48 icon-mic" id="editSound" style="margin: 0 auto;margin-top: 90;"></div>
+				<input style="display: none;" type="file" name="audio_upload" id="audio_upload" accept="audio/*"  />
+			</div>
+		</div>
+		<!--
 		<div class="row marginB20" style="margin-top: -10px;">
 			<div class="col-xs-3 col-sm-3">
 				<div id="" class="form-group form-group-sm">
@@ -35,7 +47,6 @@ $_GET['pageid'];
 						<i class="icon-text " >editText</i> 
 					</div>
 					<input type="hidden" name="editText"  />
-					<!--<input type="text" name="editText" id="editText" />-->
 				</div>
 			</div>
 			<div class="col-xs-3 col-sm-3">
@@ -62,13 +73,22 @@ $_GET['pageid'];
 			</div>
 			
 		</div>
+		-->
 		<div style="display:none;" id = "show_description_page">
 			<label for="description_page" class="marginT10 color-blue">เนื้อเรื่อง</label>
-			<textarea class="form-control marginB20" id="description_page" rows="3">  </textarea>
+			<textarea class="form-control" id="description_page" rows="3">  </textarea>
 		</div>
-		<div class="btn-confirm btn-ok">
-			<button type="submit" id = "SavePage" class="btn btn-primary wp100">SavePage</button>
-		</div>							  
+			
+		
+		<div class="row " >
+			<div class="col-xs-12">
+				<div  class="text-center" >
+					 <button type="button" class="btn btn-back" style="width:80px" id="backBtn">Back</button>
+					 <button type="button" class="btn btn-info" style="width:80px" id="SavePage">Add</button>
+				</div>
+				<p class="marginB10"></p>
+			</div>
+		</div>	
 	</form>
 </div>
 <script>
@@ -92,6 +112,21 @@ $_GET['pageid'];
 			$('#html_btn2').click();
 		});
 		
+		
+		//สั่งให้ปุ่ม อัดเสียงทำงาน
+		$('#editSound').bind("click" , function () {
+			$('#audio_upload').click();
+		});
+		
+		
+		
+		$("#backBtn").click(function(){ 
+			alert("back")
+		});
+		
+		
+		
+		$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 		$("#editText").click(function(){ /// กดเพิ่มเนื้อเรื่องนิทาน
 			var show_description_page = document.getElementById("show_description_page");
 			show_description_page.style.display = "block";

@@ -54,7 +54,7 @@
 					<input type="text" class="form-control" id="Detail" placeholder="Topic ...." name="" >
 					<div class="borderBlue" id="showPic_news">
 						<div class="boxIconCamera">
-							<i class="glyphicon glyphicon-plus"></i>
+							<i class="glyphicon glyphicon-camera"></i>
 						</div>
 						<p class="color-blue text-center" style="margin:0">Add Picture News</p>
 					</div>
