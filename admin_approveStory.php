@@ -1,5 +1,6 @@
 <div class="row adminApproveStoryPage">
 	<div class="marginAuto divBtn min-h">
+		<div class="icon24 icon-back" id="closeBtn" style="position: absolute;z-index: 999;"></div>
 		<div class="row marginAuto boxImgLogo">
 			<p><b>Apporve Story</b></p>
 		</div>
@@ -100,6 +101,13 @@
 				}
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
+		});
+		
+		
+		//ปุ่ม back
+		$( "#closeBtn" ).click(function() { 
+			//alert(categoryid);
+			window.location.href="main.php?page=admin";
 		});
 		
 	});

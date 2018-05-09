@@ -1,13 +1,13 @@
 <div class="row adminManageStoryPage">
 	<div class="marginAuto divBtn min-h">
-		<div class="icon32 icon-close" id="closeBtn" style="position: absolute;z-index: 999;"></div>
+		<div class="icon24 icon-back" id="closeBtn" style="position: absolute;z-index: 999;"></div>
 		<div class="row marginAuto boxImgLogo">
 			<p><b>Manage Story</b></p>
 		</div>
 		<div class="iconApproveHead icon48 icon-manage marginB10"></div>
 		<div class="blockAdmin marginAuto marginT20" style=" margin-bottom: 0px;">
 		
-			<div class="" style="padding-top:50px;">
+			<div class="" style="padding-top:30px;">
 				<select name="Myselect" id="Myselect"  class="form-control myselect">
 					<option style="width:50px;"  value="0">All</option>
                 </select>
@@ -87,9 +87,15 @@
         /// ---------------------------------ถ้ามีการเลือก categoyr ให้ไปดึงข้อมูลเฉพาะที่เลือกมาแสดง------------------------------
 		$( "#Myselect" ).change(function() { 
 			var categoryid = $("#Myselect").val();
-			alert(categoryid);
+			//alert(categoryid);
 			loadStory(categoryid);
 		});
+		$( "#closeBtn" ).click(function() { 
+			
+			//alert(categoryid);
+			window.location.href="main.php?page=admin";
+		});
+		
 	});
 	
 	//////////////////////////////////////////////////////////////////-------------โหลดนิทาน มาแสดง-------------------------//
@@ -130,7 +136,7 @@
 				}
 				else{
 					$('#showHomeStory').empty();
-					var imgStory = "<div > ไม่พบนิทาน </div>";
+					var imgStory = "<div class='text-center text-blue' > ไม่พบนิทาน </div>";
 					$('#showHomeStory').append(imgStory);
 				}
 				

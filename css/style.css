@@ -323,6 +323,12 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+.icon-back{
+	background-image: url('../icon/back.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+	
+}
 
 .iconNbr{
 	right: -34px;
@@ -673,8 +679,8 @@ body{
 
 .adminManageStoryPage #addBtn{
     position: absolute;
-    right: 20;
-    top: 50;
+    right: 20px;
+    top: 30px;
 }
 .adminAddNewsPage #showPic_news{
 	width: 90%;
@@ -880,7 +886,7 @@ ul.select-list li.active
     background: #dddddd;
     padding-top: 0px;
     position: relative;
-    top: -35px;
+    top: -20px;
 	margin-bottom:20px;
 }
 .blockRegis{
