@@ -166,7 +166,8 @@ $(document).ready(function(){
 
    <div class="masterProfile">
 	   <i class="fa fa-sign-out-alt"></i>
-	   <span class="glyphicon glyphicon-log-out">
+	   <!--<span class="glyphicon glyphicon-log-out">-->
+	   <div class="glyphicon glyphicon-log-out" id="" data-toggle="modal" data-target="#exampleModal"></div>
    </div>
    <div class="nameLogo" style="width: 130px; height: 53px;"></div>
    <div class="w100 logoHome login marginT10" style="position:retative; top:-20px;"></div>
@@ -295,7 +296,14 @@ $(document).ready(function(){
 $(document).ready(function(){
 //=======================>>>>> logout <<<<<=======================
 	$(".glyphicon-log-out").click(function(){ 
-		window.location.href="logout.php";
+		
+		
+		$(".modal-body").html("ออกจากระบบ")
+		
+		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
+			window.location.href="logout.php";
+		})
+		
 	});
 	
 	/*$(".homePage").click(function(){ 
