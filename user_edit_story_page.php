@@ -2,31 +2,47 @@
 session_start();
 $_GET['storyid'];
 ?>
-<br>
-<div id = "showAllPage" class = "showAllPage marginAuto myStoryPage"> 
-	<form class="marginT20 marginAuto" style="width :90%; ">
-		<div class="form-group">
-			<label for="">Story Name : <span id="showStoryname"></span></label>
-			<input type="hidden" class="form-control" id="showStoryid">
-		</div>
-	</form>
-	<div class="form-group paddingT10 marginAuto divBtn" style="height: 260px;">
-		<center>
+<div class="row userEditPage">
+	<div class="marginAuto divBtn min-h">
+		<p class="text-center text-blue marginT10" ><b>Story Name : <span class="text-orenge" id="textStory"></span> </b></p>
 		<div class="marginAuto marginB20" style="width:90%; height:auto;">
-			<div id = "showpic_Allpage"></div>
+			<p style="text-align:  left; font-style:italic; padding-left: 10px;    margin-bottom: 0px;">
+				<i class="glyphicon glyphicon-triangle-bottom text-14 text-blue"></i>
+				Click button for Add picture and Record
+			</p>
+			<div class="text-center marginAuto" style="width:95%; height:100%; background-color:#bbd3de; border-radius: 5px;">
+			
+				<div id="" class="form-group">
+					<div class='row marginAuto'  style="width:95%" id="showStory" >
+						<!--
+					    <div class="col-xs-4 col-lg-2 boxImg"> 
+							<div class="viewDetail" > 
+								<div class="imgbox icon-page1">
+									<div class="iconNbr"><span class="text-white">1<span></div>
+								</div> 
+							</div>
+						</div>
+						-->
+					</div>
+				</div> 
+			</div>
+			<div class="row marginT20">
+				<div class="col-xs-12">
+					<div  class="text-center sizeBtn " >
+						<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
+						<button type="button" class="btn btn-info" style="" id="updateBtn">Update</button>
+					</div>
+					<p class="marginB10"></p>
+				</div>
+			</div>
 		</div>
-		</center>
 	</div>
-	<div class="btn-confirm"> 
-		<button type="button" id = "finish" class="btn btn-primary btn-confirm"  >Finish</button>
-	</div>
-	<br>
 </div>
-<script>
+
+<script type="text/javascript">
 	var story_id = <?php echo $_GET['storyid'];?> ;
 	$(document).ready(function(){
-		//$(".storyPage").addClass('active');
-		//$(".adminPage").hide();
+		//สีฟ้าที่ปุ่ม admin
 		<?php 
 			if($_SESSION["role_id"]== 0 ){ ///admin
 				echo "$('.storyPage').hide(); ";
@@ -38,34 +54,10 @@ $_GET['storyid'];
 			}
 			
 		?>
+		//สี bg
+		$(".mainDetail").css('background-color', '#fcf8e3');
 		
-		//------------------------------------------->> แสดงหน้าเปล่า 10 หน้า <<----------------------------------------
-		$.ajax({
-			type:'POST',
-			url:'qs/qs_showAllPage.php',
-			dataType: "json",
-			data: {story_id:story_id},
-			success:function( datajson ) {  
-				
-				var img = "";						
-				if(datajson.length !=0){
-					$('#showpic_Allpage').empty();
-					$.each(datajson, function(i,item){
-						var no =i+1;
-						if(datajson[i].picture == 'NULL' ){
-							img = " <div class='col-xs-3 col-lg-2'><button id = 'pic_' value ='"+no+"' onClick = 'pageAddpicture(this.value);' > <img src ='imgStory/img_00.png' style=' width: 45px; height: 45px;' />  </button> </div> "; 
-						}else{
-							img = " <div class='col-xs-3 col-lg-2'><button id = 'pic_' value ='"+no+"' onClick = 'pageAddpicture(this.value);' > <img src ='imgStory/"+ datajson[i].picture + "'  style=' width: 45px; height: 45px;' />  </button></div>"; 
-						}
-						$('#showpic_Allpage').append(img);	
-					});	
-				}
-				else{
-					  alert("ไม่พบข้อมูลหน้านิทาน");
-				}
-			},
-			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
-		});
+		$("#textStory").text("TEST..........")
 		//------------------------------------------->> แสดงชื่อเรื่อง <<----------------------------------------
 		$.ajax({
 			type:'POST',
@@ -74,8 +66,7 @@ $_GET['storyid'];
 			data: {storyid:story_id},
 			success:function( datajson ) {  
 				if(datajson.length !=0){ 
-					var showStoryname = document.getElementById("showStoryname");
-					showStoryname.innerHTML = ""+datajson[0].story_name+"" ;
+					$("#textStory").text(datajson[0].story_name)
 				}
 				else{
 					  alert("ไม่พบข้อมูลหน้านิทาน");
@@ -83,10 +74,60 @@ $_GET['storyid'];
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 		});
-		///---------------------------- กดตกลงหลังจากเพิ่มหน้าหมดแล้ว---------------------
-		$("#finish").click(function(){ 
-			//window.location.href="main.php?page=play_storydetail_formystory&storyID="+story_id+"";
-			//window.history.back();
+		//วนสร้าง กรอบ img 
+		for (i = 1; i < 10; i++) { 
+			//alert(i)
+			var div = '<div class="col-xs-4 col-lg-2 boxImg"> '+
+							'<div class="viewDetail" >'+
+								'<div class="imgbox icon-page1">'+
+									'<div class="iconNbr"><span class="text-white">'+i+'<span></div>'+
+								'</div>'+
+							'</div>'+
+					  '</div>'
+		   // $("showStory")
+			$('#showStory').append(div);	
+		}
+		//------------------------------------------->> แสดงหน้าเปล่า 10 หน้า <<----------------------------------------
+		$.ajax({
+			type:'POST',
+			url:'qs/qs_showAllPage.php',
+			dataType: "json",
+			data: {story_id:story_id},
+			success:function( datajson ) {  
+				var img = "";						
+				if(datajson.length !=0){
+					$('#showStory').empty();
+					$.each(datajson, function(i,item){
+						var no =i+1;
+						var div = '<div class="col-xs-4 col-lg-2 boxImg"> '+
+										'<div class="viewDetail" data-img='+datajson[i].page_number+'>'+
+											'<div class="imgbox icon-page1">'+
+												'<div class="iconNbr"><span class="text-white">'+no+'<span></div>'+
+											'</div>'+
+										'</div>'+
+								  '</div>'
+							$('#showStory').append(div);
+					});
+					/*-----------------------เมื่อคลิ้กหน้าแต่ละหน้า-----------------*/
+					$(".viewDetail").click(function(){ 
+						var thisId = $(this).data('img');
+						alert(story_id+"-"+thisId);
+						window.location.href="main.php?page=user_edit_story_page_detail&storyid="+story_id+"&pageid="+thisId+"";
+					/*	window.location.href="main.php?page=create_page_detail&storyid="+story_id+"&pageid="+thisId+"";*/
+					});					
+				}
+				else{
+					  alert("ไม่พบข้อมูลหน้านิทาน");
+				}
+			},
+			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
+		});
+		$("#backBtn").click(function(){
+			/*window.location.href="main.php?page=admin_manageStoryEdit"; */
+			window.location.href="main.php?page=uesr_edit_story&storyidToEdit="+story_id;
+		});
+		///---------------------------- กดอัพเดทหลังจากเพิ่มหน้าหมดแล้ว---------------------  
+		$("#updateBtn").click(function(){
 			<?php 
 				if($_SESSION["role_id"]== 0 ){ ///admin
 					echo 'window.location.href="main.php?page=admin_manageStory";';
@@ -96,10 +137,12 @@ $_GET['storyid'];
 				}
 			?>
 		});
-	});
-	function pageAddpicture(pageNumber) { // กดปุ่มเลือกหน้าที่จะเพิ่ม เนื้อเรื่องกับภาพ
-		alert(story_id+"+"+pageNumber);
-		window.location.href="main.php?page=user_edit_story_page_detail&storyid="+story_id+"&pageid="+pageNumber+"";
 		
-	}
+		
+		
+	});
+	
+	
+		
+	
 </script>

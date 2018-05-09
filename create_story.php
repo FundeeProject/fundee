@@ -122,7 +122,15 @@ $_SESSION['user_id'];
 		});
 		
 		$("#backBtn").click(function(){
-			alert("ทำด้วย")
+			/*window.location.href="main.php?page=mystory";*/
+			<?php 
+				if($_SESSION["role_id"]== 0 ){ ///admin
+					echo 'window.location.href="main.php?page=admin_manageStory";';
+				}
+				else if($_SESSION["role_id"]== 1 ){
+					echo 'window.location.href="main.php?page=mystory";';
+				}
+			?>
 			//window.location.href="main.php?page=admin_manageStoryEdit";
 		});
 		

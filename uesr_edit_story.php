@@ -99,7 +99,18 @@ $_GET['storyidToEdit'];
 		$('#cancelBtn').bind("click" , function () {
 			//alert("ยกเลิกการแก้ไข");
 			//window.location.href="main.php?page=play_storydetail_formystory&storyID="+storyid+"";
-			window.history.back();
+			//window.history.back();
+			<?php 
+				if($_SESSION["role_id"]== 0 ){ ///admin
+					//echo 'window.location.href="main.php?page=admin_manageStory";';
+					//main.php?page=play_storydetail_formystory&storyID=80&formPage=admin_manageStory
+					echo 'window.location.href="main.php?page=play_storydetail_formystory&storyID='.$_GET['storyidToEdit'].'&formPage=admin_manageStory ";';
+				}
+				else if($_SESSION["role_id"]== 1 ){
+					//echo 'window.location.href="main.php?page=mystory";';
+					echo 'window.location.href="main.php?page=play_storydetail_formystory&storyID='.$_GET['storyidToEdit'].'&formPage=mystory";';
+				}
+			?>
 		})
 		//-------------------------->> เลือกภาพ <<---------------------------
 		$('#showPic').bind("click" , function () {

@@ -1,0 +1,22 @@
+หน้าเพจหลายๆหน้า
+user_edit_story_page //ทุกคนกดแก้ไขนิทาน
+
+create_page // ทุกคนกดสร้างนิทาน
+
+/////ยูสเซอรสร้างนิทาน 
+1. create_story > กดครีเอท  create_page  > กดแบค  uesr_edit_story 	>กดอัพเดท user_edit_story_page >กดอัพเดท   mystory
+																>กดแบ็ค  play_storydetail_formystory
+				>  กดฟินิช  mystory
+////ยูสเซอร์แก้ไขนิทาน
+3. uesr_edit_story  > กดอัพเดท  4. user_edit_story_page  >กดอัพเดท mystory
+													   >กดแบ็ค uesr_edit_story
+
+ ///แอดมินสร้างนิทาน
+ create_story 	> กดครีเอท   create_page	> กดแบ็ค  uesr_edit_story
+										> กดฟินิช  admin_manageStory
+				> กดแบ็ค  admin_manageStory
+				
+ ///แอดมินแก้ไขนิทาน
+ uesr_edit_story 	> กดอัพเดท  user_edit_story_page 	> กดอัพเดท admin_manageStory
+													> กดแบ็ค uesr_edit_story
+					> กดแบ็ค play_storydetail_formystory   --ok---

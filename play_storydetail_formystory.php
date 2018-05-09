@@ -57,7 +57,15 @@ $_GET['formPage'];
 		/*-------------------กดกากบาท----------------------*/
 		$("#closeBtn").click(function(){ 
 			//window.location.href="main.php?page=mystory";
-			window.history.back();
+		//	window.history.back();
+			<?php 
+				if($_SESSION["role_id"]== 0 ){ ///admin
+					echo 'window.location.href="main.php?page=admin_manageStory";';
+				}
+				else if($_SESSION["role_id"]== 1 ){
+					echo 'window.location.href="main.php?page=mystory";';
+				}
+			?>
 		});
 		
 		/*-------------------กดลบนิทาน----------------------*/
