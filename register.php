@@ -16,6 +16,42 @@ include "include/function.php";*/
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+<body class="bgHome">
+		<div class="navbarH">
+			 <div class="nameLogo" style="width: 130px; height: 53px;"></div>
+			 <div class="w100 logoRegis login marginT10" style="position:retative; top:-10px;"></div>
+			 <div class="row ">
+				<div class="col-xs-12 col-lg-offset-3 col-lg-6">
+					<div class="divRegis contentStory marginB10 border-bottom"><p>&nbsp</p>
+						<div class="boxRegis">
+							<div style="position: relative;top:-10px;">
+								<p class="text-center text-blue"><b>REGISTER</b></p>
+							</div>
+							
+							<div class="blockRegis marginAuto">
+								</br>
+								<input type="text" class="form-control" id="username" placeholder="username" name="username">
+								</br>
+								<input type="text" class="form-control" id="email" placeholder="email" name="email">
+								</br>
+								<input type="password" class="form-control" id="pwd" placeholder="password" name="pwd">
+							</div>
+							
+							 <div class="form-group marginT20 marginAuto" style="width:195px;">        
+								<div class="col-sm-10 marginAuto" style="width:195px;">
+									<button type="button" class="btn btn-back" style="width: 80px;" id="back">Back</button>
+									<button type="button" class="btn btn-info" style="width: 80px;" id="regis">Register</button>
+								</div>
+								<p class="marginB10"></p>
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+<!--
 <body class="bgHome container">
 	<div class="navbarH">
 		
@@ -25,14 +61,22 @@ include "include/function.php";*/
 
 			<div class="row ">
 				<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-					<div class="bgW_login contentStory marginB10 border-bottom" style="">
+					<div class="contentStory marginB10 border-bottom" style="    background-color: #FFF;
+    width: 90%;
+    height: auto;
+    margin-top: -60px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    border-radius: 10px;">
 						<section class="area">
 							 <div class="row">
 								<div class="col-md-12" style="padding:0px;">
 									<div class="row adminPage">
 										<div class="marginAuto divBtn min-h">
 											<div class="row marginAuto"  style="width:95%;">
+												
 												<div style="position: relative;top: 60px;"><p class="text-center text-blue">REGISTER</p></div>
+												
 												<div class="blockRegis marginAuto" style="top: 80px;">
 													</br>
 													<input type="text" class="form-control" id="username" placeholder="username" name="username">
@@ -41,13 +85,10 @@ include "include/function.php";*/
 													</br>
 													<input type="password" class="form-control" id="pwd" placeholder="password" name="pwd">
 												</div>
-												 <div class="form-group marginT20">        
-													<div class="col-sm-10" style="width:200px;margin: 0 auto;">
+												 <div class="form-group marginT20 marginAuto" style="width:195px;">        
+													<div class="col-sm-10 marginAuto" style="width:195px;">
 													    <button type="button" class="btn btn-back" style="width: 80px;" id="back">Back</button>
-														<!--<button type="button" class="btn btn-success" style="width: 80px;" id="regis">Submit</button>-->
 														<button type="button" class="btn btn-info" style="width: 80px;" id="regis">Register</button>
-														<!--<button type="button" class="btn btn-secondary" style="width: 80px;" id="back">Back</button>-->
-														
 													</div>
 													<p class="marginB10"></p>
 												</div>
@@ -61,6 +102,7 @@ include "include/function.php";*/
 				</div>
 			</div>
 	</div>
+	-->
 	 <script type="text/javascript">
 	$(document).ready(function(){
 		

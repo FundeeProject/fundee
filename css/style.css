@@ -829,6 +829,24 @@ ul.select-list li.active
 {
   background-color: #999999;
 }
+/*Regis*/
+
+.divRegis{
+	background-color: #FFF;
+	width: 90%;
+	height: 380px;
+	margin-top: -60px;
+	margin-left: auto!important;
+	margin-right: auto!important;
+	border-radius: 10px;
+}
+.boxRegis{
+	background-color: rgb(252, 248, 227);
+    height: 300px;
+    margin-top: 50px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
 /********************************************/
 
 .list-group-item.active{
@@ -867,12 +885,12 @@ ul.select-list li.active
 }
 .blockRegis{
 	width:270px;
-	min-height: 200px;
+	min-height: 190px;
     border-radius: 15px;
     margin: 0 auto;
     background: #dddddd;
     padding-top: 0px;
-    margin-top: 70px;
+    
 }
 .blockRegis input{
 	width: 70%;
