@@ -165,7 +165,10 @@ body{
 	height: 64px;
 }
 
-.homeIcon{
+.myStoryPage .homeIcon{}
+
+.homeIcon,
+.typeIcon{
 	width: 26px;
     height: 26px;
     position: relative;
@@ -173,6 +176,9 @@ body{
     top: -22px;
     right: -26px;
 }
+.storyPage .homeIcon{top: -45px!important;}
+.storyPage .typeIcon{top: -45px!important;}
+
 .icon-play{
     background-image: url('../icon/play.png');
     background-repeat: no-repeat;
@@ -328,6 +334,21 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 	
+}
+.icon-share1{
+	background-image: url('../icon/share1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-share2{
+	background-image: url('../icon/share2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.icon-wait{
+	background-image: url('../icon/wait.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .iconNbr{
@@ -930,7 +951,7 @@ ul.select-list li.active
 
 .myStoryPage .divBtn{
 	/*width:320px;*/
-	background-color: #bbd3de!important; 
+	background-color: #bbd3de!important;
 	border-radius: 5px;
 	position: relative; 
 }
@@ -1004,7 +1025,7 @@ ul.select-list li.active
 
 #btCerate{
 	position: absolute;
-	right: 0px;
+	margin-left: 120px;;
 }
 
 /*fullPage*/

@@ -46,7 +46,7 @@ include "include/function.php";
 				 -->
 				 <div class="form-group">        
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary col-sm-12 wp100" onclick="login()" id="login">Connect with Facebook</button>
+						<button type="submit" class="btn btn-primary col-sm-12 wp100" style="background-color: #3b5998;" onclick="login()" id="login">Connect with Facebook</button>
 					</div>
 				</div>
 				<div id = "status"> </div>
@@ -73,10 +73,10 @@ include "include/function.php";
 					</div>-->
 					<div class="form-group">        
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="button" class="btn btn-success wp100" id="singin">Sign In</button>
+							<button type="button" class="btn btn-success wp100" style="background-color: #99c432;border-color: #99c432;" id="singin">Sign In</button>
 						</div>
 						<div class="col-sm-offset-2 col-sm-10 text-center marginT10 marginB10">
-							<a href="register.php">Have an account? Login</a>
+							<a href="register.php" style="color: #999;">Have an account? Log in ></a>
 						</div>
 					</div>
 				</div>

@@ -22,7 +22,7 @@ $_GET['pageid'];
 				
 				<input type="file" name="pic_upload_page" id="html_btn2" OnChange="PreviewPage(this)" style="display:none"/>
 				<div style="position: relative;top: 130px;">
-					<textarea class="form-control" id="editText" rows="3" placeholder="Storyline : " style="border-radius: 10px;background-color: #085b6b;color: #FFF;"></textarea>
+					<textarea class="form-control" id="description_page" rows="3" placeholder="Storyline : " style="border-radius: 10px;background-color: #085b6b;color: #FFF;"></textarea>
 				</div>
 				
 			</div>
@@ -84,7 +84,7 @@ $_GET['pageid'];
 			<div class="col-xs-12">
 				<div  class="text-center" >
 					 <button type="button" class="btn btn-back" style="width:80px" id="backBtn">Back</button>
-					 <button type="button" class="btn btn-info" style="width:80px" id="SavePage">Add</button>
+					 <button type="submit" class="btn btn-info" style="width:80px" id="SavePage">Add</button>
 				</div>
 				<p class="marginB10"></p>
 			</div>
@@ -127,10 +127,10 @@ $_GET['pageid'];
 		
 		
 		$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
-		$("#editText").click(function(){ /// กดเพิ่มเนื้อเรื่องนิทาน
+		/*$("#editText").click(function(){ /// กดเพิ่มเนื้อเรื่องนิทาน
 			var show_description_page = document.getElementById("show_description_page");
 			show_description_page.style.display = "block";
-		});
+		});*/
 		//------------------------------------------->> แสดงชื่อเรื่อง <<---------------------------------------->
 		$.ajax({
 			type:'POST',
@@ -149,10 +149,13 @@ $_GET['pageid'];
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 		});
 		//------------------------------------------->> แก้ไขหน้าของนิทานเมื่อด Save Page <<---------------------------------------->
+		//$("#SavePage").click(function(e){ 
+		
 		$("#createform2").on("submit",function(e){ 
 			e.preventDefault();
 			//----------------ข้อมูลที่จะส่งไปอัพเดท
-			var  description_page = document.getElementById("description_page");alert($("#description_page").val());
+			var  description_page = document.getElementById("description_page");
+			alert($("#description_page").val());
 			var formData2 = new FormData($(this)[0]);
 			formData2.append("story_id",story_id);
 			formData2.append("pageNumber",pageNumber_);
@@ -163,6 +166,7 @@ $_GET['pageid'];
 				alert("กรุณากรอกข้อมูลให้ครบ");
 			}
 			else{
+				
 				//alert("ครบ"+pageNumber_);
 				///////อัพเดทลงฐานข้อมูล
 				$.ajax({

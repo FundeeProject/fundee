@@ -24,9 +24,9 @@
 			<form class="form-horizontal" method="post" name="" id="">
 				<div class="form-group marginAuto marginT10" style="width: 250px;">
 					<span class="glyphicon glyphicon-search"></span>
-					<input type="text"  class="form-control borderBlue" id="textSearch" placeholder="" >
+					<input type="text"  class="form-control borderBlue" id="textSearch" placeholder="search" style="border-radius: 20px;" >
 				</div> 
-				<p class="marginT20" style="">All Story</p>
+				<!--<p class="marginT20" style="">All Story</p>-->
 				<div id="homeStory" class="form-group">
 					<div class='row'  style="width:95%" id="showHomeStory" ></div>
 				</div> 
@@ -54,7 +54,7 @@ $(document).ready(function(){
 			echo "$('.adminPage').hide(); ";
 		}
 	?>
-	
+	$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 	//=======================>>>>> News <<<<<=======================
 	$.ajax({
 		type:'POST',
@@ -131,7 +131,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 					}
 					else{
@@ -141,7 +141,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p  class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 					}
 					$('#showHomeStory').append(imgStory);
@@ -183,7 +183,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p  class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 						}
 						else{
@@ -193,7 +193,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p  class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 						}
 						$('#showHomeStory').append(imgStory);

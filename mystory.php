@@ -1,23 +1,24 @@
-<div class="row homePage">
+<div class="row storyPage">
 	<div class="marginAuto divBtn">
 		<center>
 		<div class="marginAuto" style="height:auto;">
 			<!----><br>
 			<form class="form-horizontal" method="post" name="" id="">
-				<div class="form-group marginAuto" style="width: 250px;">
-					<select name="Myselect" id="Myselect"  class="form-control myselect">
-						<option value="9" selected>ทั้งหมด</option>
-						<option value="0" >ยังไม่แชร์</option>
-						<option value="1" >รออนุมัติ</option>
-						<option value="2" >อนุมัติแล้ว</option>
-					</select>
-				</div>  
-				<p class="marginT20" style="">All Story</p>
+				<p class="text-blue"><b>MY STORY</b></p>
+				<div id="btCerate" class="btn icon-add btn-circle" style="top:47px;width:40px;height:40px;"><i class="icon-new"></i></div>
+				<select name="Myselect" id="Myselect"  class="form-control myselect text-blue" style="width: 240px; margin-left: -20;">
+					<option value="9" selected>ทั้งหมด</option>
+					<option value="0" >ยังไม่แชร์</option>
+					<option value="1" >รออนุมัติ</option>
+					<option value="2" >อนุมัติแล้ว</option>
+				</select>
+				</br>
+				
 				<div id="homeStory" class="form-group">
 					<div class='row'  style="width:95%" id="showHomeStory" ></div>
 				</div> 
 				<div style="width:270px;"  class="objectCenter">
-					<div id="btCerate" class="btn icon-add btn-circle"><i class="icon-new"></i></div>
+					
 				</div>
 			</form>
 			<br>
@@ -33,7 +34,7 @@ $(document).ready(function(){
 	
 	$(".storyPage").addClass('active');
 	$(".adminPage").hide();
-	
+	$(".mainDetail").css('background-color', '#fcf8e3');//C1C319
 	//=======================>>>>> โหลดนิทานทั้งหมดของ user <<<<<=======================
 	var Myselect = document.getElementById("Myselect").value;
 		callStoryByStatus(Myselect);
@@ -66,11 +67,11 @@ function callStoryByStatus(status_id) {
 				$.each(datajson, function(i,item){
 					var iconShare = "";
 					if(datajson[i].status_id == 0){ /*----------ยังไม่กดแชร์-----------*/
-						iconShare ='<div class="homeIcon icon-folder shareStory" data-img='+datajson[i].story_id+' ></div>';
+						iconShare ='<div class="typeIcon icon-share1 shareStory" data-img='+datajson[i].story_id+' style="width: 26px;height: 26px;position: relative;z-index: 999;top: -50px;right: -26px;"></div>';
 					}else if(datajson[i].status_id == 1){ /*----------กดแชร์แล้วรออนุมัติ-----------*/
-						iconShare ='<div class="homeIcon icon-approveWait " data-img='+datajson[i].story_id+' ></div>';
+						iconShare ='<div class="typeIcon icon-wait " data-img='+datajson[i].story_id+' ></div>';
 					}else if(datajson[i].status_id == 2){ /*----------อนุมัติแล้ว-----------*/
-						iconShare ='<div class="homeIcon icon-check " data-img='+datajson[i].story_id+' ></div>';
+						iconShare ='<div class="typeIcon icon-share2 " data-img='+datajson[i].story_id+' ></div>';
 					}
 					if(datajson[i].story_pic == 'NULL' ){
 						img = '<div class="col-xs-4 col-lg-2  boxImg"> '+
