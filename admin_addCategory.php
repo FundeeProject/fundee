@@ -41,6 +41,8 @@
 			//alert(Categoryname)
 			if(Categoryname == "" ){
 				alert("กรุณากรอกข้อมูลให้ครบ");
+				//$("#exampleModal").modal()// เปิดใช้ popup
+				//$(".modal-body").html(data)	 //ใส่ข้อความที่ต้องการ alert	
 			}else{
 				$.ajax({
 					type:'POST',

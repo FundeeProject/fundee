@@ -97,7 +97,7 @@
 					
 				}
 				else{
-					$('#showHomeStory').append("<p class='text-blue'> ไม่มีนิทานที่รอการอนุมัติ </p>");
+					$('#showHomeStory').append("<p class='text-blue text-center'> ไม่มีนิทานที่รอการอนุมัติ </p>");
 				}
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

@@ -23,7 +23,7 @@ $_SESSION['user_id'];
 						</select>
 						<!--<label for="description" class="marginT10 color-blue">Short Description</label>-->
 						
-						<textarea class="form-control boxInputBlue boxTextarea marginT20" id="description" rows="3" placeholder="Describe yourself here..."></textarea>
+						<textarea class="form-control boxInputBlue boxTextarea marginT20" id="description" rows="3" placeholder="Short Description"></textarea>
 						<span class="text-pink text-12" >use less then 255 characters.</span>
 						<br><br>
 
@@ -41,8 +41,8 @@ $_SESSION['user_id'];
 					 <div class="row" >
 						<div class="col-xs-12">
 							<div  class="text-center" >
-								 <button type="button" class="btn btn-back" style="width:80px" id="backBtn">BACK</button>
-								 <button type="submit" class="btn btn-info" style="width:80px" id="CREATEtitel">CREATE</button>
+								 <button type="button" class="btn btn-back" style="width:80px" id="backBtn">Back</button>
+								 <button type="submit" class="btn btn-info" style="width:80px" id="CREATEtitel">Create</button>
 							</div>
 							<p class="marginB10"></p>
 						</div>

@@ -15,7 +15,7 @@ $_GET['page'];*/
 		<div class="blockAdmin marginAuto marginT20">
 			<div class="marginT20 iconBtn">
 				<div class="icon36 icon-add" id="addBtn" ></div>
-				<div class="icon36 icon-delete" id="" data-toggle="modal" data-target="#exampleModal"></div>
+				<div class="icon36 icon-delete deleteBtn" id="" data-toggle="modal" data-target="#exampleModal"></div>
 				<!--<div class="icon36 icon-delete" id="delBtn"></div>-->
 			</div>
 			<div class="" style="padding-top:80px;">
@@ -88,10 +88,12 @@ $_GET['page'];*/
 			//window.location.href="main.php?page=addmin_addNews";
 			window.location.href="main.php?page=admin_addNews";
 		});
+		
+		
+		$(".deleteBtn").click(function(){});
 
 		//popup
 		$(".modal-body").html("ยืนยันการลบข้อมูล")
-		
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			var text = $('#textNews li.active').text();
 			var newId =  $('#textNews li.active').data("id") // มาจาก  data-id='+datajson[i].news_id+'

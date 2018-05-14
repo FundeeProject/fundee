@@ -8,7 +8,7 @@
 		<div class="blockAdmin marginAuto marginT20" style=" margin-bottom: 0px;">
 		
 			<div class="" style="padding-top:30px;">
-				<select name="Myselect" id="Myselect"  class="form-control myselect">
+				<select name="Myselect" id="Myselect"  class="form-control myselect text-blue" style="border-radius: 0px;    background-color: #fff;">
 					<option style="width:50px;"  value="0">All</option>
                 </select>
                 <div class="icon36 icon-add" id="addBtn"></div>

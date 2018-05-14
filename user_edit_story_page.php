@@ -29,7 +29,7 @@ $_GET['storyid'];
 			<div class="row marginT20">
 				<div class="col-xs-12">
 					<div  class="text-center sizeBtn " >
-						<button type="button" class="btn btn-back" style="" id="backBtn">BACK</button>
+						<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
 						<button type="button" class="btn btn-info" style="" id="updateBtn">Update</button>
 					</div>
 					<p class="marginB10"></p>

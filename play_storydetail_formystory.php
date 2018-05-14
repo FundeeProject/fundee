@@ -11,9 +11,10 @@ $_GET['formPage'];
 			<div class="img" id="showImg" style="background:url(imgStory/56_00.png); top:-80px"></div>
 			<div class="divIcon" style="">
 				<div class="icon32 icon-delete2 deleteBtn" id="" data-toggle="modal" data-target="#exampleModal"></div>
+				<!--<div class="icon32 icon-delete2 deleteBtn" id="" ></div>-->
 				<div class="icon48 icon-play playBtn"></div>
 				<div class="icon32 icon-edit approveBtn" >
-					<input class="textPopup" type='hidden' value='aaaaaaaaaa'/>
+					<input class="textPopup" type='hidden' value=''/>
 				</div>
 			</div>
 			<div style="position: relative;top: -30px;">
@@ -25,6 +26,10 @@ $_GET['formPage'];
 		</div>
 	</div>
 </div>
+
+
+
+
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -68,11 +73,14 @@ $_GET['formPage'];
 			?>
 		});
 		
+		$(".deleteBtn").click(function(){});
 		/*-------------------กดลบนิทาน----------------------*/
+		
 		//popup
 		$(".modal-body").html("ยืนยันการลบข้อมูล")
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 		
+		 alert(storyid)
 		//$(".deleteBtn").click(function(){ 
 			//var pop = confirm("ต้องการลบนิทานหรือไม่ ?");
 			//if (pop == true) {

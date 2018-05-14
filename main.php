@@ -258,39 +258,25 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-</div>
-<!--
-<div style="    width: 95%;
-    height: 40px;
-    background-color: #fcf8e3;
-    z-index: 9999;
-    position: fixed;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-    border-radius: 10px;
-    padding-bottom: 50px;">aaaaaaaaa</div>
 	
--->
+	
+</div>
 
 
 <!-- Modal -->
-
 <div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="min-height: 150px;">
-      <div class="modal-body" style="text-align:center;">
-      </div>
-      <div class="modal-footer marginAuto" style="" >
-        <!--<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>-->
-		
-        <button type="button" class="btn btn-info okBtn" id="okModalBtn" style="width:80px;">Yes</button>
+	<div class="modal-content" style="min-height: 150px;">
+	  <div class="modal-body" style="text-align:center;">
+	  </div>
+	  <div class="modal-footer marginAuto" style="" >
+		<button type="button" class="btn btn-info okBtn" id="okModalBtn" style="width:80px;">Yes</button>
 		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noModalBtn" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+	  </div>
+	</div>
   </div>
 </div>
+
 
 
 <div class="modal fade modalApprove" id="modalApprove" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
@@ -299,8 +285,6 @@ $(document).ready(function(){
       <div class="modal-body" style="text-align:center;">
       </div>
       <div class="modal-footer marginAuto" style="" >
-        <!--<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>-->
-		
         <button type="button" class="btn btn-info okBtn" id="okBtn" style="width:80px;">Yes</button>
 		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noBtn" data-dismiss="modal">Close</button>
       </div>
