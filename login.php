@@ -13,11 +13,11 @@ include "include/function.php";
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/ytLoad.jquery.js"></script>
+		<script type="text/javascript" src="js/ytLoad.jquery.js"></script>-->
 		
 			<link rel="apple-touch-icon" sizes="180x180" href="icon/logoHome.png">
 			<meta name="apple-mobile-web-app-capable" content="yes">
-			<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+			<meta name="apple-mobile-web-app-status-bar-style" content="black">
 			<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -49,7 +49,7 @@ include "include/function.php";
 						<button type="submit" class="btn btn-primary col-sm-12 wp100" style="background-color: #3b5998;" onclick="login()" id="login">Connect with Facebook</button>
 					</div>
 				</div>
-				<div id = "status"> </div>
+				<div class="text-center text-orenge" id = "status"> </div>
 				<p class="text-center marginT10">- or -</p>
 				<form class="form-horizontal" method="post" name="flogin" id="flogin">
 					<div class="form-group">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_GET['page'];
-$_GET['storyID'];
+//$_GET['storyID'];
 ?>
 <html>
 <head>
@@ -162,7 +162,7 @@ $(document).ready(function(){
 <div class="navbarH">
 	
 
-<div style="position:absolute"><?php echo $_SESSION["role_id"];?> </div>
+<div style="position:absolute"></div>
 
    <div class="masterProfile">
 	   <i class="fa fa-sign-out-alt"></i>
@@ -284,8 +284,9 @@ $(document).ready(function(){
       </div>
       <div class="modal-footer marginAuto" style="" >
         <!--<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>-->
-		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noModalBtn" data-dismiss="modal">Close</button>
+		
         <button type="button" class="btn btn-info okBtn" id="okModalBtn" style="width:80px;">Yes</button>
+		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noModalBtn" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -299,8 +300,9 @@ $(document).ready(function(){
       </div>
       <div class="modal-footer marginAuto" style="" >
         <!--<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>-->
-		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noBtn" data-dismiss="modal">Close</button>
+		
         <button type="button" class="btn btn-info okBtn" id="okBtn" style="width:80px;">Yes</button>
+		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noBtn" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ $_SESSION['user_id'];
 ?>
 <br>
 <div class="marginAuto myStoryPage showCreate" id = "showCreate" >
-	<p class="text-center text-blue marginT10"><b>STORY</b></p>
+	<p class="text-center text-blue marginT10"><b>CREATE STORY</b></p>
 	<form class="marginT20 marginAuto" style="width :90%;" method = "post" enctype = "multipart/form-data" id = "createform1" >
 		  <p class="text-center textName"></p>
 		  <div class="form-group paddingT10 marginAuto divBtn">
@@ -13,15 +13,16 @@ $_SESSION['user_id'];
 				<div class="marginAuto marginB20" style="width:90%; height:auto;">
 					  <div class="">
 					
-						<label class="marginT20 color-blue" for="Storyname">Story Name</label>
-						<input type="text" class="form-control" id="Storyname" aria-describedby="emailHelp" placeholder="">
+						<!--<label class="marginT20 color-blue" for="Storyname">Story Name</label>-->
+						<input type="text" class="form-control boxInputBlue marginT20" id="Storyname" aria-describedby="emailHelp" placeholder="Story Name">
 						
-						<label for="exampleFormControlSelect2" class="marginT10 color-blue">Category</label>
-						<select class="form-control" id="selectCategory">
+						<!--<label for="exampleFormControlSelect2" class="marginT10 color-blue">Category</label>-->
+						<select class="form-control boxInputBlue marginT20" id="selectCategory">
 						  <option value="0">Select Category</option>
 						</select>
-						<label for="description" class="marginT10 color-blue">Short Description</label>
-						<textarea class="form-control" id="description" rows="3">  </textarea>
+						<!--<label for="description" class="marginT10 color-blue">Short Description</label>-->
+						
+						<textarea class="form-control boxInputBlue boxTextarea marginT20" id="description" rows="3" placeholder="Describe yourself here..."></textarea>
 						<span class="text-pink text-12" >use less then 255 characters.</span>
 						<br><br>
 
@@ -29,7 +30,7 @@ $_SESSION['user_id'];
 						<label for="showPic" class="color-blue">Choose a cover photo</label>
 						<div class="boxImg box-90 box-camera " id="showPic">
 							<div class="boxIconCamera">
-								<i class="glyphicon glyphicon-plus"></i>
+								<i class="glyphicon glyphicon-camera"></i>
 							</div>
 							<p class="color-blue text-center" style="margin:0"></p>
 						</div>
@@ -39,7 +40,7 @@ $_SESSION['user_id'];
 					 <div class="row" >
 						<div class="col-xs-12">
 							<div  class="text-center" >
-								 <button type="button" class="btn btn-back" style="width:80px" id="backBtn">Back</button>
+								 <button type="button" class="btn btn-back" style="width:80px" id="backBtn">BACK</button>
 								 <button type="submit" class="btn btn-info" style="width:80px" id="CREATEtitel">CREATE</button>
 							</div>
 							<p class="marginB10"></p>

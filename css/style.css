@@ -1,6 +1,6 @@
 body{
-	/*font-family: Leelawadee !important;*/
-	font-family: PSL-Text_Regular !important;
+	font-family: Leelawadee !important;
+	/*font-family: PSL-Text_Regular !important;*/
 	
 	
 	
@@ -47,7 +47,18 @@ body{
     margin-left: auto!important;
     margin-right: auto!important;
 }
-
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #FFF!important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #FFF!important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #FFF!important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #FFF!important;
+}
 .color-blue{
 	color: #085b6b;
 }
@@ -415,6 +426,7 @@ body{
 	margin-left:auto;
 	margin-right:auto;    
 	position: relative;
+	border: 1px solid #085b6b;
 }
 
 .contentStory{
@@ -690,7 +702,8 @@ body{
 	margin: 0 auto;
 }
 
-.adminManageStoryPage #Myselect{
+.adminManageStoryPage #Myselect
+{
     width: 70%;
     border-radius: 25px;
     background-color: #085b6b;
@@ -698,6 +711,13 @@ body{
 	margin-left: 20px;
 }
 
+.boxInputBlue{
+	width: 100%;
+	border-radius: 25px;
+    background-color: #085b6b;
+    color: #FFF;
+}
+.boxTextarea{border-radius: 10px!important;}
 .adminManageStoryPage #addBtn{
     position: absolute;
     right: 20px;
@@ -951,7 +971,8 @@ ul.select-list li.active
 
 .myStoryPage .divBtn{
 	/*width:320px;*/
-	background-color: #bbd3de!important;
+	/*background-color: #bbd3de!important;*/
+	background-color: #e7e7e7!important;
 	border-radius: 5px;
 	position: relative; 
 }
