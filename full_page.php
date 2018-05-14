@@ -18,19 +18,22 @@ $_GET['storyid'];
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
  <style type="text/css">
-body, html {
-   /* height: 100%;
-    margin: 0;*/
-}
-
 @media screen and (orientation:portrait) {
-	body {
-		-ms-transform: rotate(90deg); /* IE 9 */
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		transform: rotate(90deg);
-	}
-		
-	
+ .fullPage {
+   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+                    transform: rotate(90deg);
+                    -ms-transform: rotate(90deg); /* IE 9 */
+     position: absolute;
+
+    transform-origin: bottom left;
+    width: 100vh;
+    height: 100vw;
+    margin-top: -100vw;
+    object-fit: cover;
+
+    z-index: 4;
+    visibility: visible;
+ }
 }
 
 </style>
