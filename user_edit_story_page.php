@@ -99,6 +99,7 @@ $_GET['storyid'];
 					$('#showStory').empty();
 					$.each(datajson, function(i,item){
 						var no =i+1;
+						if(datajson[i].picture == 'NULL' ){
 						var div = '<div class="col-xs-4 col-lg-2 boxImg"> '+
 										'<div class="viewDetail" data-img='+datajson[i].page_number+'>'+
 											'<div class="imgbox icon-page1">'+
@@ -106,6 +107,15 @@ $_GET['storyid'];
 											'</div>'+
 										'</div>'+
 								  '</div>'
+						}else{
+							var div = '<div class="col-xs-4 col-lg-2 boxImg"> '+
+										'<div class="viewDetail" data-img='+datajson[i].page_number+'>'+
+											'<div class="imgbox " style = "background-image: url(imgStory/'+datajson[i].picture+');">'+
+												'<div class="iconNbr"><span class="text-white">'+no+'<span></div>'+
+											'</div>'+
+										'</div>'+
+								  '</div>'
+						}
 							$('#showStory').append(div);
 					});
 					/*-----------------------เมื่อคลิ้กหน้าแต่ละหน้า-----------------*/
@@ -128,6 +138,7 @@ $_GET['storyid'];
 		});
 		///---------------------------- กดอัพเดทหลังจากเพิ่มหน้าหมดแล้ว---------------------  
 		$("#updateBtn").click(function(){
+			alert("อัพเดทแล้ว");
 			<?php 
 				if($_SESSION["role_id"]== 0 ){ ///admin
 					echo 'window.location.href="main.php?page=admin_manageStory";';

@@ -53,7 +53,7 @@ $_GET['storyid'];
 			var txt ="" ;
 			
 			
-			$("#okModalBtn").click(function(){
+			$("#okBtn").click(function(){
 				$.ajax({
 					type:'POST',
 					url:'qs/qs_admin_deleteStory.php',
@@ -77,20 +77,19 @@ $_GET['storyid'];
 		
 		
 		$(".playBtn").click(function(){ 
-			//alert("ทำด้วย");
 			window.location.href = "full_page.php?storyid="+storyid+"";
 		});
 	
 		
 		
-		/////////////////////////////////
+		///////////////////////////////// กดแอพพรูฟ
 		$(".approveBtn").click(function(){
 			$(".modal-body").html("Approve!!")
 			
 			
-			$("#noBtn").click(function(){
+			$("#okModalBtn").click(function(){
 				var newId =  $('#boxData').data("id") ;
-				window.location.href="main.php?page=admin_approveStory";
+				//window.location.href="main.php?page=admin_approveStory";
 				
 				$.ajax({
 					type:'POST',
@@ -109,7 +108,6 @@ $_GET['storyid'];
 					},
 					error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
 				});
-				
 			})
 			
 		})

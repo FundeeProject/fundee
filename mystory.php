@@ -7,10 +7,10 @@
 				<p class="text-blue"><b>MY STORY</b></p>
 				<div id="btCerate" class="btn icon-add btn-circle" style="top:47px;width:40px;height:40px;"><i class="icon-new"></i></div>
 				<select name="Myselect" id="Myselect"  class="form-control myselect text-blue" style="width: 240px; margin-left: -20;">
-					<option value="9" selected>ทั้งหมด</option>
-					<option value="0" >ยังไม่แชร์</option>
-					<option value="1" >รออนุมัติ</option>
-					<option value="2" >อนุมัติแล้ว</option>
+					<option value="9" selected>All my stories</option>
+					<option value="0" >Private story</option>
+					<option value="1" >waiting for approve</option>
+					<option value="2" >Public story</option>
 				</select>
 				</br>
 				

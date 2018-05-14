@@ -166,6 +166,25 @@ $_GET['storyidToEdit'];
 				alert("ข้อมูลไม่ครบ \n"+textToAlert); 
 			}
 		});
+		
+			//-----------เช็คจำนวนตัวอักษร ตอนกรอกชื่อนิทาน------//
+		$('#Storyname').keyup(function(){
+			var x = document.getElementById("Storyname").value.length ;
+			if(x > 25){
+				alert("หัวข้อข่าวต้องมีความยาวระหว่าง 1-25 ตัวอักษร");
+				var newstring = document.getElementById("Storyname").value.substring(0,25);
+				document.getElementById("Storyname").value = newstring;
+			}
+		})
+		//-----------เช็คจำนวนตัวอักษร คำอธิบายนิทาน------//
+		$('#description').keyup(function(){
+			var x = document.getElementById("description").value.length ;
+			if(x > 180){
+				alert("คำอธิบายต้องมีความยาวระหว่าง 1-180 ตัวอักษร");
+				var newstring = document.getElementById("description").value.substring(0,180);
+				document.getElementById("description").value = newstring;
+			}
+		})
 	});
 	function add_select_option(){ // ดัง category ทั้งหมดมาแสดงให้เลือก
 		$.ajax({

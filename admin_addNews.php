@@ -94,32 +94,53 @@
 		
 		$("#createform3").on("submit",function(e){
 			var str = $('#img3').attr('src');
-			if (typeof str === "undefined" || $("#Detail").val() == "") {
-				alert("กรุณากรอกข้อมูลให้ครบ")
+			//-----------เช็คจำนวนตัวอักษร ตอนกดแอดข่าว------//
+			var x = document.getElementById("Detail").value.length ;
+			if(x > 30){
+				alert("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร");
 			}else{
-				e.preventDefault();
-				var  Detail = document.getElementById("Detail");
-				var formData3 = new FormData($(this)[0]);
-				formData3.append("Detail",Detail.value);
-				$.ajax({
-		            url: 'qs/qs_add_news.php',
-		            type: 'POST',
-				    data: formData3,
-		            async: false,
-		            cache: false,
-		            contentType: false,
-		            processData: false
-		        }).done(function(data){
-		               //alert("-"+data+"-");
-					if(data == "success"){
-						window.location.href="main.php?page=admin_manageNews";
-					}
-					else if(data == "notsuccess"){
-						alert("ไม่สามารถอัพโหลดได้ กรุณาลองใหม่");
-					}
-		   		});
+				if (typeof str === "undefined" || $("#Detail").val() == "") {
+					alert("กรุณากรอกข้อมูลให้ครบ")
+				}else{
+					e.preventDefault();
+					var  Detail = document.getElementById("Detail");
+					var formData3 = new FormData($(this)[0]);
+					formData3.append("Detail",Detail.value);
+					$.ajax({
+			            url: 'qs/qs_add_news.php',
+			            type: 'POST',
+					    data: formData3,
+			            async: false,
+			            cache: false,
+			            contentType: false,
+			            processData: false
+			        }).done(function(data){
+			               //alert("-"+data+"-");
+						if(data == "success"){
+							alert("เพิ่มข่าวสำเร็จ");
+							window.location.href="main.php?page=admin_manageNews";
+						}
+						else if(data == "notsuccess"){
+							alert("ไม่สามารถอัพโหลดได้ กรุณาลองใหม่");
+						}
+			   		});
+				}
 			}
+			
+			
+			
 		});
+		
+		//-----------เช็คจำนวนตัวอักษร ตอนกรอก------//
+			$('#Detail').keyup(function(){
+				var x = document.getElementById("Detail").value.length ;
+				if(x > 30){
+					alert("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร");
+					var newstring = document.getElementById("Detail").value.substring(0,30);
+					document.getElementById("Detail").value = newstring;
+				}
+				
+			})
 	});
 	function addPic(ele) {  // แสดงรูปที่เลือก
 		var showPic_news = document.getElementById("showPic_news");

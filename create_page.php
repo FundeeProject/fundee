@@ -101,20 +101,24 @@ $_GET['storyid'];
 					$('#showStory').empty();
 					$.each(datajson, function(i,item){
 						var no =i+1;
-						/*if(datajson[i].picture == 'NULL' ){
-							img = " <div class='col-xs-3 col-lg-2'><button id = 'pic_' value ='"+no+"' onClick = 'pageAddpicture(this.value);' > <img src ='imgStory/img_00.png' style=' width: 45px; height: 45px;' />  </button> </div> "; 
-						}else{
-							img = " <div class='col-xs-3 col-lg-2'><button id = 'pic_' value ='"+no+"' onClick = 'pageAddpicture(this.value);' > <img src ='imgStory/"+ datajson[i].picture + "'  style=' width: 45px; height: 45px;' />  </button></div>"; 
-						}
-						$('#showpic_Allpage').append(img);	*/
-						var div = '<div class="col-xs-4 col-lg-2 boxImg"> '+
+						if(datajson[i].picture == 'NULL' ){ 
+							var div = '<div class="col-xs-4 col-lg-2 boxImg"> '+
 										'<div class="viewDetail"  data-img='+datajson[i].page_number+'>'+
 											'<div class="imgbox icon-page1">'+
 												'<div class="iconNbr"><span class="text-white">'+no+'<span></div>'+
 											'</div>'+
 										'</div>'+
 								  '</div>'
-							$('#showStory').append(div);
+						}else{
+							var div = '<div class="col-xs-4 col-lg-2 boxImg"> '+
+										'<div class="viewDetail"  data-img='+datajson[i].page_number+'>'+
+											'<div class="imgbox " style = "background-image: url(imgStory/'+datajson[i].picture+');">'+
+												'<div class="iconNbr"><span class="text-white">'+no+'<span></div>'+
+											'</div>'+
+										'</div>'+
+								  '</div>'
+						}
+						$('#showStory').append(div);
 					});	
 					/*-----------------------เมื่อคลิ้กหน้าแต่ละหน้า-----------------*/
 					$(".viewDetail").click(function(){ 

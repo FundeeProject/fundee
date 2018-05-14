@@ -47,18 +47,18 @@
 					url:'qs/qs_add_Category.php',
 					dataType: "text",
 					data: {Categoryname:Categoryname},
-					success:function( datajson ) {     
+					success:function( datajson ) {  
 						if(datajson == 'ok'){
-							//alert("เพิ่มแล้ว");
+							alert("Added finished");
 							window.location.href="main.php?page=admin_manageCategory";
 						}
-						else{ alert("เพิ่มไม่สำเร็จ");
+						else{ alert("Unsuccessful ! "+datajson);
 						}
 					},
 					error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 				});
 			}
-			
+			 
 				//window.location.href="main.php?page=admin_manageCategory";
 		});
 			

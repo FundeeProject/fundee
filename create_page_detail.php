@@ -14,7 +14,7 @@ $_GET['pageid'];
 			<!--<label for="">Please add picture, Record and text. </label>-->
 			<div class="box-img" style="margin: 0 auto;width: 100%; background-color: #fff;" >
 				<div class="box-text-number">
-					<p class="text-center">1</p>
+					<p class="text-center"><?php echo $_GET['pageid'];?></p>
 				</div>
 				<div class="objectCenter new_Btn2 "  id = "showPic_page">
 					<i class="glyphicon glyphicon-camera" style="left: 43%;top: 43;"></i>
@@ -121,7 +121,8 @@ $_GET['pageid'];
 		
 		
 		$("#backBtn").click(function(){ 
-			alert("back")
+			//alert("back")
+			window.location.href="main.php?page=create_page&storyid="+story_id+"";
 		});
 		
 		
@@ -155,7 +156,7 @@ $_GET['pageid'];
 			e.preventDefault();
 			//----------------ข้อมูลที่จะส่งไปอัพเดท
 			var  description_page = document.getElementById("description_page");
-			alert($("#description_page").val());
+			//alert($("#description_page").val());
 			var formData2 = new FormData($(this)[0]);
 			formData2.append("story_id",story_id);
 			formData2.append("pageNumber",pageNumber_);
@@ -189,6 +190,14 @@ $_GET['pageid'];
 		        });
 			}
 		});
+		//-----------เช็คจำนวนตัวอักษร ตอนกรอก------//
+			$('#description_page').keyup(function(){
+				var x = document.getElementById("description_page").value.length ;
+				if(x > 255){alert("เนื้อเรื่องต้องมีความยาว 1-255 ตัวอักษร");
+					var newstring = document.getElementById("description_page").value.substring(0,255);
+					document.getElementById("description_page").value = newstring ;
+				}
+			})
 	});
 	function PreviewPage(ele) {  // แสดงรูปที่เลือก เพจ
 		var showPic_page = document.getElementById("showPic_page");
