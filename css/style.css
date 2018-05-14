@@ -62,6 +62,9 @@ body{
 .color-blue{
 	color: #085b6b;
 }
+.color-white{
+	color: #FFF;
+}
 .borderBlue{
 	border: 1px solid #31708f!important;
 }

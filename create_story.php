@@ -17,7 +17,8 @@ $_SESSION['user_id'];
 						<input type="text" class="form-control boxInputBlue marginT20" id="Storyname" aria-describedby="emailHelp" placeholder="Story Name">
 						
 						<!--<label for="exampleFormControlSelect2" class="marginT10 color-blue">Category</label>-->
-						<select class="form-control boxInputBlue marginT20" id="selectCategory">
+						<!--<select class="form-control boxInputBlue marginT20" id="selectCategory">-->
+						<select class="form-control marginT20 borderBlue text-blue" style=" background-color: #fcf8e3;;" id="selectCategory">
 						  <option value="0">Select Category</option>
 						</select>
 						<!--<label for="description" class="marginT10 color-blue">Short Description</label>-->
