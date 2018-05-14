@@ -123,7 +123,7 @@ $_GET['storyid'];
 					/*-----------------------เมื่อคลิ้กหน้าแต่ละหน้า-----------------*/
 					$(".viewDetail").click(function(){ 
 						var thisId = $(this).data('img');
-						alert(story_id+"-"+thisId);
+						//alert(story_id+"-"+thisId);
 						window.location.href="main.php?page=create_page_detail&storyid="+story_id+"&pageid="+thisId+"";
 						//window.location.href="main.php?page=admin_approveStoryDetail&storyid="+thisId+"";
 					});

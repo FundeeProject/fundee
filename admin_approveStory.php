@@ -80,10 +80,10 @@
 							img = 	'<div class="col-xs-4 col-lg-2 boxImg">'+
 										'<div class="h100 viewDetail" data-img='+datajson[i].story_id+'>'+
 											'<div class="img"  style="background:url(imgStory/'+datajson[i].story_pic+')"></div>'+
-											'<div class="homeIcon icon-approveWait"></div>'+
+											'<div class="homeIcon icon-play "></div>'+
 										'</div>'+
 										'<p class="text-center text-blue">'+cutStoryName(datajson[i].story_name)+'</p>'+
-										'<div class="iconCheckStatus icon16 icon-approve "></div>'+
+										'<div class="iconCheckStatus icon16 icon-approveWait "></div>'+
 									'</div>'; 
 						}
 						$('#showHomeStory').append(img);	
