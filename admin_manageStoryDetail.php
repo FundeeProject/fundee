@@ -39,16 +39,16 @@
 			window.location.href="main.php?page=admin_manageStory"
 		});
 		$(".deleteBtn").click(function(){ 
-			alert("del")
+			//alert("del")
 		});
 		$(".playBtn").click(function(){ 
-			alert("ทำด้วย")
+			//alert("ทำด้วย")
 		});
 		$(".editBtn").click(function(){ 
 		
 				
 				var newId =  $('#boxData').data("id") 
-				alert(newId+"sss")
+				//alert(newId+"sss")
 				
 				// !!!!!!!!!!!!!!!!!!!!!!!!  ถ้า approve สำเร็จถึงเปลี่ยนหน้า !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 				window.location.href="main.php?page=admin_manageStoryEdit"
@@ -69,10 +69,10 @@
 	});
 	
 	function chk (c){
-		alert(c)
+		//alert(c)
 		if (c == "del"){
 			$(".okBtn").click(function(){
-				alert("55555555555555")
+				//alert("55555555555555")
 				/*
 				var newId =  $('#boxData').data("id") 
 				alert(newId)
@@ -85,7 +85,7 @@
 		if (c == "apv"){
 			
 			$(".okBtn").click(function(){
-				alert("11111111")
+				//alert("11111111")
 				/*
 				var newId =  $('#boxData').data("id") 
 				alert(newId)

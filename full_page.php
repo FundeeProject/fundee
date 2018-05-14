@@ -29,10 +29,8 @@ $_GET['storyid'];
     width: 100vh;
     height: 100vw;
     margin-top: -100vw;
-    object-fit: cover;
 
-    z-index: 4;
-    visibility: visible;
+   
  }
 }
 
