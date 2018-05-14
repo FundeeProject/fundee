@@ -77,13 +77,15 @@ $_GET['storyid'];
 <script type="text/javascript">
 $(document).ready(function(){
 	var storyid = <?php echo $_GET['storyid'];?> ;
+	var numberOfpage = 0;
 	$.ajax({
 		type:'POST',
 		url:'qs/qs_loadStoryByID.php',
 		dataType: "json",
 		data: {storyid:storyid},
 		success:function( datajson ) {    
-			if(datajson.length !=0){ 
+			if(datajson.length != 0){ 
+				numberOfpage = datajson.length;
 				$('#showSlideNews').empty();
 				$.each(datajson, function(i,item){
 					var no = i;
@@ -149,7 +151,7 @@ $(document).ready(function(){
 	var index_ = 1 ;
 	//----------------click next--------------//
 	$( "#next" ).click(function() {
-		if(index_ != 10){
+		if(index_ != numberOfpage){
 		index_ += 1 ;}
 		else{index_=1;}
 		//alert( "index_ = "+index_ );
@@ -236,7 +238,7 @@ $(document).ready(function(){
 	$( "#prev" ).click(function() {
 		if(index_ != 1){
 			index_ -= 1 ;
-		}else{index_ = 10;}
+		}else{index_ = numberOfpage ;}
 		//alert( "index_ = "+index_ );
 		var vid0 = document.getElementById("myVideo0");
 		var vid1 = document.getElementById("myVideo1");
