@@ -18,14 +18,15 @@ function regis(){ //echo "dd";
 	$username = trim($_POST['username']);
 	$email = trim($_POST['email']);
 	$password = trim($_POST['pwd']);
-	$cke = selects("user","where email='$email'");
+	$cke = selects("user","where email='$email' or username='$username'");
 	//echo "email :".$email."username :".$username."password ".$password;
+	//echo $email."-".count($cke);
 	if(count($cke)==0){
 		$row = insert("username,password,email,user_point,role_id","'$username','$password','$email','0','1'","user");
 	  echo "ok";
 	}
 	else{
-		echo "มี อีเมลล์นี้แล้ว";
+		echo "ชื่อผู้ใช้ หรือ อีเมลล์นี้ถูกใช้แล้ว";
 	}
 }
 function logFace(){

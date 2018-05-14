@@ -27,24 +27,24 @@ include "include/function.php";*/
 							<div style="position: relative;top:-10px;">
 								<p class="text-center text-blue"><b>REGISTER</b></p>
 							</div>
-							
-							<div class="blockRegis marginAuto">
-								</br>
-								<input type="text" class="form-control" id="username" placeholder="username" name="username">
-								</br>
-								<input type="text" class="form-control" id="email" placeholder="email" name="email">
-								</br>
-								<input type="password" class="form-control" id="pwd" placeholder="password" name="pwd">
-							</div>
-							
-							 <div class="form-group marginT20 marginAuto" style="width:195px;">        
-								<div class="col-sm-10 marginAuto" style="width:195px;">
-									<button type="button" class="btn btn-back" style="width: 80px;" id="back">Back</button>
-									<button type="button" class="btn btn-info" style="width: 80px;" id="regis">Register</button>
+							<form  method="post" name="fregis" id="fregis">
+								<div class="blockRegis marginAuto">
+									</br>
+									<input type="text" class="form-control" id="username" placeholder="username" name="username">
+									</br>
+									<input type="text" class="form-control" id="email" placeholder="email" name="email">
+									</br>
+									<input type="password" class="form-control" id="pwd" placeholder="password" name="pwd">
 								</div>
-								<p class="marginB10"></p>
-							</div>
-							
+								
+								 <div class="form-group marginT20 marginAuto" style="width:195px;">        
+									<div class="col-sm-10 marginAuto" style="width:195px;">
+										<button type="button" class="btn btn-back" style="width: 80px;" id="back">Back</button>
+										<button type="button" class="btn btn-info" style="width: 80px;" id="regis">Register</button>
+									</div>
+									<p class="marginB10"></p>
+								</div>
+							</form>
 						</div>
 						
 					</div>
