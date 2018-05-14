@@ -80,6 +80,10 @@ body{
 .text-orenge{color: #fa9900!important;}
 .text-white{color:#FFF!important;}
 
+.bg-blue{
+	background-color:#085b6b!important;
+}
+
 
 
 /*============bg color=============*/
@@ -540,8 +544,12 @@ body{
 	margin-right:auto;
 }
 
-/**/
 
+
+/*popup*/
+.modal-content{
+	border: 1px solid #085b6b;
+}
 
 .box-camera i{
 	font-size:20px;

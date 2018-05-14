@@ -10,7 +10,7 @@
 	<label class="marginT20 color-blue" for="Storyname">CATEGORY</label>
 	<form class="form-horizontal" method="post" name="" id="">
 		<div class="form-group marginAuto marginT10" style="width: 250px;">
-			<select class="form-control" id="selectCategory">
+			<select class="form-control borderBlue text-blue" id="selectCategory">
 				<option value="0">Select Category</option>
 			</select>
 		</div> 
@@ -56,7 +56,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 					}
 					else{
@@ -66,7 +66,7 @@ $(document).ready(function(){
 												'<div class="homeIcon icon-play"></div>'+
 												<!--1. ปุ่มที่แสดงบนหนังสือ ทำต่อด้วย!!!!!!!!!!!!!!!!-->
 											'</div>'+
-											'<p>'+cutStoryName(datajson[i].story_name) + '</p>'+
+											'<p class="text-blue">'+cutStoryName(datajson[i].story_name) + '</p>'+
 										'</div>';
 					}
 					$('#showHomeStory').append(imgStory);
@@ -147,7 +147,7 @@ $(document).ready(function(){
 				}
 				else{
 					$('#showHomeStory').empty();
-					var imgStory = "<div ><p class='text-blue'> ไม่พบนิทาน </p></div>";
+					var imgStory = "<div ><p class='text-blue text-center'> ไม่พบนิทาน </p></div>";
 					$('#showHomeStory').append(imgStory);
 				}
 				

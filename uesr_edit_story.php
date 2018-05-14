@@ -50,7 +50,7 @@ $_GET['storyidToEdit'];
 							<div  class="text-center" >
 								 <!--<button type="button" class="btn " style="" id="cancelBtn">CANCEL</button>-->
 								 <button type="button" class="btn btn-back" style="width:80px" id="cancelBtn">Back</button>
-								 <button type="submit" class="btn btn-info" style="width:80px" id="CREATEtitel">UPDATE</button>
+								 <button type="submit" class="btn btn-info" style="width:80px" id="CREATEtitel">Update</button>
 							</div>
 							<p class="marginB10"></p>
 						</div>

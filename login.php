@@ -87,10 +87,10 @@ include "include/function.php";
 		<div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
 		  <div class="modal-dialog" role="document" style="top: 40%;">
 			<div class="modal-content" style="min-height: 150px;">
-			  <div class="modal-body" style="text-align:center;">
+			  <div class="modal-body text-blue" style="text-align:center;">
 			  </div>
 			  <div class="modal-footer marginAuto" style="width: 90px;padding-left: 0px;" >
-				<button type="button" class="btn btn-secondary noBtn" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-back noBtn marginT20" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
 				
 			  </div>
 			</div>

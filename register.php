@@ -46,9 +46,23 @@ include "include/function.php";*/
 								</div>
 							</form>
 						</div>
-						
 					</div>
 				</div>
+			</div>
+			
+			
+			<!-- popup -->
+			<div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+			  <div class="modal-dialog" role="document" style="top: 40%;">
+				<div class="modal-content" style="min-height: 150px;">
+				  <div class="modal-body text-blue" style="text-align:center;">
+				  </div>
+				  <div class="modal-footer marginAuto" style="width: 90px;padding-left: 0px;" >
+					<button type="button" class="btn btn-back noBtn marginT20" id="noModalBtn" style="width:90px;" data-dismiss="modal">Close</button>
+					
+				  </div>
+				</div>
+			  </div>
 			</div>
 
 <!--
@@ -119,27 +133,33 @@ include "include/function.php";*/
 					$.post("action.php?op=regis",$("form").serialize(), function(data){
 						//alert("-"+data+"-");
 						if(data=='ok'){
-							alert("สมัครสมาชิคเรียบร้อยแล้ว");
+							//alert("สมัครสมาชิคเรียบร้อยแล้ว");
 							<?php  
 								//$row = insert("username,password,email,user_point,role_id","'$username','$password','$email','0','1'","user");
 							?>
 							window.location.href='login.php';
 							//return true;
+						}else{
+							$("#exampleModal").modal()// เปิดใช้ popup
+							$(".modal-body").html("สมัครสมาชิกไม่สำเร็จ")	 //ใส่ข้อความที่ต้องการ alert	
+							//alert("555")
 						}
 					});
 				}
 				else {
 					var texAlert = "";
 					if(validateEmail(email) == false){
-						texAlert += "\n- email incorrect" ;
+						texAlert += "<p>email incorrect</p>" ;
 					}
 					if(username == ""){
-						texAlert += "\n- fill username" ;
+						texAlert += "<p>fill username</p>" ;
 					}
 					if(pwd == ""){
-						texAlert += "\n- fill your password" ;
+						texAlert += "<p>fill your password</p>" ;
 					}
-					alert(texAlert);
+					//alert(texAlert);
+					$("#exampleModal").modal()// เปิดใช้ popup
+					$(".modal-body").html(texAlert);
 				}
 				
                 /*$.post("action.php?op=regis",$("form").serialize(), function(data){

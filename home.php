@@ -23,8 +23,8 @@
 			<!---->
 			<form class="form-horizontal" method="post" name="" id="">
 				<div class="form-group marginAuto marginT10" style="width: 250px;">
-					<span class="glyphicon glyphicon-search"></span>
-					<input type="text"  class="form-control borderBlue" id="textSearch" placeholder="search" style="border-radius: 20px;" >
+					<span class="glyphicon glyphicon-search" style="color: #fff;"></span>
+					<input type="text"  class="form-control borderBlue bg-blue" id="textSearch" placeholder="search" style="border-radius: 20px;color: #fff;" >
 				</div> 
 				<!--<p class="marginT20" style="">All Story</p>-->
 				<div id="homeStory" class="form-group">
@@ -154,7 +154,7 @@ $(document).ready(function(){
 			}
 			else{
 				//alert("ไม่พบข้อมูลหน้านิทาน");
-				$('#showHomeStory').append("<p  class='text-blue'>ไม่พบข้อมูลหน้านิทาน</p>");
+				$('#showHomeStory').append("<p class='text-blue'>ไม่พบข้อมูลหน้านิทาน</p>");
 			}
 		},
 		error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
@@ -201,7 +201,7 @@ $(document).ready(function(){
 				}
 				else{
 					$('#showHomeStory').empty();
-					var imgStory = "<div > ไม่พบนิทาน </div>";
+					var imgStory = "<div class='text-center text-blue' > ไม่พบนิทาน </div>";
 					$('#showHomeStory').append(imgStory);
 				}
 				

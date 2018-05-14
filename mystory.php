@@ -67,7 +67,7 @@ function callStoryByStatus(status_id) {
 				$.each(datajson, function(i,item){
 					var iconShare = "";
 					if(datajson[i].status_id == 0){ /*----------ยังไม่กดแชร์-----------*/
-						iconShare ='<div class="typeIcon icon-share1 shareStory" data-img='+datajson[i].story_id+' style="width: 26px;height: 26px;position: relative;z-index: 999;top: -50px;right: -26px;"></div>';
+						iconShare ='<div class="typeIcon icon-share1 shareStory" data-img='+datajson[i].story_id+' style="top:-50px;right:-26px;" data-toggle="modal" data-target="#exampleModal"></div>';
 					}else if(datajson[i].status_id == 1){ /*----------กดแชร์แล้วรออนุมัติ-----------*/
 						iconShare ='<div class="typeIcon icon-wait " data-img='+datajson[i].story_id+' ></div>';
 					}else if(datajson[i].status_id == 2){ /*----------อนุมัติแล้ว-----------*/
@@ -102,7 +102,40 @@ function callStoryByStatus(status_id) {
 				});	
 				
 				
+				//
+				
+				$(".modal-body").html("Do you want to publish this story?");
+				$(".okBtn").click(function(){
+					var thisId = $(".shareStory").data('img'); //alert(thisId+"------กดแชร์")	
+					//var pop = confirm("Do you want to publish this story ?");
+					//if (pop == true){
+						$.ajax({
+							type:'POST',
+							url:'qs/qs_user_shareStory.php',
+							dataType: "text",
+							data: {storyid:thisId},
+							success:function( datajson ) {  
+								//----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------
+								if(datajson == "ok"){ 
+									window.location.href="main.php?page=mystory";
+
+								}
+								else{
+									alert("แชร์ผิดพลาด กรุณาลองใหม่");
+								}
+							},
+							error:function(jqXHR, textStatus, errorThrown){
+								alert("การส่งข้อมูลผิดพลาด"+errorThrown);
+							}		
+						});
+						
+					//}else{}
+				});
+				
+				
 				$(".shareStory").click(function(){ 
+					
+				/*
 					var thisId = $(this).data('img'); //alert(thisId+"------กดแชร์")	
 					var pop = confirm("Do you want to publish this story ?");
 					if (pop == true){
@@ -112,7 +145,7 @@ function callStoryByStatus(status_id) {
 							dataType: "text",
 							data: {storyid:thisId},
 							success:function( datajson ) {  
-								/*-----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------*/
+								//----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------
 								if(datajson == "ok"){ 
 									alert("Waiting for an administrator check.");
 									window.location.href="main.php?page=mystory";
@@ -124,13 +157,13 @@ function callStoryByStatus(status_id) {
 							error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
 						});
 						
-					}else{}
+					}else{}*/
 				});	
 				
 				
 			}
 			else{
-				$('#showHomeStory').append("<p class='text-blue'>ไม่มีนิทานที่อยู่ในสถานะนี้ </p>");
+				$('#showHomeStory').append("<p class='text-blue text-center'>ไม่มีนิทานที่อยู่ในสถานะนี้ </p>");
 			}
 			
 		},

@@ -267,7 +267,7 @@ $(document).ready(function(){
 <div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document">
 	<div class="modal-content" style="min-height: 150px;">
-	  <div class="modal-body" style="text-align:center;">
+	  <div class="modal-body text-blue" style="text-align:center;">
 	  </div>
 	  <div class="modal-footer marginAuto" style="" >
 		<button type="button" class="btn btn-info okBtn" id="okModalBtn" style="width:80px;">Yes</button>
@@ -282,7 +282,7 @@ $(document).ready(function(){
 <div class="modal fade modalApprove" id="modalApprove" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="min-height: 150px;">
-      <div class="modal-body" style="text-align:center;">
+      <div class="modal-body text-blue" style="text-align:center;">
       </div>
       <div class="modal-footer marginAuto" style="" >
         <button type="button" class="btn btn-info okBtn" id="okBtn" style="width:80px;">Yes</button>
