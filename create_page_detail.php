@@ -164,7 +164,11 @@ $_GET['pageid'];
 			//-------------------------
 			var str = $('#img2').attr('src');
 			if (typeof str === "undefined" || $("#description_page").val() == ""  ) {
-				alert("กรุณากรอกข้อมูลให้ครบ");
+				//alert("กรุณากรอกข้อมูลให้ครบ");
+				$("#exampleModal").modal()// เปิดใช้ popup
+				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+				$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+				$(".modal-body").html("กรุณากรอกข้อมูลให้ครบ")	 //ใส่ข้อความที่ต้องการ alert
 			}
 			else{
 				
@@ -181,10 +185,15 @@ $_GET['pageid'];
 		        }).done(function(data){
 		              //  alert("-"+data+"-");
 					if(data == "notsuccess"){
-						alert("เพิ่มไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
+						//alert("เพิ่มไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
+						$("#exampleModal").modal()// เปิดใช้ popup
+						$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+						$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+						$(".modal-body").html("กรุณากรอกข้อมูลให้ครบแล้วลองใหม่")	 //ใส่ข้อความที่ต้องการ alert
+						
 					}
 					else if(data == "ok"){
-						alert("เพิ่มแล้ว");
+						//alert("เพิ่มแล้ว");
 						window.location.href="main.php?page=create_page&storyid="+story_id+"";
 					}
 		        });
@@ -193,7 +202,13 @@ $_GET['pageid'];
 		//-----------เช็คจำนวนตัวอักษร ตอนกรอก------//
 			$('#description_page').keyup(function(){
 				var x = document.getElementById("description_page").value.length ;
-				if(x > 255){alert("เนื้อเรื่องต้องมีความยาว 1-255 ตัวอักษร");
+				if(x > 255){
+					$("#exampleModal").modal()// เปิดใช้ popup
+					$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+					$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+					$(".modal-body").html("เนื้อเรื่องต้องมีความยาว 1-255 ตัวอักษร")	 //ใส่ข้อความที่ต้องการ alert
+					
+					//alert("เนื้อเรื่องต้องมีความยาว 1-255 ตัวอักษร");
 					var newstring = document.getElementById("description_page").value.substring(0,255);
 					document.getElementById("description_page").value = newstring ;
 				}
