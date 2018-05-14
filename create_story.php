@@ -89,8 +89,11 @@ $_SESSION['user_id'];
 			////---------------------->> เช็คการกรอกข้อมูล <<---------------------------
 			if(Storyname.value == '' ){ textToAlert = " - ตั้งชื่อนิทาน \n"; }
 			if(selectCategory.value == 0 ){ textToAlert = textToAlert+" - เลือกประเภทนิทาน \n"; }
+			var str = $('#img3').attr('src');
+			//alert(typeof str);
+			if(typeof str === "undefined" ){ textToAlert = textToAlert+" - เลือกรูป \n"; }
 			
-			if((Storyname.value != '')&&(selectCategory.value != 0 )){
+			if((Storyname.value != '')&&(selectCategory.value != 0 )&&(typeof str != "undefined")){ 
 				/*อัพโหลดรูป*/
 				//alert("Storyname - "+Storyname.value+"\ndescription - "+description.value+"\nuser_id - "+user_id);
 				var formData = new FormData($(this)[0]);
