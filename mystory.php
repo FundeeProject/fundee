@@ -45,7 +45,7 @@ $(document).ready(function(){
 	});
 	//=======================>>>>> กดบวก สร้างนิทาน <<<<<==================
 	$("#btCerate").click(function(){ //// เมื่อกดปุ่มเครื่องหมาย +
-		alert("create");
+		//alert("create");
 		window.location.href="main.php?page=create_story";
 	});
 });
