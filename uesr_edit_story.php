@@ -13,21 +13,31 @@ $_GET['storyidToEdit'];
 				<div class="marginAuto marginB20" style="width:90%; height:auto;">
 					  <div class="">
 					
-						<label class="marginT20 color-blue" for="Storyname">Story Name</label>
-						<input type="text" class="form-control" id="Storyname" aria-describedby="emailHelp" placeholder="">
+						<!-- <label class="marginT20 color-blue" for="Storyname">Story Name</label>
+						<input type="text" class="form-control" id="Storyname" aria-describedby="emailHelp" placeholder=""> -->
+						<input type="text" class="form-control boxInputBlue marginT20" id="Storyname" aria-describedby="emailHelp" placeholder="Story Name">
 						
-						<label for="exampleFormControlSelect2" class="marginT10 color-blue">Category</label>
+						<!-- <label for="exampleFormControlSelect2" class="marginT10 color-blue">Category</label> 
 						<select class="form-control" id="selectCategory">
 						  <option value="0">Select Category</option>
+						</select>-->
+						<select class="form-control marginT20 borderBlue text-blue" style=" background-color: #fcf8e3;;" id="selectCategory">
+						  <option value="0">Select Category</option>
 						</select>
-						<label for="description" class="marginT10 color-blue">Short Description</label>
+						
+						<!--<label for="description" class="marginT10 color-blue">Short Description</label>
 						<textarea class="form-control" id="description" rows="3">  </textarea>
 						<span class="text-pink text-12" >use less then 255 characters.</span>
-						</br></br>
+						</br></br>-->
+						
+						<textarea class="form-control boxInputBlue boxTextarea marginT20" id="description" rows="3" placeholder="Describe yourself here..."></textarea>
+						<span class="text-pink text-12" >use less then 255 characters.</span>
+						<br><br>
+						
 						<label for="showPic" class="color-blue">Choose a cover photo</label>
 						<div class="boxImg box-90 box-camera " id="showPic">
 							<div class="boxIconCamera">
-								<i class="glyphicon glyphicon-plus"></i>
+								<i class="glyphicon glyphicon-camera"></i>
 							</div>
 							<p class="color-blue text-center" style="margin:0"></p>
 						</div>
