@@ -34,6 +34,16 @@ $_GET['storyid'];
  }
 }
 
+.text{
+	position: relative;
+    bottom: 0px;
+    text-align: center;
+    background-color: #777;
+    color: #f5f5f5;
+    /*top: -15px;*/
+    opacity: 0.5;
+}
+
 </style>
 </head>
 <body >
@@ -76,6 +86,8 @@ $_GET['storyid'];
 
 <script type="text/javascript">
 $(document).ready(function(){
+	
+	var h = document.documentElement.clientHeight
 	var storyid = <?php echo $_GET['storyid'];?> ;
 	var numberOfpage = 0;
 	$.ajax({
@@ -101,22 +113,22 @@ $(document).ready(function(){
 						if(i==0){
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							if(datajson[i].voice != "NULL"){
-								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :300px;">	<p>'+ description +'</p>'+
+								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
 								'<audio controls id="myVideo'+no+'" class="myVideo" ><source src="audio/'+datajson[i].voice+'" type="audio/mpeg"></audio>'+
 								'</div></div>'
 							}else{
-								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :300px;">	<p>'+ description +'</p>'+
+								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>>'+ description +'</b></p>'+
 								'</div></div>'
 							}
 						}
 						else{
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							if(datajson[i].voice != "NULL"){
-								img = '<div class="item "><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :300px;"><p>'+ description +'</p>'+
+								img = '<div class="item "><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;"><p class="text"><b>'+ description +'</b></p>'+
 								'<audio controls id="myVideo'+no+'" class="myVideo" ><source src="audio/'+datajson[i].voice+'" type="audio/mpeg"></audio>'+
 								'</div></div>'
 							}else{
-								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :300px;">	<p>'+ description +'</p>'+
+								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
 								'</div></div>'
 							}
 						}

@@ -139,10 +139,8 @@ $_GET['storyidToEdit'];
 			////---------------------->> เช็คการกรอกข้อมูล <<---------------------------
 			if(Storyname.value == '' ){ textToAlert = " - ตั้งชื่อนิทาน \n"; }
 			if(selectCategory.value == 0 ){ textToAlert = textToAlert+" - เลือกประเภทนิทาน \n"; }
-			var str = $('#img3').attr('src');
-			if(typeof str === "undefined" ){ textToAlert = textToAlert+" - เลือกรูป \n"; }
 			
-			if((Storyname.value != '')&&(selectCategory.value != 0 )&&(typeof str != "undefined")){
+			if((Storyname.value != '')&&(selectCategory.value != 0 )){
 				/*อัพโหลดรูป*/
 				//alert("Storyname - "+Storyname.value+"\ndescription - "+description.value+"\nuser_id - "+user_id);
 				var formData = new FormData($(this)[0]);
@@ -167,7 +165,7 @@ $_GET['storyidToEdit'];
 					else if(data == "failed"){
 						alert("อัพเดทข้อมูลไม่สำเร็จ");
 					}else if(data == "ok"){
-						alert("อัพเดทสำเร็จ");
+						//alert("อัพเดทสำเร็จ");
 						window.location.href="main.php?page=user_edit_story_page&storyid="+storyid+"";
 					}
 		        });

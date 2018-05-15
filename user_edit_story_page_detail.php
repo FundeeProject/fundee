@@ -116,6 +116,18 @@ $_GET['pageid'];
 		//สั่งให้ปุ่ม อัดเสียงทำงาน
 		$('#editSound').bind("click" , function () {
 			$('#audio_upload').click();
+			
+		});
+		
+		//เปลี่ยนสีปุ่ม
+		$("#audio_upload").change(function(){
+			if( document.getElementById("audio_upload").files.length == 0 ){
+				$("#editSound").addClass("icon-mic")
+				$("#editSound").removeClass("icon-mic-recond")
+			}else{
+				$("#editSound").removeClass("icon-mic")
+				$("#editSound").addClass("icon-mic-recond")
+			}
 		});
 		
 		
@@ -157,6 +169,19 @@ $_GET['pageid'];
 			data: {storyid:story_id,pageNumber_:pageNumber_},
 			success:function( datajson ) {  
 				if(datajson.length !=0){ 
+					//check icon audio
+					$('#audio_upload').attr('src', datajson[0].voice);
+					var audio = $('#audio_upload').attr('src');
+					if (typeof audio == "undefined" || audio == NULL ){
+						$("#editSound").addClass("icon-mic")
+						$("#editSound").removeClass("icon-mic-recond")
+						
+					}else{
+						
+						$("#editSound").removeClass("icon-mic")
+						$("#editSound").addClass("icon-mic-recond")//icon มีไฟล์ 
+						
+					}
 					
 					document.getElementById("description_page").value = datajson[0].text;
 					var showPic_page = document.getElementById("showPic_page");
@@ -186,10 +211,20 @@ $_GET['pageid'];
 			formData2.append("story_id",story_id);
 			formData2.append("pageNumber",pageNumber_);
 			formData2.append("description_page",description_page.value);
+			var fileAudio = document.getElementById("audio_upload").files.length;
+			
+			
+			
+			
 			//-------------------------
+			
 			var str = $('#img2').attr('src');
-			if (typeof str === "undefined" || $("#description_page").val() == ""  ) {
-				alert("กรุณากรอกข้อมูลให้ครบ");
+			if (typeof str === "undefined" || $("#description_page").val() == "" || fileAudio == 0  ) {
+				//popup for alert
+				$("#exampleModal").modal()// เปิดใช้ popup
+				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+				$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+				$(".modal-body").html("กรุณากรอกข้อมูลให้ครบ")  //ใส่ข้อความที่ต้องการ alert
 			}
 			else{
 				
@@ -209,7 +244,7 @@ $_GET['pageid'];
 						alert("เพิ่มไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
 					}
 					else if(data == "ok"){
-						alert("เพิ่มแล้ว");
+						//alert("เพิ่มแล้ว");
 						//window.location.href="main.php?page=create_page&storyid="+story_id+"";
 						<?php 
 							if($_SESSION["role_id"]== 0 ){ ///admin

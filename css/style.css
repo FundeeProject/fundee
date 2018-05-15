@@ -369,6 +369,13 @@ body{
     background-size: contain;
 }
 
+.icon-mic-recond{
+	background-image: url('../icon/mic_recond.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+	
+}
+
 .iconNbr{
 	right: -34px;
     width: 18px;
@@ -380,9 +387,13 @@ body{
 
 
 
+/*slide video*/
 
+.slideMint{
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 
-
+}
 
 
 
