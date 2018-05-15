@@ -33,6 +33,17 @@ $_GET['storyid'];
    
  }
 }
+/* sumsung garlecy */
+@media only screen 
+  and (min-device-width: 360px) 
+  and (max-device-width: 640px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+/*oppo a33*/
+  @media only screen 
+   and (max-width : 540px) 
+   and (max-height : 960px) {
+   /* Styles here */
+}
 
 .text{
 	position: relative;
