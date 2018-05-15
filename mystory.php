@@ -67,7 +67,7 @@ function callStoryByStatus(status_id) {
 				$.each(datajson, function(i,item){
 					var iconShare = "";
 					if(datajson[i].status_id == 0){ /*----------ยังไม่กดแชร์-----------*/
-						iconShare ='<div class="typeIcon icon-share1 shareStory" data-img='+datajson[i].story_id+' style="top:-50px;right:-26px;" data-toggle="modal" data-target="#exampleModal"></div>';
+						iconShare ='<div class="typeIcon icon-share1 shareStory" data-img='+datajson[i].story_id+' style="top:-50px;right:-26px;" data-toggle="modal" data-target="#modalApprove"></div>';
 					}else if(datajson[i].status_id == 1){ /*----------กดแชร์แล้วรออนุมัติ-----------*/
 						iconShare ='<div class="typeIcon icon-wait " data-img='+datajson[i].story_id+' ></div>';
 					}else if(datajson[i].status_id == 2){ /*----------อนุมัติแล้ว-----------*/
@@ -104,60 +104,38 @@ function callStoryByStatus(status_id) {
 				
 				//
 				
-				$(".modal-body").html("Do you want to publish this story?");
-				$(".okBtn").click(function(){
-					var thisId = $(".shareStory").data('img'); //alert(thisId+"------กดแชร์")	
-					//var pop = confirm("Do you want to publish this story ?");
-					//if (pop == true){
-						$.ajax({
-							type:'POST',
-							url:'qs/qs_user_shareStory.php',
-							dataType: "text",
-							data: {storyid:thisId},
-							success:function( datajson ) {  
-								//----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------
-								if(datajson == "ok"){ 
-									window.location.href="main.php?page=mystory";
+				
+				
+				
+				$(".shareStory").click(function(){  
+					var thisId = $(this).data('img'); //alert(thisId);
+					$(".modal-body").html("Do you want to publish this story?");
+					$("#okBtn").click(function(){
+						//alert(thisId+"------กดแชร์")	
+						
+							$.ajax({
+								type:'POST',
+								url:'qs/qs_user_shareStory.php',
+								dataType: "text",
+								data: {storyid:thisId},
+								success:function( datajson ) {  
+									//----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------
+									if(datajson == "ok"){ 
+										window.location.href="main.php?page=mystory";
 
-								}
-								else{
-									alert("แชร์ผิดพลาด กรุณาลองใหม่");
-								}
-							},
-							error:function(jqXHR, textStatus, errorThrown){
-								alert("การส่งข้อมูลผิดพลาด"+errorThrown);
-							}		
-						});
+									}
+									else{
+										alert("แชร์ผิดพลาด กรุณาลองใหม่");
+									}
+								},
+								error:function(jqXHR, textStatus, errorThrown){
+									alert("การส่งข้อมูลผิดพลาด1"+errorThrown);
+								}		
+							});
+							
 						
-					//}else{}
-				});
+					});
 				
-				
-				$(".shareStory").click(function(){ 
-					
-				/*
-					var thisId = $(this).data('img'); //alert(thisId+"------กดแชร์")	
-					var pop = confirm("Do you want to publish this story ?");
-					if (pop == true){
-						$.ajax({
-							type:'POST',
-							url:'qs/qs_user_shareStory.php',
-							dataType: "text",
-							data: {storyid:thisId},
-							success:function( datajson ) {  
-								//----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------
-								if(datajson == "ok"){ 
-									alert("Waiting for an administrator check.");
-									window.location.href="main.php?page=mystory";
-								}
-								else{
-									  alert("แชร์ผิดพลาด กรุณาลองใหม่");
-								}
-							},
-							error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
-						});
-						
-					}else{}*/
 				});	
 				
 				
@@ -167,7 +145,7 @@ function callStoryByStatus(status_id) {
 			}
 			
 		},
-		error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
+		error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด2"+errorThrown);}		
 	});
 }
 /*-----------------------ฟังชันตัดชื่อนิทาน-----------------*/

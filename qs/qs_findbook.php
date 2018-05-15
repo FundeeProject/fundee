@@ -8,9 +8,9 @@ $Myselect = $_POST['Myselect'];
 /// 1 คือดูทั้งหมด  0 คือเฉพาะนิทานส่วนตัว
 $arr = array();
 	if($Myselect == 9 ){
-		$sql="SELECT * FROM   story  WHERE   user_id = '$_SESSION[user_id]' ";	
+		$sql="SELECT * FROM   story  WHERE   user_id = '$_SESSION[user_id]' order by story_id";	
 	}else{
-		$sql="SELECT * FROM   story  WHERE status_id = '$Myselect' AND user_id = '$_SESSION[user_id]' ";
+		$sql="SELECT * FROM   story  WHERE status_id = '$Myselect' AND user_id = '$_SESSION[user_id]' order by story_id";
 	}
 	$objExec = mysql_query($sql) or die (mysql_error());
 	while($objResult = mysql_fetch_array($objExec) )

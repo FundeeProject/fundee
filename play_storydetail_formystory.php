@@ -79,11 +79,7 @@ $_GET['formPage'];
 		//popup
 		$(".modal-body").html("ยืนยันการลบข้อมูล")
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
-		
-		 alert(storyid)
-		//$(".deleteBtn").click(function(){ 
-			//var pop = confirm("ต้องการลบนิทานหรือไม่ ?");
-			//if (pop == true) {
+		 //alert(storyid)
 				$.ajax({
 					type:'POST',
 					url:'qs/qs_admin_deleteStory.php',
@@ -92,7 +88,11 @@ $_GET['formPage'];
 					success:function( datajson ) {  
 						/*-----------ลบแล้วกลับไปหน้าก่อนนี้-----------*/
 						if(datajson == "ok"){ 
-							alert( "ลบแล้ว" );
+							//alert( "ลบแล้ว" );
+							$("#exampleModal").modal()// เปิดใช้ popup
+							$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+							$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+							$(".modal-body").html("ลบแล้ว")  //ใส่ข้อความที่ต้องการ alert
 							//window.location.href="main.php?page=mystory";
 							 window.history.back();
 						}
@@ -102,8 +102,6 @@ $_GET['formPage'];
 					},
 					error:function(jqXHR, textStatus, errorThrown){alert("การส่งข้อมูลผิดพลาด"+errorThrown);}		
 				});
-			//} 
-			//else {}//"ยกเลิก";
 			
 		});
 		/*-------------------กดเล่นนิทาน----------------------*/

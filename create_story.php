@@ -108,7 +108,7 @@ $_SESSION['user_id'];
 		        }).done(function(data){
 		               // alert("-"+data+"-");
 					if(data == "notsuccess"){
-						alert("สร้างนิทานไม่สำเร็จกรุณาลองใหม่");
+						alert("Failed to create stories, please try again.");
 					}
 					else if(data != 0){
 						story_id = data ; 

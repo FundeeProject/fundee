@@ -118,11 +118,35 @@ $_GET['pageid'];
 			$('#audio_upload').click();
 		});
 		
+		//เปลี่ยนสีปุ่ม
+		$("#audio_upload").change(function(){
+			///adfile name 
+			$('#audio_upload').attr('src', this.value);
+			if (this.files && this.files[0]) 
+			{
+				var reader = new FileReader();
+				reader.onload = function (e) 
+				{
+					$('#audio_upload').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(this.files[0]);
+			}
+			////เปลี่ยนสีไอคอนไมค์
+			if( document.getElementById("audio_upload").files.length == 0 ){
+				$("#editSound").addClass("icon-mic")
+				$("#editSound").removeClass("icon-mic-recond")
+			}else{
+				$("#editSound").removeClass("icon-mic")
+				$("#editSound").addClass("icon-mic-recond")
+			}
+		});
+		
 		
 		
 		$("#backBtn").click(function(){ 
 			//alert("back")
-			window.location.href="main.php?page=create_page&storyid="+story_id+"";
+			//window.location.href="main.php?page=create_page&storyid="+story_id+"";
+			window.location.href="main.php?page=user_edit_story_page&storyid="+story_id+"";
 		});
 		
 		
@@ -161,9 +185,15 @@ $_GET['pageid'];
 			formData2.append("story_id",story_id);
 			formData2.append("pageNumber",pageNumber_);
 			formData2.append("description_page",description_page.value);
-			//-------------------------
+			var IsPicChange = 1;  ////0 = ใช้รูปเดิมจากฐานข้อมูล - 1 = รูปใหม่
+			var IsSoundChange = 0;  ////0 = ใช้เสียงเดิมจากฐานข้อมูล - 1 = เสียงใหม่
+			
+			var audio = $('#audio_upload').attr('src');
 			var str = $('#img2').attr('src');
-			if (typeof str === "undefined" || $("#description_page").val() == ""  ) {
+			//alert("str = -"+str+"-");
+			//alert("audio = -"+audio+"-");
+			//-------------------------
+			if (typeof str === "undefined"  || (str == "") ) {
 				//alert("กรุณากรอกข้อมูลให้ครบ");
 				$("#exampleModal").modal()// เปิดใช้ popup
 				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
@@ -171,8 +201,19 @@ $_GET['pageid'];
 				$(".modal-body").html("กรุณากรอกข้อมูลให้ครบ")	 //ใส่ข้อความที่ต้องการ alert
 			}
 			else{
+				///เช็คว่ามีการเปลี่ยนรูปปหรือไม่
+				if(str.substring(0,8) == "imgStory"){IsPicChange = 0;}
+				else{IsPicChange = 1 ;}
 				
-				//alert("ครบ"+pageNumber_);
+				// เช็คว่ามีการเปลี่ยนเสียงหรือไม่
+				if(audio  == "" || typeof audio === "undefined"){IsSoundChange = 0;}
+				else{IsSoundChange = 1 ;}
+				
+				//alert("pic= "+IsPicChange+"\nsound= "+IsSoundChange);
+				
+				formData2.append("IsPicChange",IsPicChange);
+				formData2.append("IsSoundChange",IsSoundChange);
+				
 				///////อัพเดทลงฐานข้อมูล
 				$.ajax({
 		            url: 'qs/qs_uploadPic_to_page.php',
@@ -183,9 +224,7 @@ $_GET['pageid'];
 		            contentType: false,
 		            processData: false
 		        }).done(function(data){
-		              //  alert("-"+data+"-");
 					if(data == "notsuccess"){
-						//alert("เพิ่มไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
 						$("#exampleModal").modal()// เปิดใช้ popup
 						$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
 						$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
@@ -193,8 +232,8 @@ $_GET['pageid'];
 						
 					}
 					else if(data == "ok"){
-						//alert("เพิ่มแล้ว");
-						window.location.href="main.php?page=create_page&storyid="+story_id+"";
+						
+						window.location.href="main.php?page=user_edit_story_page&storyid="+story_id+"";
 					}
 		        });
 			}

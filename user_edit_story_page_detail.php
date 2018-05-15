@@ -39,41 +39,7 @@ $_GET['pageid'];
 				<input style="display: none;" type="file" name="audio_upload" id="audio_upload" accept="audio/*"  />
 			</div>
 		</div>
-		<!--
-		<div class="row marginB20" style="margin-top: -10px;">
-			<div class="col-xs-3 col-sm-3">
-				<div id="" class="form-group form-group-sm">
-					<div class="bg-btn btn-create " style="margin-left:40px;" id="editText">
-						<i class="icon-text " >editText</i> 
-					</div>
-					<input type="hidden" name="editText"  />
-				</div>
-			</div>
-			<div class="col-xs-3 col-sm-3">
-				<div id="" class="form-group form-group-sm">
-					<div class="bg-btn btn-refresh" style="margin-left:20px;">
-						<i class="fa fa-refresh" ></i>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-3 col-sm-3">
-				<div id="" class="form-group form-group-sm">
-					<div class="bg-btn btn-microphone" id="editSound">
-						 <i class="icon-mic" style="">Audio</i> 
-					</div>
-					<input style="" type="file" name="audio_upload" id="audio_upload" accept="audio/*" />
-				</div>
-			</div>
-			<div class="col-xs-3 col-sm-3">
-				<div id="" class="form-group form-group-sm">
-					<div class="bg-btn btn-play" style="margin-left:-20px;">
-						<i class="fa fa-play-circle" ></i>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-		-->
+		
 		<div style="display:none;" id = "show_description_page">
 			<label for="description_page" class="marginT10 color-blue">เนื้อเรื่อง</label>
 			<textarea class="form-control" id="description_page" rows="3">  </textarea>
@@ -117,10 +83,23 @@ $_GET['pageid'];
 		$('#editSound').bind("click" , function () {
 			$('#audio_upload').click();
 			
+			
 		});
 		
 		//เปลี่ยนสีปุ่ม
 		$("#audio_upload").change(function(){
+			///adfile name 
+			$('#audio_upload').attr('src', this.value);
+			if (this.files && this.files[0]) 
+			{
+				var reader = new FileReader();
+				reader.onload = function (e) 
+				{
+					$('#audio_upload').attr('src', e.target.result);
+				}
+				reader.readAsDataURL(this.files[0]);
+			}
+			////เปลี่ยนสีไอคอนไมค์
 			if( document.getElementById("audio_upload").files.length == 0 ){
 				$("#editSound").addClass("icon-mic")
 				$("#editSound").removeClass("icon-mic-recond")
@@ -172,7 +151,7 @@ $_GET['pageid'];
 					//check icon audio
 					$('#audio_upload').attr('src', datajson[0].voice);
 					var audio = $('#audio_upload').attr('src');
-					if (typeof audio == "undefined" || audio == NULL ){
+					if (typeof audio == "undefined" || audio == "NULL" ){
 						$("#editSound").addClass("icon-mic")
 						$("#editSound").removeClass("icon-mic-recond")
 						
@@ -182,8 +161,12 @@ $_GET['pageid'];
 						$("#editSound").addClass("icon-mic-recond")//icon มีไฟล์ 
 						
 					}
+					if(datajson[0].text == "NULL"){
+						
+					}else{
+						document.getElementById("description_page").value = datajson[0].text;
+					}
 					
-					document.getElementById("description_page").value = datajson[0].text;
 					var showPic_page = document.getElementById("showPic_page");
 					//<i class="fa fa-camera" style="font-size:24px"></i>
 					if(datajson[0].picture == "NULL"){
@@ -211,15 +194,16 @@ $_GET['pageid'];
 			formData2.append("story_id",story_id);
 			formData2.append("pageNumber",pageNumber_);
 			formData2.append("description_page",description_page.value);
-			var fileAudio = document.getElementById("audio_upload").files.length;
-			
-			
-			
+		//	var fileAudio = document.getElementById("audio_upload").files.length;
+			var IsPicChange = 0;  ////0 = ใช้รูปเดิมจากฐานข้อมูล - 1 = รูปใหม่
+			var IsSoundChange = 0;  ////0 = ใช้เสียงเดิมจากฐานข้อมูล - 1 = เสียงใหม่
 			
 			//-------------------------
-			
+			var audio = $('#audio_upload').attr('src');
 			var str = $('#img2').attr('src');
-			if (typeof str === "undefined" || $("#description_page").val() == "" || fileAudio == 0  ) {
+			//alert("str = -"+str+"-");
+			//alert("audio = -"+audio+"-");
+			if (typeof str === "undefined"  ||(str == "")   ) {
 				//popup for alert
 				$("#exampleModal").modal()// เปิดใช้ popup
 				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
@@ -227,7 +211,20 @@ $_GET['pageid'];
 				$(".modal-body").html("กรุณากรอกข้อมูลให้ครบ")  //ใส่ข้อความที่ต้องการ alert
 			}
 			else{
+				//alert(str.substring(0,8));
 				
+				///เช็คว่ามีการเปลี่ยนรูปปหรือไม่
+				if(str.substring(0,8) == "imgStory"){IsPicChange = 0;}
+				else{IsPicChange = 1 ;}
+				
+				// เช็คว่ามีการเปลี่ยนเสียงหรือไม่
+				if(audio.substring(0,1) == "s" || (audio == "") || (audio == "NULL")){IsSoundChange = 0;}
+				else{IsSoundChange = 1 ;}
+				
+				//alert("pic= "+IsPicChange+"\nsound= "+IsSoundChange);
+				
+				formData2.append("IsPicChange",IsPicChange);
+				formData2.append("IsSoundChange",IsSoundChange);
 				//alert("ครบ"+pageNumber_);
 				///////อัพเดทลงฐานข้อมูล
 				$.ajax({
@@ -240,8 +237,11 @@ $_GET['pageid'];
 		            processData: false
 		        }).done(function(data){
 		              //  alert("-"+data+"-");
-					if(data == "notsuccess"){
-						alert("เพิ่มไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
+					if(data == "notsuccessP"){
+						alert("เพิ่มรูปไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
+					}
+					else if(data == "notsuccessS"){
+						alert("เพิ่มเสียงไม่ได้ กรุณากรอกข้อมูลให้ครบแล้วลองใหม่");
 					}
 					else if(data == "ok"){
 						//alert("เพิ่มแล้ว");

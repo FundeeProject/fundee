@@ -93,7 +93,7 @@ function test(){
 		$login=mysql_fetch_assoc($query); 
 		//echo $num_rows;
 		if($num_rows === 0){
-			echo "ผิดพลาด! ไม่มี Username นี้ในระบบ หรือคุณถูกระงับการใช้งาน.";
+			echo "Incorrect email or password. <br>The email you entered does not belong to any account.";
 			exit();
 		}else if ($num_rows != 0){
 			$uid = $username;
@@ -128,7 +128,7 @@ function signIn(){
 		$num_rows=mysql_num_rows($query);
 		$login=mysql_fetch_assoc($query);
 		if($num_rows === 0){
-			echo "ผิดพลาด! ไม่มี Username นี้ในระบบ หรือคุณถูกระงับการใช้งาน.";
+			echo "Incorrect email or password. <br>The email you entered does not belong to any account.";
 			exit();
 		}else if ($num_rows != 0){
 			$uid = $username;
