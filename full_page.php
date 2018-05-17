@@ -11,6 +11,12 @@ $_GET['storyid'];
 	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
+	<!-- p5sound -->
+	<script src="js/p5/p5.min.js"></script>
+    <script src="js/p5/addons/p5.dom.min.js"></script>
+    <script src="js/p5/addons/p5.sound.min.js"></script>
+	
 	<!-- สริปต์ปุ่มสีๆ -->
 	<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 	<!-- Add icon library -->
@@ -96,11 +102,28 @@ $_GET['storyid'];
 </div>
 
 <script type="text/javascript">
-$(document).ready(function(){
 	
+	
+	var song0;
+	var song1;
+	var song2;
+	var song3;
+	var song4;
+	var song5;
+	var song6;
+	var song7;
+	var song8;
+	var song9;
+	
+	var index_ = 0 ;
+	var lastIndex = 0;
 	var h = document.documentElement.clientHeight
 	var storyid = <?php echo $_GET['storyid'];?> ;
 	var numberOfpage = 0;
+	
+	function preload() {
+		
+
 	$.ajax({
 		type:'POST',
 		url:'qs/qs_loadStoryByID.php',
@@ -125,7 +148,7 @@ $(document).ready(function(){
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							if(datajson[i].voice != "NULL"){
 								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
-								'<audio controls id="myVideo'+no+'" class="myVideo" ><source src="audio/'+datajson[i].voice+'" type="audio/mpeg"></audio>'+
+								'<span id="myVideo'+no+'" class="myVideo" audio-src="audio/'+datajson[i].voice+'"></span>'+
 								'</div></div>'
 							}else{
 								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>>'+ description +'</b></p>'+
@@ -136,7 +159,7 @@ $(document).ready(function(){
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							if(datajson[i].voice != "NULL"){
 								img = '<div class="item "><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;"><p class="text"><b>'+ description +'</b></p>'+
-								'<audio controls id="myVideo'+no+'" class="myVideo" ><source src="audio/'+datajson[i].voice+'" type="audio/mpeg"></audio>'+
+								'<span id="myVideo'+no+'" class="myVideo" audio-src="audio/'+datajson[i].voice+'"></span>'+
 								'</div></div>'
 							}else{
 								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
@@ -151,11 +174,29 @@ $(document).ready(function(){
 					$('#showSlideNews').append(img);	
 					$('#showSlideNews').find('.item').eq(0).addClass('active');
 					
+					if (i == 0) {
+						song0 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 1) {
+						song1 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 2) {
+						song2 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 3) {
+						song3 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 4) {
+						song4 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 5) {
+						song5 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 6) {
+						song6 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 7) {
+						song7 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 8) {
+						song8 = loadSound('audio/'+datajson[i].voice);
+					} else if (i == 9) {
+						song9 = loadSound('audio/'+datajson[i].voice);
+					} 
+					
 				});	
-				//-----------play audio Auto-------------//
-				var vid = document.getElementById("myVideo0");
-				vid.autoplay = true;
-				vid.load();
 				$('.carousel').carousel({ 
 					interval:false 
 					/*pause:true*/
@@ -167,185 +208,112 @@ $(document).ready(function(){
 			else{
 				alert("ไม่พบข้อมูลหน้านิทาน");
 			}
+			
 		},
 		error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 	});
-	
-	var index_ = 1 ;
+	}
+
+	function setup() {
+		
 	//----------------click next--------------//
 	$( "#next" ).click(function() {
-		if(index_ != numberOfpage){
-		index_ += 1 ;}
-		else{index_=1;}
-		//alert( "index_ = "+index_ );
+		lastIndex = index_;
+		index_++;
 		
-		var vid0 = document.getElementById("myVideo0");
-		var vid1 = document.getElementById("myVideo1");
-		var vid2 = document.getElementById("myVideo2");
-		var vid3 = document.getElementById("myVideo3");
-		var vid4 = document.getElementById("myVideo4");
-		var vid5 = document.getElementById("myVideo5");
-		var vid6 = document.getElementById("myVideo6");
-		var vid7 = document.getElementById("myVideo7");
-		var vid8 = document.getElementById("myVideo8");
-		var vid9 = document.getElementById("myVideo9");
-		var vid10 = document.getElementById("myVideo10");
-		if(index_ == 1){
-			$('#myVideo9').removeAttr("autoplay");
-			vid9.pause();
-			vid0.autoplay = true;
-			vid0.load();
-		}
-		else if(index_ == 2){
-			$('#myVideo0').removeAttr("autoplay");
-			vid0.pause();
-			vid1.autoplay = true;
-			vid1.load();
-		}
-		else if(index_ == 3){
-			$('#myVideo1').removeAttr("autoplay");
-			vid1.pause();
-			vid2.autoplay = true;
-			vid2.load();
-		}
-		else if(index_ == 4){
-			$('#myVideo2').removeAttr("autoplay");
-			vid2.pause();
-			vid3.autoplay = true;
-			vid3.load();
-		}
-		else if(index_ == 5){
-			$('#myVideo3').removeAttr("autoplay");
-			vid3.pause();
-			vid4.autoplay = true;
-			vid4.load();
-		}
-		else if(index_ == 6){
-			$('#myVideo4').removeAttr("autoplay");
-			vid4.pause();
-			vid5.autoplay = true;
-			vid5.load();}
-		else if(index_ == 7){
-			$('#myVideo5').removeAttr("autoplay");
-			vid5.pause();
-			vid6.autoplay = true;
-			vid6.load();
-		}
-		else if(index_ == 8){
-			$('#myVideo6').removeAttr("autoplay");
-			vid6.pause();
-			vid7.autoplay = true;
-			vid7.load();
-		}
-		else if(index_ == 9){
-			$('#myVideo7').removeAttr("autoplay");
-			vid7.pause();
-			vid8.autoplay = true;
-			vid8.load();
-		}
-		else if(index_ == 10){
-			$('#myVideo8').removeAttr("autoplay");
-			vid8.pause();
-			vid9.autoplay = true;
-			vid9.load();
-		}else if(index_ == 11){
-			$('#myVideo9').removeAttr("autoplay");
-			vid9.pause();
-			document.getElementById("myVideo").autoplay = true;
-			document.getElementById("myVideo").load();
-			//vid10.autoplay = true;
-			//vid10.load();
-		}
+		if(index_  == numberOfpage)
+			index_ = 0 ;
+
+		startstopsound(index_, lastIndex);
 	});	
+	
 	//----------------click prev--------------//
 	$( "#prev" ).click(function() {
-		if(index_ != 1){
-			index_ -= 1 ;
-		}else{index_ = numberOfpage ;}
-		//alert( "index_ = "+index_ );
-		var vid0 = document.getElementById("myVideo0");
-		var vid1 = document.getElementById("myVideo1");
-		var vid2 = document.getElementById("myVideo2");
-		var vid3 = document.getElementById("myVideo3");
-		var vid4 = document.getElementById("myVideo4");
-		var vid5 = document.getElementById("myVideo5");
-		var vid6 = document.getElementById("myVideo6");
-		var vid7 = document.getElementById("myVideo7");
-		var vid8 = document.getElementById("myVideo8");
-		var vid9 = document.getElementById("myVideo9");
-		var vid10 = document.getElementById("myVideo10");
-		if(index_ == 1){
-			$('#myVideo1').removeAttr("autoplay");
-			vid1.pause();
-			vid0.autoplay = true;
-			vid0.load();
-		}
-		else if(index_ == 2){
-			$('#myVideo2').removeAttr("autoplay");
-			vid2.pause();
-			vid1.autoplay = true;
-			vid1.load();
-		}
-		else if(index_ == 3){
-			$('#myVideo3').removeAttr("autoplay");
-			vid3.pause();
-			vid2.autoplay = true;
-			vid2.load();
-		}
-		else if(index_ == 4){
-			$('#myVideo4').removeAttr("autoplay");
-			vid4.pause();
-			vid3.autoplay = true;
-			vid3.load();
-		}
-		else if(index_ == 5){
-			$('#myVideo5').removeAttr("autoplay");
-			vid5.pause();
-			vid4.autoplay = true;
-			vid4.load();
-		}
-		else if(index_ == 6){
-			$('#myVideo6').removeAttr("autoplay");
-			vid6.pause();
-			vid5.autoplay = true;
-			vid5.load();}
-		else if(index_ == 7){
-			$('#myVideo7').removeAttr("autoplay");
-			vid7.pause();
-			vid6.autoplay = true;
-			vid6.load();
-		}
-		else if(index_ == 8){
-			$('#myVideo8').removeAttr("autoplay");
-			vid8.pause();
-			vid7.autoplay = true;
-			vid7.load();
-		}
-		else if(index_ == 9){
-			$('#myVideo9').removeAttr("autoplay");
-			vid9.pause();
-			vid8.autoplay = true;
-			vid8.load();
-		}
-		else if(index_ == 10){
-			$('#myVideo0').removeAttr("autoplay");
-			vid0.pause();
-			vid9.autoplay = true;
-			vid9.load();
-		}else if(index_ == 11){
-			$('#myVideo9').removeAttr("autoplay");
-			vid9.pause();
-			document.getElementById("myVideo").autoplay = true;
-			document.getElementById("myVideo").load();
-			//vid10.autoplay = true;
-			//vid10.load();
-		}
+		 lastIndex = index_;
+		index_--;
+		
+		if(index_  < 0)
+			index_ = numberOfpage-1 ;
+		
+		startstopsound(index_, lastIndex);
 	});	
+	
 	/*-----------Close----------*/
 	$("#closeBtn").click(function(){ 
 			 window.history.back();
 	});
-});
+	
+	/*-----------Play-----------*/
+	$("#playBtn").click(function(){ 
+			 song0.play();
+	});
+	}
+	
+	function startstopsound(startsound, stopsound) {
+		// play
+		if (startsound == 0) {
+			song0.play();
+		}
+		else if(startsound == 1){
+			song1.play();
+		}
+		else if(startsound == 2){
+			song2.play();
+		}
+		else if(startsound == 3){
+			song3.play();
+		}
+		else if(startsound == 4){
+			song4.play();
+		}
+		else if(startsound == 5){
+			song5.play();
+		}
+		else if(startsound == 6){
+			song6.play();
+		}
+		else if(startsound == 7){
+			song7.play();
+		}
+		else if(startsound == 8){
+			song8.play();
+		}
+		else if(startsound == 9){
+			song9.play();
+		}
+		
+		// stop
+		if (stopsound == 0) {
+			song0.stop();
+		}
+		else if(stopsound == 1){
+			song1.stop();
+		}
+		else if(stopsound == 2){
+			song2.stop();
+		}
+		else if(stopsound == 3){
+			song3.stop();
+		}
+		else if(stopsound == 4){
+			song4.stop();
+		}
+		else if(stopsound == 5){
+			song5.stop();
+		}
+		else if(stopsound == 6){
+			song6.stop();
+		}
+		else if(stopsound == 7){
+			song7.stop();
+		}
+		else if(stopsound == 8){
+			song8.stop();
+		}
+		else if(stopsound == 9){
+			song9.stop();
+		}
+	}
 </script>
 </body>
 </html>
