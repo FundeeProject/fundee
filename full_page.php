@@ -61,7 +61,7 @@ $_GET['storyid'];
     opacity: 0.5;
 }
 
-canvas {
+#defaultCanvas0 {
 	display: none;
 }
 </style>
