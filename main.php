@@ -167,7 +167,7 @@ $(document).ready(function(){
    <div class="masterProfile">
 	   <i class="fa fa-sign-out-alt"></i>
 	   <!--<span class="glyphicon glyphicon-log-out">-->
-	   <div class="glyphicon glyphicon-log-out" id="" data-toggle="modal" data-target="#exampleModal"></div>
+	   <div class="glyphicon glyphicon-log-out" id="" data-toggle="modal" data-target="#logoutModal"></div>
    </div>
    <div class="nameLogo" style="width: 130px; height: 53px;"></div>
    <div class="w100 logoHome login marginT10" style="position:retative; top:-20px;"></div>
@@ -293,6 +293,20 @@ $(document).ready(function(){
 </div>
 
 
+<div class="modal fade exampleModal" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+	<div class="modal-content" style="min-height: 150px;">
+	  <div class="modal-body text-blue" style="text-align:center;">
+	  </div>
+	  <div class="modal-footer marginAuto" style="" >
+		<button type="button" class="btn btn-info" id="oklogoutBtn" style="width:80px;">Yes</button>
+		<button type="button" class="btn btn-back" style="width:80px;" id="noModalBtn" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
+  </div>
+</div>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
 //=======================>>>>> logout <<<<<=======================
@@ -301,7 +315,7 @@ $(document).ready(function(){
 		
 		$(".modal-body").html("ออกจากระบบ")
 		
-		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
+		$("#oklogoutBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			window.location.href="logout.php";
 		})
 		

@@ -1,44 +1,4 @@
-<!--
-<body class="bgHome container">
-	<form class="marginT20" style="width :90%; margin-left:auto; margin-right:auto; "  method = "post" enctype = "multipart/form-data" id = "createform3">
-	<div class="marginAuto admin-addNewsPage" >
-		  <p class="text-center textName"></p>
-		  <div class="form-group paddingT10 marginAuto divBtn">
-			<center>
-				<div class="marginAuto marginB20" style="width:90%; height:auto;">
-					<div class="form-group">
-						<label class="marginT20 color-blue" >Topic</label>
-						<input type="text" class="form-control" id=""  placeholder="Type Category">
-					 
-					  
-						<label class="color-blue marginT10">Detail</label>
-						<textarea class="form-control" id="Detail" rows="3"></textarea>
-					 
-					  
-					 
-						<label class="color-blue marginT10">Add Picture</label>
-						
-						<div class="box-camera  " style="" id = "showPic_news">
-							<i class="fa fa-camera" style="font-size:24px"></i>
-						</div>
-						<input type="file" name="news_pic_upload" id="add_pic" OnChange="addPic(this)"/>
-						
-					</div>
-				
-					<div class="row">
-						<div class="col-xs-12">
-							<div  class="text-center" >
-								 <button type="submit" class="btn btn-info" style="" id="addNewsBtn">Add News</button>
-							</div>
-							<p class="marginB10"></p>
-						</div>
-					</div>			
-				</div>
-			</center>
-		  </div>
-	</div>	
-	</form>
--->
+
 <form class=""   method = "post" enctype = "multipart/form-data" id = "createform3">
 	<div class="row adminAddNewsPage">
 		<div class="marginAuto divBtn min-h">
@@ -58,7 +18,7 @@
 						</div>
 						<p class="color-blue text-center" style="margin:0">Add Picture News</p>
 					</div>
-					<input style="display:none" type="file" name="news_pic_upload" id="add_pic" OnChange="addPic(this)"/>
+					<input style="display:none" type="file" name="news_pic_upload" id="add_pic" OnChange="addPic(this)" accept="image/*"/>
 					<div class="row marginT20">
 						<div class="col-xs-12">
 							<div  class="text-center sizeBtn " >
@@ -117,7 +77,7 @@
 			        }).done(function(data){
 			               //alert("-"+data+"-");
 						if(data == "success"){
-							alert("เพิ่มข่าวสำเร็จ");
+							//alert("เพิ่มข่าวสำเร็จ");
 							window.location.href="main.php?page=admin_manageNews";
 						}
 						else if(data == "notsuccess"){
