@@ -115,28 +115,7 @@
 			window.location.href="main.php?page=admin";
 		});
 
-		/////////ลบ Category  
-		/*
-		$("#delBtn").click(function(){
-			//var text = $('ul li.active').text();
-			var text = $('#textCategory li.active').text();
-			alert("del : " +text);
-			$.ajax({
-				type:'POST',
-				url:'qs/qs_deleteCategory.php',
-				dataType: "text",
-				data: {text:text},
-				success:function( datajson ) {     
-					if(datajson == 'ok'){
-						alert("ลบแล้ว");
-						window.location.href="main.php?page=admin_manageCategory";
-					}
-					else{ alert("ลบไม่สำเร็จ");
-					}
-				},
-				error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
-			});
-		});*/
+		
 	});
 		
 </script>

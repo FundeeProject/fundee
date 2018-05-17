@@ -66,7 +66,7 @@
 					
 				}
 				else{
-					$('#showHomeStory').append("<p class='text-blue text-center'> ไม่มีนิทานที่รอการอนุมัติ </p>");
+					$('#showHomeStory').append("<p class='text-blue text-center'> not have story waiting approve </p>");
 				}
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

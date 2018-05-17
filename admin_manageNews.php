@@ -65,7 +65,7 @@ $_GET['page'];*/
 					});	
 				}
 				else{
-					$('#textNews').append("<p class='list-group-item' style=' text-align: center; ' >ไม่มีข้อมูล</p>");
+					$('#textNews').append("<p class='list-group-item' style=' text-align: center; ' >No data</p>");
 				}
 				
 				$('.list-group-item:first').addClass('active');
@@ -93,7 +93,8 @@ $_GET['page'];*/
 		$(".deleteBtn").click(function(){});
 
 		//popup
-		$(".modal-body").html("ยืนยันการลบข้อมูล")
+		$(".modal-body").html("Confirm deletion?")
+		
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			var text = $('#textNews li.active').text();
 			var newId =  $('#textNews li.active').data("id") // มาจาก  data-id='+datajson[i].news_id+'
