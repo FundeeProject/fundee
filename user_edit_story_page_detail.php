@@ -20,7 +20,7 @@ $_GET['pageid'];
 					<i class="glyphicon glyphicon-camera" style="left: 43%;top: 43;"></i>
 				</div>
 				
-				<input type="file" name="pic_upload_page" id="html_btn2" OnChange="PreviewPage(this)" style="display:none"/>
+				<input type="file" name="pic_upload_page" id="html_btn2" OnChange="PreviewPage(this)" style="display:none" accept="image/*" />
 				<div style="position: relative;top: 130px;">
 					<textarea class="form-control" id="description_page" rows="3" placeholder="Storyline : " style="border-radius: 10px;background-color: #085b6b;color: #FFF;"></textarea>
 				</div>
