@@ -61,6 +61,11 @@ $_GET['storyid'];
     opacity: 0.5;
 }
 
+#defaultCanvas0{
+	display: none;
+	
+}
+
 </style>
 </head>
 <body >
@@ -68,6 +73,7 @@ $_GET['storyid'];
 
 
 <div class="icon32 icon-close " id="closeBtn"></div>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 	
 	 <ol class="carousel-indicators" style="bottom:0px;" id="showSlideNews_number">
@@ -77,6 +83,7 @@ $_GET['storyid'];
 
 	<!--img slide-->
 	<div class="carousel-inner" role="listbox" id="showSlideNews" >
+	
 		<!--<div class="item">
 			<div class="slideMint" style="background-image:url(imgStory/87_1.png);height :300px;">
 				<p>sdfsdfsdfsdf</p>
@@ -87,6 +94,9 @@ $_GET['storyid'];
 			</div>
 		</div>-->
 	</div> 
+	
+	
+	
 	
 
    
@@ -100,6 +110,19 @@ $_GET['storyid'];
 	</a>
 </div>
 </div>
+<!--
+<div class="modal fade exampleModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" style="top: 35%;" role="document">
+	<div class="modal-content" style="min-height: 150px;">
+	  <div class="modal-body text-blue" style="text-align:center;">
+	  </div>
+	  <div class="modal-footer marginAuto" style="" >
+		<button type="button" class="btn btn-back noBtn" style="width:80px;" id="noModalBtn" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
+  </div>
+</div>-->
+
 
 <script type="text/javascript">
 	
@@ -118,6 +141,7 @@ $_GET['storyid'];
 	var index_ = 0 ;
 	var lastIndex = 0;
 	var h = document.documentElement.clientHeight
+	//var h = document.documentElement.clientWidth;
 	var storyid = <?php echo $_GET['storyid'];?> ;
 	var numberOfpage = 0;
 	
@@ -151,7 +175,7 @@ $_GET['storyid'];
 								'<span id="myVideo'+no+'" class="myVideo" audio-src="audio/'+datajson[i].voice+'"></span>'+
 								'</div></div>'
 							}else{
-								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>>'+ description +'</b></p>'+
+								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
 								'</div></div>'
 							}
 						}
