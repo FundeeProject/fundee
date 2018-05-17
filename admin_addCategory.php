@@ -53,7 +53,7 @@
 					data: {Categoryname:Categoryname},
 					success:function( datajson ) {  
 						if(datajson == 'ok'){
-							alert("Added finished");
+							//alert("Added finished");
 							window.location.href="main.php?page=admin_manageCategory";
 						}
 						else{ alert("Unsuccessful ! "+datajson);

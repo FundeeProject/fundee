@@ -17,38 +17,7 @@
 			<div class="imgApporve">
 				<div id="approveStory" class="form-group">
 					<div class='row marginAuto marginT10'  style="width:95%" id="showHomeStory"  >
-						<!-- <div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='1'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-play"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-							<div class="iconCheckStatus icon16 icon-approve "></div>
-						</div>
-						<div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='+datajson[i].story_id+'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-play"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-							<div class="iconCheckStatus icon16 icon-approveWait"></div>
-						</div>
-						<div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='+datajson[i].story_id+'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-play"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-							<div class="iconCheckStatus icon16 icon-approveWait"></div>
-						</div>
-						<div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='+datajson[i].story_id+'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-play"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-							<div class="iconCheckStatus icon16 icon-approveWait"></div>
-						</div>-->
+						
 					</div>
 				</div> 
 			</div>

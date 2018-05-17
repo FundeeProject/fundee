@@ -86,7 +86,7 @@
 		//popup
 		$(".modal-body").html("ยืนยันการลบข้อมูล")
 
-		$(".okBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
+		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			var text = $('#textCategory li.active').text();
 			var categoryId =  $('#textCategory li.active').data("id") // มาจาก  data-id='+datajson[i].news_id+'
 			//alert(categoryId ) // เอาค่านี้ไปใช้

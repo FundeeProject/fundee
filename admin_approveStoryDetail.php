@@ -99,7 +99,7 @@ $_GET['storyid'];
 					success:function( datajson ) {  
 						//--------------อนุมัติสำเร็จแล้วถึงเปลี่ยนหน้า--------------
 						if(datajson == "ok"){ 
-							alert( "อนุมัติแล้ว" );
+							//alert( "อนุมัติแล้ว" );
 							window.location.href="main.php?page=admin_approveStory";
 						}
 						else{
@@ -111,18 +111,6 @@ $_GET['storyid'];
 			})
 			
 		})
-		
-		/*
-		$(".deleteBtn").click(function(){
-			$('.exampleModal').modal('show');
-			$(".modal-body").html("ยืนยันการลบข้อมูล")
-			$("#okModalBtn").click(function(){
-				var newId =  $('#boxData').data("id") ;
-				alert("5555")
-				/////// code ต่อ
-			})
-			
-		})*/
 		
 		
 		

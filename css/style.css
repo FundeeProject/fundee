@@ -561,6 +561,12 @@ body{
 .modal-content{
 	border: 1px solid #085b6b;
 }
+.modal-body{
+	top:20px;
+}
+.modal-footer{
+	margin-top: 30px;
+}
 
 .box-camera i{
 	font-size:20px;
@@ -1068,7 +1074,7 @@ ul.select-list li.active
 
 #btCerate{
 	position: absolute;
-	margin-left: 120px;;
+	margin-left: 115px;;
 }
 
 /*fullPage*/
