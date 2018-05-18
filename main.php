@@ -179,10 +179,16 @@ $(document).ready(function(){
 					 <div class="row">
 						<div class="col-md-12" style="padding:0px;">
 							<ul class="nav nav-tabs list-group" style="margin-bottom:0;">
-								<li class="homePage"><a href="main.php?page=home" >HOME</a></li>
-								<!--<li class="homePage"><a href="">HOME</a></li>-->
+								<!--<li class="homePage"><a href="main.php?page=home" >HOME</a></li>
+								
+								
+								
 								<li class="categoryPage"><a href="main.php?page=category" >CATEGORY</a></li>
-								<li class="storyPage"><a href="main.php?page=mystory" >MY STORY </a></li>
+								<li class="storyPage"><a href="main.php?page=mystory" >MY STORY </a></li>-->
+								<li class="homePage"><a class="home">HOME</a></li>
+        
+								<li class="categoryPage"><a  class ="category" >CATEGORY</a></li>
+								<li class="storyPage"><a class="mystory">MY STORY </a></li>
 								<?php if($_SESSION["role_id"] == 0){echo '<li class="adminPage"><a href="main.php?page=admin">ADMIN </a></li>';} ?>
 							</ul>
 						</div>
@@ -324,6 +330,15 @@ $(document).ready(function(){
 	/*$(".homePage").click(function(){ 
 		window.location.href="main.php?page=home";
 	});*/
+	$(".category").click(function(){ 
+	  window.location.href="main.php?page=category";
+	});
+	$(".home").click(function(){ 
+	  window.location.href="main.php?page=home";
+	});
+	$(".mystory").click(function(){ 
+	  window.location.href="main.php?page=mystory";
+	});
 
 	
 	
