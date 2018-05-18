@@ -79,7 +79,15 @@ $_GET['storyid'];
 <body >
 <div class="fullPage">
 
-
+<div class="icon32 icon-playSlide " id="playBtn" style="width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 40%;
+    z-index: 99999999;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+"></div>
 <div class="icon32 icon-close " id="closeBtn"></div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 	
@@ -120,10 +128,10 @@ var storyid = <?php echo $_GET['storyid'];?> ;
 	// Listen for orientation changes
 window.addEventListener("orientationchange", function() {
   // Announce the new orientation number
- 
+ /*
   if(window.orientation == 90){  alert("Landscape");
 	   window.location.href = "full_page.php?storyid="+storyid+"";
-  }
+  }*/
  
 }, false);
 
@@ -173,9 +181,16 @@ mql.addListener(function(m) {
 	
 	var index_ = 0 ;
 	var lastIndex = 0;
-	var h = document.documentElement.clientHeight
+	//var h = document.documentElement.clientHeight
+	var h = document.documentElement.clientWidth
+	alert(h)
 	var storyid = <?php echo $_GET['storyid'];?> ;
 	var numberOfpage = 0;
+	
+	//ซ่อนปุ่ม ซ้ายขวา
+	$(".glyphicon-chevron-left").hide();
+	$(".glyphicon-chevron-right").hide()
+	
 	
 	function preload() {
 		
@@ -201,13 +216,14 @@ mql.addListener(function(m) {
 					}
 					if(datajson[i].picture != '' ){
 						if(i==0){
+							
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							if(datajson[i].voice != "NULL"){
 								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
 								'<span id="myVideo'+no+'" class="myVideo" audio-src="audio/'+datajson[i].voice+'"></span>'+
 								'</div></div>'
 							}else{
-								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>>'+ description +'</b></p>'+
+								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
 								'</div></div>'
 							}
 						}
@@ -230,9 +246,13 @@ mql.addListener(function(m) {
 					$('#showSlideNews').append(img);	
 					$('#showSlideNews').find('.item').eq(0).addClass('active');
 					
+					
+					
 					if (i == 0) {
+						
 						song0 = loadSound('audio/'+datajson[i].voice);
 					} else if (i == 1) {
+						
 						song1 = loadSound('audio/'+datajson[i].voice);
 					} else if (i == 2) {
 						song2 = loadSound('audio/'+datajson[i].voice);
@@ -301,7 +321,11 @@ mql.addListener(function(m) {
 	
 	/*-----------Play-----------*/
 	$("#playBtn").click(function(){ 
-			 song0.play();
+			
+			$(this).hide();
+			song0.play();
+			$(".glyphicon-chevron-left").show();
+			$(".glyphicon-chevron-right").show()
 	});
 	}
 	
@@ -309,33 +333,42 @@ mql.addListener(function(m) {
 		// play
 		if (startsound == 0) {
 			song0.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 1){
 			song1.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 2){
 			song2.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 3){
 			song3.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 4){
 			song4.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 5){
 			song5.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 6){
 			song6.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 7){
 			song7.play();
+			$("#playBtn").hide()
 		}
 		else if(startsound == 8){
 			song8.play();
 		}
 		else if(startsound == 9){
 			song9.play();
+			$("#playBtn").hide()
 		}
 		
 		// stop

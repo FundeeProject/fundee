@@ -24,7 +24,7 @@
 								<div  class="text-center sizeBtn " >
 									<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
 									<!--<button type="submit" class="btn btn-info" style="" id="">Add</button>-->
-									<button type="button" class="btn btn-back" style="" id="addBtn">Back</button>
+									<button type="button" class="btn btn-info" style="" id="addBtn">Add</button>
 								</div>
 								<p class="marginB10"></p>
 							</div>
