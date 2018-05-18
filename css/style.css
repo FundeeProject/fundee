@@ -375,6 +375,19 @@ body{
     background-size: contain;
 	
 }
+.icon-approve2{
+	background-image: url('../icon/approve_button.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+	
+}
+.icon-playSlide{
+	background-image: url('../icon/play_button.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+	
+}
+
 
 .iconNbr{
 	right: -34px;

@@ -313,7 +313,7 @@ $(document).ready(function(){
 	$(".glyphicon-log-out").click(function(){ 
 		
 		
-		$(".modal-body").html("ออกจากระบบ")
+		$(".modal-body").html("Sign out?")
 		
 		$("#oklogoutBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			window.location.href="logout.php";

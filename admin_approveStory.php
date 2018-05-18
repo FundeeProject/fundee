@@ -8,10 +8,6 @@
 		<div class="blockAdmin marginAuto marginT20">
 		
 			 <div class="" style="padding-top:50px;">
-				<!--<select name="Myselect" id="Myselect"  class="form-control myselect">
-					<option style="width:50px;"  value="1">All</option>
-					<option value="0" >My Create</option>
-				</select> -->
 			</div>
 			
 			<div class="imgApporve">

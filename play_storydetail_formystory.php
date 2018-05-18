@@ -8,7 +8,7 @@ $_GET['formPage'];
 			<div class="icon32 icon-close" id="closeBtn"></div>
 		</div>
 		<div id="boxData" data-id='<?php echo $_GET['storyID']; ?>'><!--get ค่ามาใช้จากหน้าที่ผ่านมาแทนเลข 1-->
-			<div class="img" id="showImg" style="background:url(imgStory/56_00.png); top:-80px"></div>
+			<div class="img" id="showImg" style="background:url(icon/none.png); top:-80px"></div>
 			<div class="divIcon" style="">
 				<div class="icon32 icon-delete2 deleteBtn" id="" data-toggle="modal" data-target="#exampleModal"></div>
 				<!--<div class="icon32 icon-delete2 deleteBtn" id="" ></div>-->
@@ -77,7 +77,7 @@ $_GET['formPage'];
 		/*-------------------กดลบนิทาน----------------------*/
 		
 		//popup
-		$(".modal-body").html("ยืนยันการลบข้อมูล")
+		$(".modal-body").html("Confirm deletion?")
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 		 //alert(storyid)
 				$.ajax({
@@ -92,11 +92,15 @@ $_GET['formPage'];
 							$("#exampleModal").modal()// เปิดใช้ popup
 							$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
 							$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
-							$(".modal-body").html("ลบแล้ว")  //ใส่ข้อความที่ต้องการ alert
+							$(".modal-body").html("delete complete ")  //ใส่ข้อความที่ต้องการ alert
 							//window.location.href="main.php?page=mystory";
 							 window.history.back();
 						}
 						else{
+							$("#exampleModal").modal()// เปิดใช้ popup
+							$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+							$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+							$(".modal-body").html("delete complete ")  //ใส่ข้อความที่ต้องการ alert
 							  alert("ลบผิดพลาด กรุณาลองใหม่");
 						}
 					},
@@ -112,7 +116,13 @@ $_GET['formPage'];
 		$(".approveBtn").click(function(){ 
 			var newId =  $('#boxData').data("id") ;
 			//alert("***********ทำต่อด้วย***");
-			if(statusid == 2 && formPage == "mystory"){alert("อนุมัติแล้ว แก้ไขไม่ได้");}
+			if(statusid == 2 && formPage == "mystory"){
+				//alert("อนุมัติแล้ว แก้ไขไม่ได้");
+				$("#exampleModal").modal()// เปิดใช้ popup
+				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+				$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+				$(".modal-body").html("Can not edit after approved")  //ใส่ข้อความที่ต้องการ alert
+			}
 			else{
 				window.location.href="main.php?page=uesr_edit_story&storyidToEdit="+newId;
 			}
@@ -142,8 +152,6 @@ $_GET['formPage'];
 					  //window.location.href = "index.php";
 				}
 				
-				
-		
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
 		});

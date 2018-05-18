@@ -8,8 +8,8 @@
 			<div class="icon48 icon-news2 marginB10"></div>
 			<div class="blockAdmin marginAuto marginT20">
 				<div class="divTextDetail">
-				<div class="icon24 icon-add"></div>
-				<p class="text-blue"><b>Add News</b></p>
+					<div class="icon24 icon-add"></div>
+					<p class="text-blue"><b>Add News</b></p>
 			
 					<input type="text" class="form-control" id="Detail" placeholder="Topic ...." name="" >
 					<div class="borderBlue" id="showPic_news">
@@ -20,14 +20,16 @@
 					</div>
 					<input style="display:none" type="file" name="news_pic_upload" id="add_pic" OnChange="addPic(this)" accept="image/*"/>
 					<div class="row marginT20">
-						<div class="col-xs-12">
-							<div  class="text-center sizeBtn " >
-								<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
-								<button type="submit" class="btn btn-info" style="" id="">Add</button>
+							<div class="col-xs-12">
+								<div  class="text-center sizeBtn " >
+									<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
+									<!--<button type="submit" class="btn btn-info" style="" id="">Add</button>-->
+									<button type="button" class="btn btn-back" style="" id="addBtn">Back</button>
+								</div>
+								<p class="marginB10"></p>
 							</div>
-							<p class="marginB10" ></p>
 						</div>
-					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -52,20 +54,28 @@
 			window.location.href="main.php?page=admin_manageNews";
 		})
 		
-		$("#createform3").on("submit",function(e){
+		$('#addBtn').click(function(e){
 			var str = $('#img3').attr('src');
 			//-----------เช็คจำนวนตัวอักษร ตอนกดแอดข่าว------//
 			var x = document.getElementById("Detail").value.length ;
 			if(x > 30){
-				alert("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร");
+				$("#exampleModal").modal()// เปิดใช้ popup
+				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+				$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+				$(".modal-body").html("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร")  //ใส่ข้อความที่ต้องการ alert
 			}else{
 				if (typeof str === "undefined" || $("#Detail").val() == "") {
-					alert("กรุณากรอกข้อมูลให้ครบ")
+					
+					$("#exampleModal").modal()// เปิดใช้ popup
+					$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+					$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+					$(".modal-body").html("Please fill up this form")  //ใส่ข้อความที่ต้องการ alert
 				}else{
 					e.preventDefault();
 					var  Detail = document.getElementById("Detail");
-					var formData3 = new FormData($(this)[0]);
+					var formData3 = new FormData($('#createform3')[0]);
 					formData3.append("Detail",Detail.value);
+					alert(formData3)
 					$.ajax({
 			            url: 'qs/qs_add_news.php',
 			            type: 'POST',
@@ -81,21 +91,48 @@
 							window.location.href="main.php?page=admin_manageNews";
 						}
 						else if(data == "notsuccess"){
-							alert("ไม่สามารถอัพโหลดได้ กรุณาลองใหม่");
+							
+							$("#exampleModal").modal()// เปิดใช้ popup
+							$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+							$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+							$(".modal-body").html("ไม่สามารถอัพโหลดได้ กรุณาลองใหม่")  //ใส่ข้อความที่ต้องการ alert
 						}
 			   		});
 				}
 			}
-			
-			
-			
+		})
+		
+		/*
+		$("#createform3").on("submit",function(e){
+			var str = $('#img3').attr('src');
+			//-----------เช็คจำนวนตัวอักษร ตอนกดแอดข่าว------//
+			var x = document.getElementById("Detail").value.length ;
+			if(x > 30){
+				alert("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร");
+			}else{
+				if (typeof str === "undefined" || $("#Detail").val() == "") {
+					
+					$("#exampleModal").modal()// เปิดใช้ popup
+					$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+					$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+					$(".modal-body").html("Please fill up this form")  //ใส่ข้อความที่ต้องการ alert
+				}else{
+					e.preventDefault();
+					var  Detail = document.getElementById("Detail");
+					var formData3 = new FormData($(this)[0]);
+					formData3.append("Detail",Detail.value);
+					alert(Detail.value)
+				
+				}
+			}
 		});
+		*/
 		
 		//-----------เช็คจำนวนตัวอักษร ตอนกรอก------//
 			$('#Detail').keyup(function(){
 				var x = document.getElementById("Detail").value.length ;
 				if(x > 30){
-					alert("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร");
+					//alert("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร");
 					var newstring = document.getElementById("Detail").value.substring(0,30);
 					document.getElementById("Detail").value = newstring;
 				}

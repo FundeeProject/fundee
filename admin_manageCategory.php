@@ -84,7 +84,7 @@
 
 		$(".deleteBtn").click(function(){});
 		//popup
-		$(".modal-body").html("ยืนยันการลบข้อมูล")
+		$(".modal-body").html("Confirm deletion?")
 
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			var text = $('#textCategory li.active').text();
@@ -99,7 +99,6 @@
 				data: {text:categoryId},
 				success:function( datajson ) {     
 					if(datajson == 'ok'){
-						//alert("ลบแล้ว");
 						window.location.href="main.php?page=admin_manageCategory";
 					}
 					else{ alert("ลบไม่สำเร็จ");
@@ -115,28 +114,7 @@
 			window.location.href="main.php?page=admin";
 		});
 
-		/////////ลบ Category  
-		/*
-		$("#delBtn").click(function(){
-			//var text = $('ul li.active').text();
-			var text = $('#textCategory li.active').text();
-			alert("del : " +text);
-			$.ajax({
-				type:'POST',
-				url:'qs/qs_deleteCategory.php',
-				dataType: "text",
-				data: {text:text},
-				success:function( datajson ) {     
-					if(datajson == 'ok'){
-						alert("ลบแล้ว");
-						window.location.href="main.php?page=admin_manageCategory";
-					}
-					else{ alert("ลบไม่สำเร็จ");
-					}
-				},
-				error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
-			});
-		});*/
+		
 	});
 		
 </script>

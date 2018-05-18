@@ -16,7 +16,6 @@ $_GET['page'];*/
 			<div class="marginT20 iconBtn">
 				<div class="icon36 icon-add" id="addBtn" ></div>
 				<div class="icon36 icon-delete deleteBtn" id="" data-toggle="modal" data-target="#exampleModal"></div>
-				<!--<div class="icon36 icon-delete" id="delBtn"></div>-->
 			</div>
 			<div class="" style="padding-top:80px;">
 				<div class="form-group borderBlue marginAuto"  style="width:95%;">
@@ -65,7 +64,7 @@ $_GET['page'];*/
 					});	
 				}
 				else{
-					$('#textNews').append("<p class='list-group-item' style=' text-align: center; ' >ไม่มีข้อมูล</p>");
+					$('#textNews').append("<p class='list-group-item' style=' text-align: center; ' >No Data</p>");
 				}
 				
 				$('.list-group-item:first').addClass('active');
@@ -93,7 +92,7 @@ $_GET['page'];*/
 		$(".deleteBtn").click(function(){});
 
 		//popup
-		$(".modal-body").html("ยืนยันการลบข้อมูล")
+		$(".modal-body").html("Confirm deletion?")
 		$("#okModalBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			var text = $('#textNews li.active').text();
 			var newId =  $('#textNews li.active').data("id") // มาจาก  data-id='+datajson[i].news_id+'

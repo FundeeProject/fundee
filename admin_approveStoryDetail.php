@@ -11,7 +11,7 @@ $_GET['storyid'];
 			<div class="divIcon" style="">
 				<div class="icon32 icon-delete2 deleteBtn" id="" data-toggle="modal" data-target="#modalApprove"></div>
 				<div class="icon48 icon-play playBtn"></div>
-				<div class="icon32 icon-approve approveBtn" data-toggle="modal" data-target="#exampleModal"></div>
+				<div class="icon32 icon-approve2 approveBtn" data-toggle="modal" data-target="#exampleModal"></div>
 				<!--<div class="glyphicon glyphicon-log-out" id="" data-toggle="modal" data-target="#exampleModal"></div>-->
 			</div>
 			<div style="position: relative;top: -30px;">
@@ -62,7 +62,7 @@ $_GET['storyid'];
 					success:function( datajson ) {  
 						//-----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------//
 						if(datajson == "ok"){ 
-							alert( "ลบแล้ว" );
+							//alert( "ลบแล้ว" );
 							window.location.href="main.php?page=admin_approveStory";
 						}
 						else{
