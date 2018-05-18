@@ -64,6 +64,16 @@ $_GET['storyid'];
 #defaultCanvas0 {
 	display: none;
 }
+
+/*-----------------------------mint เพิ่ม------------------------*/
+/* portrait */
+@media screen and (orientation:portrait) {
+  /* portrait-specific styles */
+}
+/* landscape */
+@media screen and (orientation:landscape) {
+  /* landscape-specific styles */
+}
 </style>
 </head>
 <body >
@@ -105,8 +115,51 @@ $_GET['storyid'];
 </div>
 
 <script type="text/javascript">
-	
-	
+/*-----------------------------mint เพิ่ม------------------------*/
+var storyid = <?php echo $_GET['storyid'];?> ;
+	// Listen for orientation changes
+window.addEventListener("orientationchange", function() {
+  // Announce the new orientation number
+ 
+  if(window.orientation == 90){  alert("Landscape");
+	   window.location.href = "full_page.php?storyid="+storyid+"";
+  }
+ 
+}, false);
+
+// Listen for resize changes
+window.addEventListener("resize", function() {
+  // Get screen size (inner/outerWidth, inner/outerHeight)
+  
+}, false);
+
+// Find matches
+var mql = window.matchMedia("(orientation: portrait)");
+
+// If there are matches, we're in portrait
+if(mql.matches) {  
+  // Portrait orientation
+} else {  
+  // Landscape orientation
+}
+
+// Add a media query change listener
+mql.addListener(function(m) {
+  if(m.matches) {
+    // Changed to portrait
+  }
+  else {
+    // Changed to landscape
+  }
+});
+/*----------------------------- จบที่ mint เพิ่ม------------------------*/
+
+	/*if(window.innerHeight > window.innerWidth){
+		alert("Please use Landscape!");
+	}
+	if(window.innerHeight < window.innerWidth){
+		alert(" Landscape!");
+	}*/
 	var song0;
 	var song1;
 	var song2;
