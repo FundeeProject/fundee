@@ -25,7 +25,7 @@
 								<button type="button" class="btn btn-back" style="" id="backBtn">Back</button>
 								<button type="submit" class="btn btn-info" style="" id="">Add</button>
 							</div>
-							<p class="marginB10"></p>
+							<p class="marginB10" ></p>
 						</div>
 					</div>
 			</div>
