@@ -17,43 +17,7 @@
 			<div class="imgApporve">
 				<div id="approveStory" class="form-group">
 					<div class='row marginAuto marginT10'  style="width:95%" id="showHomeStory"  >
-						<!--
-						 <div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='1'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-edit"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-                        </div>
-                        
-						<div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='1'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-edit"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-                        </div>
-                        <div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='1'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-edit"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-                        </div>
-                        <div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='1'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-edit"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-                        </div>
-                        <div class="col-xs-4 col-lg-2 boxImg"> 
-							<div class="h100 viewDetail" data-img='1'> 
-								<div class="img"  style="background:url(imgStory/56_00.png)"></div> 
-								<div class="homeIcon icon-edit"></div>
-							</div>
-							<p class="text-center text-blue">การะต่ายน้อย</p>
-						</div>-->
+						
                     </div>
                    
 				</div> 
@@ -136,7 +100,7 @@
 				}
 				else{
 					$('#showHomeStory').empty();
-					var imgStory = "<div class='text-center text-blue' > ไม่พบนิทาน </div>";
+					var imgStory = "<div class='text-center text-blue' > The story not found </div>";
 					$('#showHomeStory').append(imgStory);
 				}
 				
@@ -169,7 +133,11 @@
 					});	
 				}
 				else{
-					alert("ไม่พบข้อมูล Category");
+					//alert("ไม่พบข้อมูล Category");
+					$("#exampleModal").modal()// เปิดใช้ popup
+					$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+					$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+					$(".modal-body").html("The story not found")  //ใส่ข้อความที่ต้องการ alert
 				}
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

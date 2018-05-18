@@ -37,6 +37,7 @@ $_GET['pageid'];
 			<div id="" class="form-group form-group-sm">
 				<div class="icon48 icon-mic" id="editSound" style="margin: 0 auto;margin-top: 90;"></div>
 				<input style="display: none;" type="file" name="audio_upload" id="audio_upload" accept="audio/*"  />
+				<!--<input style="display: none;" type="file" name="audio_upload" id="audio_upload" accept="audio/*" capture="microphone">-->
 			</div>
 		</div>
 		

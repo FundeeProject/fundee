@@ -102,12 +102,9 @@ function callStoryByStatus(status_id) {
 				});	
 				
 				
-				//
-				
-				
-				
 				
 				$(".shareStory").click(function(){  
+				
 					var thisId = $(this).data('img'); //alert(thisId);
 					$(".modal-body").html("Do you want to publish this story?");
 					$("#okBtn").click(function(){
@@ -119,6 +116,13 @@ function callStoryByStatus(status_id) {
 								dataType: "text",
 								data: {storyid:thisId},
 								success:function( datajson ) {  
+								// $('#exampleModal').modal('hide');
+								 //$('#myModal').modal('hide')
+									/*$("#exampleModal").modal()// เปิดใช้ popup
+									$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+									$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+									$(".modal-body").html("The Category not found")  //ใส่ข้อความที่ต้องการ alert*/
+								
 									//----------ลบแล้วกลับไปหน้าแอดมินแอพพรูพ------------
 									if(datajson == "ok"){ 
 										window.location.href="main.php?page=mystory";
@@ -129,7 +133,7 @@ function callStoryByStatus(status_id) {
 									}
 								},
 								error:function(jqXHR, textStatus, errorThrown){
-									alert("การส่งข้อมูลผิดพลาด1"+errorThrown);
+									//alert("การส่งข้อมูลผิดพลาด1"+errorThrown);
 								}		
 							});
 							
@@ -141,7 +145,7 @@ function callStoryByStatus(status_id) {
 				
 			}
 			else{
-				$('#showHomeStory').append("<p class='text-blue text-center'>ไม่มีนิทานที่อยู่ในสถานะนี้ </p>");
+				$('#showHomeStory').append("<p class='text-blue text-center'>Not have story in this status </p>");
 			}
 			
 		},

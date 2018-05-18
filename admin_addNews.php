@@ -62,7 +62,7 @@
 				$("#exampleModal").modal()// เปิดใช้ popup
 				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
 				$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
-				$(".modal-body").html("หัวข้อข่าวต้องมีความยาว 1-30 ตัวอักษร")  //ใส่ข้อความที่ต้องการ alert
+				$(".modal-body").html("topic news must have 20-30 characters")  //ใส่ข้อความที่ต้องการ alert
 			}else{
 				if (typeof str === "undefined" || $("#Detail").val() == "") {
 					
@@ -75,7 +75,7 @@
 					var  Detail = document.getElementById("Detail");
 					var formData3 = new FormData($('#createform3')[0]);
 					formData3.append("Detail",Detail.value);
-					alert(formData3)
+					//alert(formData3)
 					$.ajax({
 			            url: 'qs/qs_add_news.php',
 			            type: 'POST',
@@ -95,7 +95,7 @@
 							$("#exampleModal").modal()// เปิดใช้ popup
 							$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
 							$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
-							$(".modal-body").html("ไม่สามารถอัพโหลดได้ กรุณาลองใหม่")  //ใส่ข้อความที่ต้องการ alert
+							$(".modal-body").html("Can not upload.please try again")  //ใส่ข้อความที่ต้องการ alert
 						}
 			   		});
 				}

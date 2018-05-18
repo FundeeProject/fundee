@@ -87,10 +87,10 @@ $_SESSION['user_id'];
 			var textToAlert = "";
 			var story_id = 0 ;
 			////---------------------->> เช็คการกรอกข้อมูล <<---------------------------
-			if(Storyname.value == '' ){ textToAlert = " - ตั้งชื่อนิทาน \n"; }
-			if(selectCategory.value == 0 ){ textToAlert = textToAlert+" - เลือกประเภทนิทาน \n"; }
+			if(Storyname.value == '' ){ textToAlert = " - Create story \n"; }
+			if(selectCategory.value == 0 ){ textToAlert = textToAlert+" - Choose category \n"; }
 			var str = $('#img3').attr('src');
-			if(typeof str === "undefined" ){ textToAlert = textToAlert+" - เลือกรูป \n"; }
+			if(typeof str === "undefined" ){ textToAlert = textToAlert+" - Choose Picture \n"; }
 			if((Storyname.value != '')&&(selectCategory.value != 0 )){
 				/*อัพโหลดรูป*/
 				//alert("Storyname - "+Storyname.value+"\ndescription - "+description.value+"\nuser_id - "+user_id);
@@ -109,7 +109,11 @@ $_SESSION['user_id'];
 		        }).done(function(data){
 		               // alert("-"+data+"-");
 					if(data == "notsuccess"){
-						alert("Failed to create stories, please try again.");
+						//alert("");
+						$("#exampleModal").modal()// เปิดใช้ popup
+						$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+						$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+						$(".modal-body").html("Failed to create stories, please try again.")  //ใส่ข้อความที่ต้องการ alert
 					}
 					else if(data != 0){
 						story_id = data ; 
@@ -120,7 +124,11 @@ $_SESSION['user_id'];
 					
 			}
 			else{ 
-				alert("ข้อมูลไม่ครบ \n"+textToAlert); 
+				//alert("ข้อมูลไม่ครบ \n"+textToAlert); 
+				$("#exampleModal").modal()// เปิดใช้ popup
+				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+				$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+				$(".modal-body").html(textToAlert)  //ใส่ข้อความที่ต้องการ alert
 			}
 		});
 		
@@ -141,7 +149,7 @@ $_SESSION['user_id'];
 		$('#Storyname').keyup(function(){
 			var x = document.getElementById("Storyname").value.length ;
 			if(x > 25){
-				alert("หัวข้อข่าวต้องมีความยาวระหว่าง 1-25 ตัวอักษร");
+				//alert("หัวข้อข่าวต้องมีความยาวระหว่าง 1-25 ตัวอักษร");
 				var newstring = document.getElementById("Storyname").value.substring(0,25);
 				document.getElementById("Storyname").value = newstring;
 			}
@@ -150,7 +158,7 @@ $_SESSION['user_id'];
 		$('#description').keyup(function(){
 			var x = document.getElementById("description").value.length ;
 			if(x > 180){
-				alert("คำอธิบายต้องมีความยาวระหว่าง 1-180 ตัวอักษร");
+				//alert("คำอธิบายต้องมีความยาวระหว่าง 1-180 ตัวอักษร");
 				var newstring = document.getElementById("description").value.substring(0,180);
 				document.getElementById("description").value = newstring;
 			}
@@ -173,7 +181,11 @@ $_SESSION['user_id'];
 					});	
 				}
 				else{
-					alert("ไม่พบข้อมูล Category");
+					//alert("ไม่พบข้อมูล Category");
+					$("#exampleModal").modal()// เปิดใช้ popup
+					$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+					$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+					$(".modal-body").html("The Category not found")  //ใส่ข้อความที่ต้องการ alert
 				}
 			},
 			error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		

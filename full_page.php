@@ -183,7 +183,7 @@ mql.addListener(function(m) {
 	var lastIndex = 0;
 	//var h = document.documentElement.clientHeight
 	var h = document.documentElement.clientWidth
-	alert(h)
+	//alert(h)
 	var storyid = <?php echo $_GET['storyid'];?> ;
 	var numberOfpage = 0;
 	
@@ -325,7 +325,7 @@ mql.addListener(function(m) {
 			$(this).hide();
 			song0.play();
 			$(".glyphicon-chevron-left").show();
-			$(".glyphicon-chevron-right").show()
+			$(".glyphicon-chevron-right").show();
 	});
 	}
 	

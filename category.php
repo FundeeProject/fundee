@@ -147,7 +147,7 @@ $(document).ready(function(){
 				}
 				else{
 					$('#showHomeStory').empty();
-					var imgStory = "<div ><p class='text-blue text-center'> ไม่พบนิทาน </p></div>";
+					var imgStory = "<div ><p class='text-blue text-center'> The story not found </p></div>";
 					$('#showHomeStory').append(imgStory);
 				}
 				

@@ -179,10 +179,10 @@ $(document).ready(function(){
 					 <div class="row">
 						<div class="col-md-12" style="padding:0px;">
 							<ul class="nav nav-tabs list-group" style="margin-bottom:0;">
-								<li class="homePage"><a href="main.php?page=home">HOME</a></li>
+								<li class="homePage"><a href="main.php?page=home" >HOME</a></li>
 								<!--<li class="homePage"><a href="">HOME</a></li>-->
-								<li class="categoryPage"><a href="main.php?page=category">CATEGORY</a></li>
-								<li class="storyPage"><a href="main.php?page=mystory">MY STORY </a></li>
+								<li class="categoryPage"><a href="main.php?page=category" >CATEGORY</a></li>
+								<li class="storyPage"><a href="main.php?page=mystory" >MY STORY </a></li>
 								<?php if($_SESSION["role_id"] == 0){echo '<li class="adminPage"><a href="main.php?page=admin">ADMIN </a></li>';} ?>
 							</ul>
 						</div>
@@ -298,7 +298,7 @@ $(document).ready(function(){
 	<div class="modal-content" style="min-height: 150px;">
 	  <div class="modal-body text-blue" style="text-align:center;">
 	  </div>
-	  <div class="modal-footer marginAuto" style="" >
+	  <div class="modal-footer marginAuto" style="width: 200px;" >
 		<button type="button" class="btn btn-info" id="oklogoutBtn" style="width:80px;">Yes</button>
 		<button type="button" class="btn btn-back" style="width:80px;" id="noModalBtn" data-dismiss="modal">Close</button>
 	  </div>
@@ -314,7 +314,7 @@ $(document).ready(function(){
 		
 		
 		$(".modal-body").html("Sign out?")
-		
+		$(".modal-footer").css("width","200px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
 		$("#oklogoutBtn").click(function(){//note !!! ส้รางปุ่มไว้ที่ file main
 			window.location.href="logout.php";
 		})

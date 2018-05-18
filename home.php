@@ -61,8 +61,10 @@ $(document).ready(function(){
 		url:'qs/qs_showNews.php',
 		dataType: "json",
 		data: {},
-		success:function( datajson ) {    
+		success:function( datajson ) {  	
+		
 			if(datajson.length !=0){
+				
 				//$('#showSlideNews').empty();
 				$.each(datajson, function(i,item){
 					var no = i;
@@ -71,14 +73,6 @@ $(document).ready(function(){
 						if(i==0){
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							img = '<div class="item"><div class="slideBg" style="background:url(img/'+datajson[i].news_picture +')"></div></div>'
-						
-							/*
-							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
-							//var img = '<div class="imgSlide item active" style="background:url(img/'+datajson[i].news_picture +')"></div>';
-							var img = '<div class="item active">'+
-							'<img src="img/'+datajson[i].news_picture +'" alt="Chania" '+
-							'width="240" height="200"> </div>'; */
-							
 						}
 						else{
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
@@ -86,10 +80,6 @@ $(document).ready(function(){
 						}
 					}else{
 						var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
-						/*
-						var img = '<div class="item active">'+
-						'<img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="Chania" '+
-						'width="240" height="200"> </div>'; */
 						img = '<div class="item active"><div class="slideBg"></div></div>'
 					}
 					$('#showSlideNews_number').append(imgNumber);	
@@ -97,13 +87,14 @@ $(document).ready(function(){
 					$('#showSlideNews').find('.item').eq(0).addClass('active');
 					
 				});	
-				/*
-				$('.carousel').carousel({
-						interval: 500
-				})*/
+				
 			}
 			else{
-				alert("ไม่พบข้อมูลหน้านิทาน");
+				$("#exampleModal").modal()// เปิดใช้ popup
+				$("#okModalBtn").remove();//ลบปุ่ม ok ออกใหเหลือแต่ปุ่ม cancel
+				$(".modal-footer").css("width","110px")//จัดปุ่ม cancel ให้อยู่กึ่งกลาง
+				$(".modal-body").html("The story not found")  //ใส่ข้อความที่ต้องการ alert
+				//alert("ไม่พบข้อมูลหน้านิทาน");
 			}
 		},
 		error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
@@ -154,7 +145,7 @@ $(document).ready(function(){
 			}
 			else{
 				//alert("ไม่พบข้อมูลหน้านิทาน");
-				$('#showHomeStory').append("<p class='text-blue'>ไม่พบข้อมูลหน้านิทาน</p>");
+				$('#showHomeStory').append("<p class='text-blue'>The story not found</p>");
 			}
 		},
 		error:function(jqXHR, textStatus, errorThrown){alert(errorThrown);}		
@@ -201,7 +192,7 @@ $(document).ready(function(){
 				}
 				else{
 					$('#showHomeStory').empty();
-					var imgStory = "<div class='text-center text-blue' > ไม่พบนิทาน </div>";
+					var imgStory = "<div class='text-center text-blue' > The story not found </div>";
 					$('#showHomeStory').append(imgStory);
 				}
 				
