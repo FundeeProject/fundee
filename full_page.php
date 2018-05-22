@@ -79,15 +79,7 @@ $_GET['storyid'];
 <body >
 <div class="fullPage">
 
-<div class="icon32 icon-playSlide " id="playBtn" style="width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 40%;
-    z-index: 99999999;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-"></div>
+<div class="icon32 icon-playSlide " id="playBtn" style="width: 60px;height: 60px;position: absolute;top: 40%;z-index: 99999999;left: 0;right: 0;margin: 0 auto;"></div>
 <div class="icon32 icon-close " id="closeBtn"></div>
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 	
@@ -97,7 +89,7 @@ $_GET['storyid'];
 	</ol> 
 
 	<!--img slide-->
-	<div class="carousel-inner" role="listbox" id="showSlideNews" >
+	<div class="carousel-inner" role="listbox" id="showSlideNews" style='overflow: visible;' >
 		<!--<div class="item">
 			<div class="slideMint" style="background-image:url(imgStory/87_1.png);height :300px;">
 				<p>sdfsdfsdfsdf</p>
@@ -186,10 +178,10 @@ mql.addListener(function(m) {
 	//alert(h)
 	var storyid = <?php echo $_GET['storyid'];?> ;
 	var numberOfpage = 0;
+	var countSlide;
 	
 	//ซ่อนปุ่ม ซ้ายขวา
-	$(".glyphicon-chevron-left").hide();
-	$(".glyphicon-chevron-right").hide()
+	
 	
 	
 	function preload() {
@@ -205,9 +197,19 @@ mql.addListener(function(m) {
 				numberOfpage = datajson.length;
 				$('#showSlideNews').empty();
 				$.each(datajson, function(i,item){
+					//alert(datajson.length)
 					var no = i;
 					var img;
 					var description;
+					//22.05.2018
+					countSlide = datajson.length
+					if (datajson.length == 1){
+						
+						$(".glyphicon-chevron-left").hide();
+						$(".glyphicon-chevron-right").hide()
+						
+					}
+					
 					if(datajson[i].text == "NULL"){
 						description = "";
 					}
@@ -219,7 +221,9 @@ mql.addListener(function(m) {
 							
 							var imgNumber = ' <li data-target="#myCarousel" data-slide-to="'+no+'" ></li>';
 							if(datajson[i].voice != "NULL"){
-								img = '<div class="item"><div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">	<p class="text"><b>'+ description +'</b></p>'+
+								img = '<div class="item">'+
+								'<div class="slideMint" style="background-image:url(imgStory/'+datajson[i].picture +');height :'+h+'px;">'+
+									'<p class="text"><b>'+ description +'</b></p>'+
 								'<span id="myVideo'+no+'" class="myVideo" audio-src="audio/'+datajson[i].voice+'"></span>'+
 								'</div></div>'
 							}else{
@@ -245,6 +249,7 @@ mql.addListener(function(m) {
 					$('#showSlideNews_number').append(imgNumber);	
 					$('#showSlideNews').append(img);	
 					$('#showSlideNews').find('.item').eq(0).addClass('active');
+					
 					
 					
 					
@@ -292,41 +297,47 @@ mql.addListener(function(m) {
 
 	function setup() {
 		
-	//----------------click next--------------//
-	$( "#next" ).click(function() {
-		lastIndex = index_;
-		index_++;
-		
-		if(index_  == numberOfpage)
-			index_ = 0 ;
-
-		startstopsound(index_, lastIndex);
-	});	
-	
-	//----------------click prev--------------//
-	$( "#prev" ).click(function() {
-		 lastIndex = index_;
-		index_--;
-		
-		if(index_  < 0)
-			index_ = numberOfpage-1 ;
-		
-		startstopsound(index_, lastIndex);
-	});	
-	
-	/*-----------Close----------*/
-	$("#closeBtn").click(function(){ 
-			 window.history.back();
-	});
-	
-	/*-----------Play-----------*/
-	$("#playBtn").click(function(){ 
+		//----------------click next--------------//
+		$( "#next" ).click(function() {
+			lastIndex = index_;
+			index_++;
 			
-			$(this).hide();
-			song0.play();
-			$(".glyphicon-chevron-left").show();
-			$(".glyphicon-chevron-right").show();
-	});
+			if(index_  == numberOfpage)
+				index_ = 0 ;
+
+			startstopsound(index_, lastIndex);
+		});	
+		
+		//----------------click prev--------------//
+		$( "#prev" ).click(function() {
+			 lastIndex = index_;
+			index_--;
+			
+			if(index_  < 0)
+				index_ = numberOfpage-1 ;
+			
+			startstopsound(index_, lastIndex);
+		});	
+		
+		/*-----------Close----------*/
+		$("#closeBtn").click(function(){ 
+				 window.history.back();
+		});
+		
+		/*-----------Play-----------*/
+		$("#playBtn").click(function(){ 
+				//alert(countSlide)
+				if (countSlide == 1){
+					$(".glyphicon-chevron-left").hide();
+					$(".glyphicon-chevron-right").hide();
+				}else{
+					$(".glyphicon-chevron-left").show();
+					$(".glyphicon-chevron-right").show();
+				}
+				$(this).hide();
+				song0.play();
+				
+		});
 	}
 	
 	function startstopsound(startsound, stopsound) {
