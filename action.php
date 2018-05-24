@@ -13,16 +13,34 @@ if($op === 'signin'){
    regis();
 }else if($op === 'logFace'){
    logFace();
+}else if($op === 'forgetPass'){
+   forgetPass();
+}
+function forgetPass(){ //echo "dd";
+	$username = trim($_POST['username']);
+	$bday = trim($_POST['bday']);
+	$cke = selects("_user","where ((email='$username') or (username='$username')) AND (bday = '$bday')");
+	//echo "email :".$email."username :".$username."password ".$password;
+	//echo $email."-".count($cke);
+	if(count($cke)==0){
+		echo "not";
+	}
+	else{
+		$row = select("_user","where ((email='$username') or (username='$username')) AND (bday = '$bday')");
+			
+		echo $row['password'];
+	}
 }
 function regis(){ //echo "dd";
 	$username = trim($_POST['username']);
 	$email = trim($_POST['email']);
 	$password = trim($_POST['pwd']);
-	$cke = selects("user","where email='$email' or username='$username'");
+	$bday = trim($_POST['bday']);
+	$cke = selects("_user","where email='$email' or username='$username'");
 	//echo "email :".$email."username :".$username."password ".$password;
 	//echo $email."-".count($cke);
 	if(count($cke)==0){
-		$row = insert("username,password,email,user_point,role_id","'$username','$password','$email','0','1'","user");
+		$row = insert("username,password,email,user_point,role_id,bday","'$username','$password','$email','0','1','$bday'","_user");
 	  echo "ok";
 	}
 	else{
@@ -43,14 +61,14 @@ function logFace(){
 //	$chk = (isset($_POST['remember']) ? $_POST['remember'] : '');
 	//เช็ค user และ password จาก ฟอร์ม
 	if (!empty($user_email)){
-		$sql = sprintf("select * from user where email='%s'",
+		$sql = sprintf("select * from _user where email='%s'",
 		mysql_real_escape_string($user_email));
 		$query = mysql_query($sql) or die (mysql_error());
 		$num_rows=mysql_num_rows($query);
 		$login=mysql_fetch_assoc($query); 
 	//	echo $num_rows; //เอามาเช็คว่ามีข้อมูลรึป่าว
 		if($num_rows === 0){ // ถ้ายังไม่มีข้อมูล ให้เพิ่มข้อมูลลงไป
-			$row = insert("username,password,email,user_point,role_id","'$user_name','00000000','$user_email','0','1'","user");
+			$row = insert("username,password,email,user_point,role_id","'$user_name','00000000','$user_email','0','1'","_user");
 			if($row){
 				//echo "<br><p class='alert alert-danger'>ยังไม่มีข้อมูล สมัครสมาชิคเรียบร้อยแล้ว</p>";
 				$_SESSION['logon'] = 1;
@@ -85,28 +103,28 @@ function test(){
 	$chk = (isset($_POST['remember']) ? $_POST['remember'] : '');
 	//เช็ค user และ password จาก ฟอร์ม
 	if ((!empty($username)) and (!empty($password)) or $password == '') {
-		$sql = sprintf("select * from user where email='%s' and password='%s'",
-		mysql_real_escape_string($username),
-		mysql_real_escape_string($password));
+		//$sql = sprintf("select * from _user where ((email='$username') OR (username = '$username')) and (password='$password')",
+		$sql = "select * from _user where ((email='$username') OR (username = '$username')) and (password='$password')";
+		//mysql_real_escape_string($username),
+		//mysql_real_escape_string($password));
 		$query = mysql_query($sql) or die (mysql_error());
 		$num_rows=mysql_num_rows($query);
 		$login=mysql_fetch_assoc($query); 
 		//echo $num_rows;
-		if($num_rows === 0){
+		if($num_rows == 0){
 			echo "Incorrect email or password. <br>The email you entered does not belong to any account.";
 			exit();
-		}else if ($num_rows != 0){
+		}else if ($num_rows == 1){
 			$uid = $username;
-			$row = select("user","where email='$uid'");
+			$row = select("_user","where ((email='$uid') OR (username = '$uid')) AND (password ='$password')");
 			$_SESSION['logon'] = 1;
 			$_SESSION["user_id"] = $row['user_id'];
 			$_SESSION["user_email"] = $row['email'];
 			$_SESSION["user_name"] = $row['username'];
 			$_SESSION["role_id"] = $row['role_id'];
-			//echo "Hello".$username."  ypurpass: ".$password ;
-			if($chk == 'on') { // ถ้าติ๊กถูก Login ตลอดไป ให้ทำการสร้าง cookie
-				//setcookie("username_log",$row['user_id'],time()+3600*24*356);
+			if($chk == 'on') { 
 			}
+			//echo "ddd";
 			echo $_SESSION["role_id"];
 			exit();
 		}else{
@@ -121,7 +139,7 @@ function signIn(){
 	$chk = (isset($_POST['remember']) ? $_POST['remember'] : '');
 	//เช็ค user และ password จาก ฟอร์ม
 	if ((!empty($username)) and (!empty($password)) or $password == '') {
-		$sql = sprintf("select * from user where email='%s' and password='%s'",
+		$sql = sprintf("select * from _user where email='%s' and password='%s'",
 		mysql_real_escape_string($username),
 		mysql_real_escape_string($password));
 		$query = mysql_query($sql) or die (mysql_error());
@@ -132,7 +150,7 @@ function signIn(){
 			exit();
 		}else if ($num_rows != 0){
 			$uid = $username;
-			$row = select("user","where email='$uid'");
+			$row = select("_user","where email='$uid'");
 			$_SESSION['logon'] = 1;
 			$_SESSION["user_id"] = $row['user_id'];
 			$_SESSION["user_name"] = $row['username'];

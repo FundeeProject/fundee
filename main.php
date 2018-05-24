@@ -339,6 +339,9 @@ $(document).ready(function(){
 	$(".mystory").click(function(){ 
 	  window.location.href="main.php?page=mystory";
 	});
+	$(".admin").click(function(){ 
+	  window.location.href="main.php?page=admin";
+	});
 
 	
 	

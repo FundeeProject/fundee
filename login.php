@@ -53,7 +53,7 @@ include "include/function.php";
 				<p class="text-center marginT10">- or -</p>
 				<form class="form-horizontal" method="post" name="flogin" id="flogin">
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="email">Email:</label>
+						<label class="control-label col-sm-2" for="email">Username or Email:</label>
 						<div class="col-sm-10">
 							<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
 						</div>
@@ -76,7 +76,10 @@ include "include/function.php";
 							<button type="button" class="btn btn-success wp100" style="background-color: #99c432;border-color: #99c432;" id="singin">Sign In</button>
 						</div>
 						<div class="col-sm-offset-2 col-sm-10 text-center marginT10 marginB10">
-							<a href="register.php" style="color: #999;">Have an account? Log in ></a>
+							<a  id="register" style="color: #999;">Have an account? Log in ></a>
+						</div>
+						<div class="col-sm-offset-2 col-sm-10 text-center marginT10 marginB10">
+							<a  id="forgetPass" style="color: #999;">Forget your password? </a>
 						</div>
 					</div>
 				</div>
@@ -154,21 +157,19 @@ include "include/function.php";
 			
 			
 			
+            $("#forgetPass").click(function(){
+				window.location.href="forgetPass.php";
+			});
+			$("#register").click(function(){
+				window.location.href="register.php";
+			});
             $("#singin").click(function(){
 				var email = $("#email").val();
 				var pass = $("#pwd").val();
 				
 				if (email != "" &&  pass != ""){
 				
-				/*if (email == "admin@gmail.com" && pass == "1234"){
-					//window.location.href="admin.php";
-					window.location.href="main.php?page=admin";
-					
-				}else{
-					window.location.href="main.php?page=mystory";
-				}*/
-				
-					$.post("action.php?op=test",$("form").serialize(), function(data){
+					$.post("action.php?op=test",$("form").serialize(), function(data){//alert("-"+data+"-");
 						if(data=='1'){ //user
 							window.location.href="main.php?page=home";
 							return true;
@@ -177,10 +178,10 @@ include "include/function.php";
 							window.location.href="main.php?page=admin";
 							return true;
 						}
-						else{
+						else{ 
 							$("#exampleModal").modal()// เปิดใช้ popup
 							$(".modal-body").html(data)	 //ใส่ข้อความที่ต้องการ alert	
-							//alert("-"+data+"-"); 
+							
 						}
 					})
 				}else{
