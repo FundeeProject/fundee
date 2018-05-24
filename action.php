@@ -21,7 +21,7 @@ function forgetPass(){ //echo "dd";
 	$bday = trim($_POST['bday']);
 	$cke = selects("_user","where ((email='$username') or (username='$username')) AND (bday = '$bday')");
 	//echo "email :".$email."username :".$username."password ".$password;
-	//echo $email."-".count($cke);
+	//echo $username."-".count($cke); 
 	if(count($cke)==0){
 		echo "not";
 	}

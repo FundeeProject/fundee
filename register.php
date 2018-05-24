@@ -35,7 +35,9 @@ include "include/function.php";*/
 									<input type="text" class="form-control" id="email" placeholder="Ex. ex@gmail.com" name="email">
 									</br>
 									<input type="password" class="form-control" id="pwd" placeholder="password" name="pwd"><br>
-									<input type="date" class="form-control" id="bday" name = "bday"  >
+									<!--<input type="date" class="form-control" id="bday" name = "bday"  >-->
+									<input required="" type="text" class="form-control" placeholder="select birthday" id="bday" name="bday" onfocus="(this.type='date')"/>
+									
 									</br>
 								</div>
 								
@@ -70,9 +72,17 @@ include "include/function.php";*/
 
 	 <script type="text/javascript">
 	$(document).ready(function(){
-		
-		   
-		
+		//---------------------------------------------------------------//date
+		   var dd_mm_yyyy;
+			
+			$("#bday").change( function(){
+				changedDate = $(this).val(); //in yyyy-mm-dd format obtained from datepicker
+				var date = new Date(changedDate);
+				dd_mm_yyyy = twoDigitDate(date)+"-"+twoDigitMonth(date)+"-"+date.getFullYear(); // in dd-mm-yyyy format
+				
+				
+			});
+		//---------------------------------------------------------------//end date
 			$("#regis").click(function(){
 				var email = $('#email').val();
 				var username = $('#username').val();

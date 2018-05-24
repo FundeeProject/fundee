@@ -15,6 +15,6 @@ mysql_query("SET character_set_connection=utf8");
 setlocale(LC_ALL, 'th_TH');
 
 ############ GENERAL SETTING ######################
-$title = "ระบบยืม - คืนครุภัณฑ์";
+$title = "";
 $version = "?version=1";
 ?>

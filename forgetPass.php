@@ -30,9 +30,11 @@ include "include/function.php";*/
 							<form  method="post" name="fregis" id="fregis">
 								<div class="blockRegis marginAuto">
 									</br>
-									<input type="text" class="form-control" id="username" placeholder="username or email" name="username">
+									<input type="text" class="form-control" id="username" placeholder="Username Or Email" name="username">
 									</br>
-									<input type="date" class="form-control" id="bday" name = "bday"  >
+									<!--<input type="date" class="form-control" id="bday" name = "bday"  />-->
+									<input required="" type="text" class="form-control" placeholder="Select Birthday" id="bday" name="bday" onfocus="(this.type='date')"/>
+									
 									</br>
 									<div id="youPassword" style="display:none">
 										<label class="text-red text-center" style="width: 70%;">Your Password</label>
@@ -73,8 +75,22 @@ include "include/function.php";*/
 	 <script type="text/javascript">
 	$(document).ready(function(){
 			//document.getElementById("pwd").style.display ="none";
+			//---------------------------------------------------------------//date
+			/*var d = new Date();  
+			var today_ISO_date = d.getFullYear()+"-"+twoDigitMonth(d)+"-"+twoDigitDate(d); // in yyyy-mm-dd format
+			document.getElementById('bday').setAttribute("value", today_ISO_date);*/
 			
-		
+			var dd_mm_yyyy;
+			
+			$("#bday").change( function(){
+				changedDate = $(this).val(); //in yyyy-mm-dd format obtained from datepicker
+				var date = new Date(changedDate);
+				dd_mm_yyyy = twoDigitDate(date)+"-"+twoDigitMonth(date)+"-"+date.getFullYear(); // in dd-mm-yyyy format
+				
+				
+			});
+			//---------------------------------------------------------------//end date
+			
 			$("#getPass").click(function(){
 				
 				var username = $('#username').val();
@@ -98,7 +114,7 @@ include "include/function.php";*/
 						}else{
 							$("#exampleModal").modal()// เปิดใช้ popup
 							$(".modal-body").html("Username or Password or Your birthday is invalid. Please try again.")	 //ใส่ข้อความที่ต้องการ alert	
-							//alert("555")
+							$("#youPassword").hide()
 						}
 					});
 				}
@@ -131,7 +147,20 @@ include "include/function.php";*/
 		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		return re.test(email);
 	}
+	
+	//---------------------------------------------------date
+	function twoDigitDate(d){
+	  return ((d.getDate()).toString().length == 1) ? "0"+(d.getDate()).toString() : (d.getDate()).toString();
+	};
+		
+	function twoDigitMonth(d){
+		return ((d.getMonth()+1).toString().length == 1) ? "0"+(d.getMonth()+1).toString() : (d.getMonth()+1).toString();
+	};
+	//---------------------------------------------------end     
     </script>
+	
+	
+	
 </body>
 
 
